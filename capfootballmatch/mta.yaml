@@ -1,0 +1,148 @@
+---
+_schema-version: '3.1'
+ID: capfootballmatch
+version: 1.0.0
+description: "CAP Football Match Project"
+
+parameters:
+  enable-parallel-deployments: true
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+
+
+#---------------------------#
+# MODULES                   #
+#---------------------------#
+modules:
+  #1: Database module
+  - name: capfootballmatch_db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 512M
+      no-route: true
+      no-start: true
+      stack: cflinuxfs4
+      tasks:
+        - name: hdi-deploy
+          command: npm run start
+    requires:
+      - name: cfm_hdi_container
+      - name: cfm_xsuaa
+
+  #2: Service module
+  - name: capfootballmatch_srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      buildpack: nodejs_buildpack
+      readiness-health-check-type: http
+      readiness-health-check-http-endpoint: /health
+    build-parameters:
+      builder: npm
+    provides:
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: cfm_hdi_container
+      - name: cfm_xsuaa
+      - name: cfm_destination
+
+  # #3: UI module
+  # - name: capfootballmatch_ui
+  #   type: html5
+  #   path: ui
+  #   requires:
+  #     - name: cfm_destination
+  #   build-parameters:
+  #     ignore: ["node_modules/"]    
+  #     build-result: dist
+  #     builder: custom
+  #     commands:
+  #       - node -v
+  #       - npm i
+  #       - npm run build:cf
+  #     supported-platforms: []
+
+
+  # #4: UI deployer module
+  # - name: capfootballmatch_ui_deployer
+  #   type: com.sap.application.content
+  #   path: .
+  #   requires:
+  #     - name: cfm_html5_host
+  #       parameters:
+  #         content-target: true
+  #   build-parameters:
+  #     ignore: ["node_modules/"]    
+  #     build-result: ui_resources
+  #     requires:
+  #       - artifacts:
+  #           - capfootballmatch.zip
+  #         name: capfootballmatch_ui
+  #         target-path: ui_resources/
+
+
+
+
+
+#-----------------------------------------------------------------#
+# RESOURCES
+#-----------------------------------------------------------------#
+resources:
+#1
+  - name: cfm_hdi_container
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+
+#2
+  - name: cfm_xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+
+#3
+  - name: cfm_html5_host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+      sizeLimit: 100
+
+#4
+  - name: cfm_destination
+    type: org.cloudfoundry.managed-service
+    requires:
+      - name: srv-api
+    parameters:
+      service: destination
+      service-plan: lite
+      config:
+        forwardAuthToken: true
+        HTML5Runtime_enabled: true
+        version: 1.0.0
+        init_data:
+          instance:
+            existing_destinations_policy: update
+            destinations:
+              - Name: capfootballmatch_srv_dest
+                Description: CAP Football Match Service Destination
+                Authentication: NoAuthentication
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv-api/srv-url}
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+                HTML5.Timeout: 600000
+ 
