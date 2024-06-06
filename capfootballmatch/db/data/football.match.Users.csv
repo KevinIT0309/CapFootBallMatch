@@ -1,0 +1,9 @@
+user_id,email,password,fullName,role
+123,email-123,password-123,fullName-123,2
+345,email-345,password-345,fullName-345,1
+567,email-567,password-567,fullName-567,2
+789,email-789,password-789,fullName-789,1
+987,email-987,password-987,fullName-987,2
+765,email-765,password-765,fullName-765,2
+543,email-543,password-543,fullName-543,1
+321,email-321,password-321,fullName-321,2
