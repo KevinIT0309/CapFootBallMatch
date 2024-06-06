@@ -1,0 +1,5 @@
+bet_id,bet_time,user_ID,match_ID,team_win_ID,isDraw,predictGoals
+100,2009-08-24T00:00:00.000Z,123,001,1,true,"[{""team1_ID"":1,""team1_numOfGoals"":25,""team2_ID"":5,""team2_numOfGoals"":18}]"
+200,2002-09-17T00:00:00.000Z,123,001,6,false,"[{""team1_ID"":4,""team1_numOfGoals"":28,""team2_ID"":6,""team2_numOfGoals"":4}]"
+300,2001-10-19T00:00:00.000Z,567,001,7,true,"[{""team1_ID"":2,""team1_numOfGoals"":7,""team2_ID"":8,""team2_numOfGoals"":31}]"
+400,2011-06-30T00:00:00.000Z,789,001,3,false,"[{""team1_ID"":3,""team1_numOfGoals"":61,""team2_ID"":7,""team2_numOfGoals"":81}]"
