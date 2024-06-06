@@ -23,3 +23,12 @@ File or Folder | Purpose
 ## Learn More
 
 Learn more at https://cap.cloud.sap/docs/get-started/.
+
+
+## Linux command
+- Kill a port running
+    + step 1: lsof -i :<port running>
+    + step 2: kill <PID>
+
+## Rule Testing at local
+- move folder /data/ from asset directory to folder db for test, when done remove from db.
