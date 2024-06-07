@@ -9,6 +9,7 @@ service FM_SRV {
     entity Bets as select from fms.Bets;
     entity Scores as select from fms.Scores;
 
+    function TotalBetPointsReceived(userID: Integer) returns Integer;
 }
 
 annotate FM_SRV with @(requires: 'authenticated-user');
