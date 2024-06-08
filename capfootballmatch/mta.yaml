@@ -1,4 +1,3 @@
----
 _schema-version: '3.1'
 ID: capfootballmatch
 version: 1.0.0
@@ -13,7 +12,6 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
-
 
 #---------------------------#
 # MODULES                   #
@@ -32,6 +30,7 @@ modules:
       tasks:
         - name: hdi-deploy
           command: npm run start
+      buildpack: nodejs_buildpack
     requires:
       - name: cfm_hdi_container
       - name: cfm_xsuaa
@@ -54,7 +53,6 @@ modules:
       - name: cfm_hdi_container
       - name: cfm_xsuaa
       - name: cfm_destination
-
   # #3: UI module
   # - name: capfootballmatch_ui
   #   type: html5
@@ -93,18 +91,18 @@ modules:
 
 
 
-#-----------------------------------------------------------------#
-# RESOURCES
-#-----------------------------------------------------------------#
+  #-----------------------------------------------------------------#
+  # RESOURCES
+  #-----------------------------------------------------------------#
 resources:
-#1
+  #1
   - name: cfm_hdi_container
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
 
-#2
+  #2
   - name: cfm_xsuaa
     type: org.cloudfoundry.managed-service
     parameters:
@@ -112,7 +110,7 @@ resources:
       service: xsuaa
       service-plan: application
 
-#3
+  #3
   - name: cfm_html5_host
     type: org.cloudfoundry.managed-service
     parameters:
@@ -120,7 +118,7 @@ resources:
       service-plan: app-host
       sizeLimit: 100
 
-#4
+  #4
   - name: cfm_destination
     type: org.cloudfoundry.managed-service
     requires:
@@ -145,4 +143,3 @@ resources:
                 HTML5.DynamicDestination: true
                 HTML5.ForwardAuthToken: true
                 HTML5.Timeout: 600000
- 
