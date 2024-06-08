@@ -1,0 +1,108 @@
+<mvc:View
+    controllerName="cap.euro.admin.football.controller.MatchResult"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <ObjectPageLayout
+        id="matchResultObjectPageLayout"
+        showTitleInHeaderContent="true"
+        alwaysShowContentHeader="false"
+        preserveHeaderStateOnScroll="false"
+        headerContentPinnable="true"
+        isChildPage="true"
+        upperCaseAnchorBar="false"
+        showFooter="true"
+    >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <heading>
+                    <m:Title text="{mainModel>match_name}" />
+                </heading>
+                <navigationActions>
+                    <m:OverflowToolbarButton
+                        type="Transparent"
+                        icon="sap-icon://decline"
+                        press="handleClose"
+                        id="exitFullScreenBtn"
+                        tooltip="Exit Full Screen Mode"
+                    />
+                </navigationActions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+        <sections>
+            <ObjectPageSection
+                titleUppercase="false"
+                id="MatchInformation"
+                title="MatchInformation"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <form:SimpleForm
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsM="3"
+                            columnsL="3"
+                            columnsXL="3"
+                        >
+                            <form:content>
+                                <core:Title text="General" />
+                                <m:Label text="Home" />
+                                <m:Text text="{mainModel>team1/team_name}" />
+                                <m:Label text="Away" />
+                                <m:Text text="{mainModel>team2/team_name}" />
+                                <core:Title text="" />
+                                <m:Label text="Match Day" />
+                                <m:Text
+                                    text="{
+                                        path: 'mainModel>match_time',
+                                        type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                        formatOptions: {
+                                        pattern: 'dd/MM/yyyy'
+                                        }
+                                    }"
+                                />
+                                <m:Label text="Match Time" />
+                                <m:Text
+                                    text="{
+                                        path:'mainModel>match_time',  
+                                        type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                        formatOptions: {  
+                                            pattern : 'HH:mm'
+                                        }
+                                    }"
+                                />
+                                <core:Title text="Result" />
+                                <m:Label text="Team win" />
+                                <m:Input />
+                                <m:Label text="Team 1 Score" />
+                                <m:Input value="{mainModel>team1_score}" />
+                                <m:Label text="Team 2 Score" />
+                                <m:Input value="{mainModel>team2_score}" />
+                            </form:content>
+                        </form:SimpleForm>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+        <footer>
+            <m:OverflowToolbar id="otbFooter">
+                <m:ToolbarSpacer />
+                <m:Button
+                    type="Accept"
+                    text="Save"
+                    press="handleSave"
+                />
+                <m:Button
+                    type="Reject"
+                    text="Discard"
+                    press="handleClose"
+                />
+            </m:OverflowToolbar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>
