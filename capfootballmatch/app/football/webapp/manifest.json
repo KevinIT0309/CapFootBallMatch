@@ -87,7 +87,13 @@
         "settings": {
           "operationMode": "Server",
           "autoExpandSelect": true,
-          "earlyRequests": true
+          "earlyRequests": true,
+          "groupProperties": {
+            "UpdateGroup": {
+              "submit": "API"
+            }
+          },
+          "updateGroupId": "UpdateGroup"
         }
       }
     },
@@ -125,7 +131,7 @@
           ]
         },
         {
-          "pattern": "createMatch/{layout}",
+          "pattern": "createMatch/:layout:",
           "name": "createMatch",
           "target": [
             "MatchList",

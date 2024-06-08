@@ -5,10 +5,10 @@ sap.ui.define([
 
     return BaseController.extend("cap.euro.admin.football.controller.MatchResult", {
         onInit: function () {
-            this.getRouter().attachRouteMatched(this.onRouteMatched, this);
+            this.getRouter().getRoute("matchResult").attachPatternMatched(this.onPatternMatched, this);
         },
 
-        onRouteMatched: function (oEvent) {
+        onPatternMatched: function (oEvent) {
             this._matchId = oEvent.getParameter("arguments").matchId;
             if (this._matchId) {
                 this._layout = oEvent.getParameter("arguments").layout;
@@ -24,12 +24,12 @@ sap.ui.define([
         },
 
         handleSave: function () {
-            this.getModel("mainModel").submitBatch();
+            this.getModel("mainModel").submitBatch("UpdateGroup");
             this.getRouter().navTo("matchList");
         },
 
         handleClose: function (oEvent) {
-            this.getModel("mainModel").resetChanges();
+            this.getModel("mainModel").resetChanges("UpdateGroup");
             this.getRouter().navTo("matchList");
         }
     });

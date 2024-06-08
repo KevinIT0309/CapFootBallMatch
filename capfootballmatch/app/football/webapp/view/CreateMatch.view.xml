@@ -16,6 +16,7 @@
         headerContentPinnable="true"
         isChildPage="true"
         upperCaseAnchorBar="false"
+        showFooter="true"
     >
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
@@ -51,36 +52,35 @@
                             <form:content>
                                 <core:Title text="General" />
                                 <m:Label text="Home" />
-                                <m:Select
+                                <m:ComboBox
                                     id="selectTeam1"
                                     showSecondaryValues="true"
-                                    selectedKey=""
                                     items="{ path: 'mainModel>/Teams' }"
+                                    change="handleTeamChange"
                                 >
                                     <core:ListItem
-                                        text="{mainModel>team_id}"
-                                        additionalText="{mainModel>team_name}"
+                                        text="{mainModel>team_name}"
+                                        additionalText="{mainModel>team_id}"
                                     />
-                                </m:Select>
+                                </m:ComboBox>
                                 <m:Label text="Away" />
-                                <m:Select
+                                <m:ComboBox
                                     id="selectTeam2"
                                     showSecondaryValues="true"
-                                    selectedKey=""
                                     items="{ path: 'mainModel>/Teams' }"
+                                    change="handleTeamChange"
                                 >
                                     <core:ListItem
-                                        text="{mainModel>team_id}"
-                                        additionalText="{mainModel>team_name}"
+                                        text="{mainModel>team_name}"
+                                        additionalText="{mainModel>team_id}"
                                     />
-                                </m:Select>
+                                </m:ComboBox>
                                 <core:Title text="" />
                                 <m:Label text="Match Day" />
                                 <m:DateTimePicker
                                     id="matchDateTimeDTP"
                                     value="{
-                                        path:'/valueDTP5',
-                                        type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                        path:'{viewModel>/match_time}',
                                         formatOptions: {
                                             style: 'medium',
                                             strictParsing: true
