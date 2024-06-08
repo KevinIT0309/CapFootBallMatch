@@ -55,6 +55,7 @@ modules:
   build-parameters:
     builder: npm
 
+ # Admin UI module
 - name: capfootballmatch-app-content
   type: com.sap.application.content
   path: .
@@ -69,8 +70,11 @@ modules:
       - capeuroadminfootball.zip
       name: capeuroadminfootball
       target-path: resources/
+    - artifacts:
+      - capeurobettorsoccer.zip
+      name: capeurobettorsoccer
+      target-path: resources/
 
- # Admin UI module
 - name: capeuroadminfootball
   type: html5
   path: app/football
@@ -82,11 +86,22 @@ modules:
     - npm run build:cf
     supported-platforms: []
 
+- name: capeurobettorsoccer
+  type: html5
+  path: app/soccer
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+
 #-----------------------------------------------------------------#
 # RESOURCES
 #-----------------------------------------------------------------#
-resources:
 #1
+resources:
 - name: cfm_hdi_container
   type: com.sap.xs.hdi-container
   parameters:
