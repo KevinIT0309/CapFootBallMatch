@@ -291,12 +291,12 @@
                 <m:ToolbarSpacer />
                 <m:Button
                     type="Accept"
-                    text="Save"
+                    text="Bet"
                     press="handleSave"
                 />
                 <m:Button
                     type="Reject"
-                    text="Discard"
+                    text="Cancel"
                     press="handleClose"
                 />
             </m:OverflowToolbar>
