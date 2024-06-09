@@ -1,3 +1,4 @@
+---
 _schema-version: '3.1'
 ID: capfootballmatch
 version: 1.0.0
@@ -19,129 +20,137 @@ build-parameters:
 #---------------------------#
 modules:
   #1: Database module
-  - name: capfootballmatch_db
-    type: hdb
-    path: db
-    requires:
-      - name: cfm_hdi_container
-      - name: cfm_xsuaa
-    parameters:
-      disk-quota: 512M
-      memory: 256M
-      no-route: true
-      no-start: true
-      stack: cflinuxfs4
-      tasks:
-        - command: npm run start
-          name: hdi-deploy
-      buildpack: nodejs_buildpack
-    #2: Service module
-  - name: capfootballmatch_srv
-    type: nodejs
-    path: gen/srv
-    requires:
-      - name: cfm_hdi_container
-      - name: cfm_xsuaa
-      - name: cfm_destination
-    provides:
-      - name: srv-api
-        properties:
-          srv-url: ${default-url}
-    parameters:
-      buildpack: nodejs_buildpack
-      readiness-health-check-http-endpoint: /health
-      readiness-health-check-type: http
-    build-parameters:
-      builder: npm
+- name: capfootballmatch_db
+  type: hdb
+  path: db
+  requires:
+  - name: cfm_hdi_container
+  - name: cfm_xsuaa
+  parameters:
+    disk-quota: 512M
+    memory: 256M
+    no-route: true
+    no-start: true
+    stack: cflinuxfs4
+    tasks:
+    - command: npm run start
+      name: hdi-deploy
 
-  - name: capfootballmatch-app-content
-    type: com.sap.application.content
-    path: .
-    requires:
-      - name: cfm_html5_host
-        parameters:
-          content-target: true
-    build-parameters:
-      build-result: resources
-      requires:
-        - artifacts:
-            - capeuroadminfootball.zip
-          name: capeuroadminfootball
-          target-path: resources/
+  #2: Service module
+- name: capfootballmatch_srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: cfm_hdi_container
+  - name: cfm_xsuaa
+  - name: cfm_destination
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+    readiness-health-check-http-endpoint: /health
+    readiness-health-check-type: http
+  build-parameters:
+    builder: npm
 
-  # Admin UI module
-  - name: capeuroadminfootball
-    type: html5
-    path: app/football
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm install
-        - npm run build:cf
-      supported-platforms:
-        []
-  - name: capfootballmatch-srv
-    type: nodejs
-    path: srv
+ # Admin UI module
+- name: capfootballmatch-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: cfm_html5_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
     requires:
-      - name: capfootballmatch-db
-      - name: cfm_hdi_container
+    - artifacts:
+      - capeuroadminfootball.zip
+      name: capeuroadminfootball
+      target-path: resources/
+    - artifacts:
+      - capeurobettorsoccer.zip
+      name: capeurobettorsoccer
+      target-path: resources/
+
+- name: capeuroadminfootball
+  type: html5
+  path: app/football
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+
+- name: capeurobettorsoccer
+  type: html5
+  path: app/soccer
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
 
 #-----------------------------------------------------------------#
 # RESOURCES
 #-----------------------------------------------------------------#
+#1
 resources:
-  #1
-  - name: cfm_hdi_container
-    type: com.sap.xs.hdi-container
-    parameters:
-      service: hana
-      service-plan: hdi-shared
+- name: cfm_hdi_container
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
 
-  #2
-  - name: cfm_xsuaa
-    type: org.cloudfoundry.managed-service
-    parameters:
-      path: ./xs-security.json
-      service: xsuaa
-      service-plan: application
+#2
+- name: cfm_xsuaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
 
-  #3
-  - name: cfm_html5_host
-    type: org.cloudfoundry.managed-service
-    parameters:
-      service: html5-apps-repo
-      service-plan: app-host
-      sizeLimit: 100
+#3
+- name: cfm_html5_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+    sizeLimit: 100
 
-  #4
-  - name: cfm_destination
-    type: org.cloudfoundry.managed-service
-    parameters:
-      config:
-        HTML5Runtime_enabled: false
-        forwardAuthToken: true
-        init_data:
-          instance:
-            destinations:
-              - Authentication: NoAuthentication
-                Description: CAP Football Match Service Destination
-                HTML5.DynamicDestination: true
-                HTML5.ForwardAuthToken: true
-                HTML5.Timeout: 600000
-                Name: capfootballmatch_srv_dest
-                ProxyType: Internet
-                Type: HTTP
-                URL: ~{srv-api/srv-url}
-              - Authentication: NoAuthentication
-                Name: ui5
-                ProxyType: Internet
-                Type: HTTP
-                URL: https://ui5.sap.com
-            existing_destinations_policy: update
-        version: 1.0.0
-      service: destination
-      service-plan: lite
-    requires:
-      - name: srv-api
+#4
+- name: cfm_destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      forwardAuthToken: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Description: CAP Football Match Service Destination
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            HTML5.Timeout: 600000
+            Name: capfootballmatch_srv_dest
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-plan: lite
+  requires:
+  - name: srv-api

@@ -38,7 +38,7 @@
             <ObjectPageSection
                 titleUppercase="false"
                 id="MatchInformation"
-                title="MatchInformation"
+                title="Match Information"
             >
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">

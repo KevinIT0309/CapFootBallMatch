@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="cap.euro.admin.football.controller.MatchList"
+    controllerName="cap.euro.bettor.soccer.controller.MatchList"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -31,7 +31,7 @@
                                     />
                                 </fb:control>
                             </fb:FilterGroupItem>
-                            <fb:FilterGroupItem
+                            <!-- <fb:FilterGroupItem
                                 name="Match Status"
                                 label="Match Status"
                                 groupName="Group1"
@@ -52,7 +52,7 @@
                                         />
                                     </Select>
                                 </fb:control>
-                            </fb:FilterGroupItem>
+                            </fb:FilterGroupItem> -->
                             <fb:FilterGroupItem
                                 name="MatchDay"
                                 label="Match Day"
@@ -80,7 +80,6 @@
             <Table
                 id="table"
                 inset="false"
-                mode="SingleSelectLeft"
                 items="{
 						path: 'mainModel>/Matches',
                         parameters: {
@@ -94,17 +93,7 @@
                             text="Matches"
                             level="H2"
                         />
-                        <ToolbarSpacer />
-                        <Button
-                            tooltip="Create"
-                            text="Create"
-                            press="handleCreateButtonPressed"
-                        />
-                        <Button
-                            tooltip="Delete"
-                            text="Delete"
-                            press="handleDeleteButtonPressed"
-                        />
+                        <!-- <ToolbarSpacer /> -->
                     </OverflowToolbar>
                 </headerToolbar>
                 <columns>
@@ -138,12 +127,6 @@
                     >
                         <Text text="Away" />
                     </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Match Status" />
-                    </Column>
                 </columns>
 
                 <items>
@@ -174,7 +157,6 @@
                             />
                             <Text text="{mainModel>team1/team_name}" />
                             <Text text="{mainModel>team2/team_name}" />
-                            <Text text="{mainModel>status}" />
                         </cells>
                     </ColumnListItem>
                 </items>

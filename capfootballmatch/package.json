@@ -1,37 +1,39 @@
 {
-    "name": "capfootballmatch",
-    "version": "1.0.0",
-    "description": "CAP Football Match Project",
-    "repository": "https://github.com/KevinIT0309/CapFootBallMatch",
-    "license": "UNLICENSED",
-    "private": true,
-    "cds": {
-        "hana": {
-            "deploy-format": "hdbtable"
-        }
-    },
-    "dependencies": {
-        "@sap/cds": "^7",
-        "@sap/xssec": "^4.0.2",
-        "express": "^4",
-        "rimraf": "^5.0.7"
-    },
-    "devDependencies": {
-        "@cap-js/sqlite": "^1",
-        "@sap/cds-dk": "^7",
-        "@sap/eslint-plugin-cds": "^3",
-        "@sap/ux-specification": "UI5-1.124",
-        "eslint": "^9",
-        "rimraf": "^5.0.5"
-    },
-    "scripts": {
-        "start": "cds-serve",
-        "watch-football": "cds watch --open football/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy capfootballmatch --delete-services --delete-service-keys --delete-service-brokers",
-        "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-    },
-    "sapux": [
-        "app/football"
-    ]
+  "name": "capfootballmatch",
+  "version": "1.0.0",
+  "description": "CAP Football Match Project",
+  "repository": "https://github.com/KevinIT0309/CapFootBallMatch",
+  "license": "UNLICENSED",
+  "private": true,
+  "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    }
+  },
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/xssec": "^4.0.2",
+    "express": "^4",
+    "rimraf": "^5.0.7"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/eslint-plugin-cds": "^3",
+    "@sap/ux-specification": "UI5-1.124",
+    "eslint": "^9",
+    "rimraf": "^5.0.5"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-football": "cds watch --open football/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy capfootballmatch --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-soccer": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/football",
+    "app/soccer"
+  ]
 }

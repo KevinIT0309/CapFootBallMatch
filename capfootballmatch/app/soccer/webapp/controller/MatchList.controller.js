@@ -1,16 +1,14 @@
 sap.ui.define([
-    "cap/euro/admin/football/controller/BaseController",
+    "cap/euro/bettor/soccer/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/f/library",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator",
-    "sap/m/MessageToast",
-    "sap/m/MessageBox"
+    "sap/ui/model/FilterOperator"
 ],
-    function (BaseController, JSONModel, fioriLibrary, Filter, FilterOperator, MessageToast, MessageBox) {
+    function (BaseController, JSONModel, fioriLibrary, Filter, FilterOperator) {
         "use strict";
 
-        return BaseController.extend("cap.euro.admin.football.controller.MatchList", {
+        return BaseController.extend("cap.euro.bettor.soccer.controller.MatchList", {
             onInit: function () {
                 let oData = {
                     "searchFieldValue": "",
@@ -33,35 +31,18 @@ sap.ui.define([
             onItemPress: function (oEvent) {
                 let oItem = oEvent.getSource();
                 let matchId = oItem.getBindingContext("mainModel").getObject("match_id");
-                this.getRouter().navTo("matchResult", { "layout": fioriLibrary.LayoutType.TwoColumnsMidExpanded, "matchId": matchId });
-            },
-
-            handleCreateButtonPressed: function () {
-                this.getRouter().navTo("createMatch");
-            },
-
-            handleDeleteButtonPressed: function (oEvent) {
-                let selectedItem = this.byId("table").getSelectedItem();
-                let context = selectedItem.getBindingContext("mainModel");
-
-                context.delete().then(function () {
-                    MessageToast.show("Delete match ok");
-                }.bind(this), function (oError) {
-                    MessageBox.error(oError.message);
-                }.bind(this));
-
-                this.getModel("mainModel").submitBatch("UpdateGroup");
+                this.getRouter().navTo("betMatch", { "layout": fioriLibrary.LayoutType.TwoColumnsMidExpanded, "matchId": matchId });
             },
 
             onSearch: function () {
                 let viewModel = this.getModel("viewModel");
-                let matchStatusKey = viewModel.getProperty("/matchStatusKey");
+                // let matchStatusKey = viewModel.getProperty("/matchStatusKey");
                 let matchDayValue = viewModel.getProperty("/matchDayValue");
                 let filters = [];
 
-                if (matchStatusKey) {
-                    filters.push(new Filter("status", "EQ", parseInt(matchStatusKey)));
-                }
+                // if (matchStatusKey) {
+                //     filters.push(new Filter("status", "EQ", parseInt(matchStatusKey)));
+                // }
 
                 if (matchDayValue) {
                     filters.push(new Filter("match_time", "EQ", matchDayValue.toISOString()));
