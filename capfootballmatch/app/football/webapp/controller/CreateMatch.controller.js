@@ -1,8 +1,10 @@
 sap.ui.define([
     "cap/euro/admin/football/controller/BaseController",
     "sap/f/library",
-    "sap/ui/model/json/JSONModel"
-], function (BaseController, fioriLibrary, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+], function (BaseController, fioriLibrary, JSONModel, MessageToast, MessageBox) {
     "use strict";
 
     return BaseController.extend("cap.euro.admin.football.controller.CreateMatch", {
@@ -27,15 +29,18 @@ sap.ui.define([
             this.setModel(oModel, "viewModel");
         },
 
+        handleMatchTimeChange: function (oEvent) {
+            let viewModel = this.getModel("viewModel");
+            viewModel.setProperty("/match_time", oEvent.getSource().getDateValue());
+        },
+
         handleTeamChange: function (oEvent) {
             let viewModel = this.getModel("viewModel");
             let id = oEvent.getSource().getId();
             if (id.indexOf("selectTeam1") >= 0) {
                 viewModel.setProperty("/team1_name", oEvent.getSource().getSelectedItem().getText());
-                viewModel.setProperty("/team1_ID", parseInt(oEvent.getSource().getSelectedItem().getAdditionalText()));
             } else {
                 viewModel.setProperty("/team2_name", oEvent.getSource().getSelectedItem().getText());
-                viewModel.setProperty("/team2_ID", parseInt(oEvent.getSource().getSelectedItem().getAdditionalText()));
             }
         },
 
@@ -44,15 +49,23 @@ sap.ui.define([
             const listBinding = this.getModel("mainModel").bindList("/Matches");
             const viewModel = this.getModel("viewModel");
             let context = listBinding.create({
-                "team1_ID": viewModel.getProperty("/team1_ID"),
-                "team2_ID": viewModel.getProperty("/team2_ID"),
+                "team1_ID": parseInt(viewModel.getProperty("/team1_ID")),
+                "team2_ID": parseInt(viewModel.getProperty("/team2_ID")),
                 "match_name": viewModel.getProperty("/team1_name") + "_" + viewModel.getProperty("/team2_name"),
                 "status": 1,
                 "match_time": viewModel.getProperty("/match_time")
             });
 
+            let fnSuccess = function () {
+                MessageToast.show("Match Saved Successfully");
+            }.bind(this);
+
+            let fnError = function (oError) {
+                MessageBox.error(oError.message);
+            }.bind(this);
+
             this.getView().setBindingContext(context, "mainModel");
-            this.getModel("mainModel").submitBatch("UpdateGroup");
+            this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
             this.getRouter().navTo("matchList");
         },
 

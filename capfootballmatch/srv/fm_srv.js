@@ -26,7 +26,15 @@ class FMService extends cds.ApplicationService {
       );
 
       return result;
-    })
+    });
+
+    this.on('GetUserInfo', req => {
+      const user = {
+        "id": req.user.id
+      }
+
+      return user;
+    });
     return super.init()
   }
 
