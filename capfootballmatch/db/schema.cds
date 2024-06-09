@@ -1,7 +1,8 @@
 namespace football.match;
 
-using { managed } from '@sap/cds/common';
+using { cuid, managed } from '@sap/cds/common';
 
+    @assert.unique : { uniqueKey: [ team_name ]}
     entity Teams: managed {
         key team_id   : Integer;// increase automatic
         team_name     : String(100) not null;
@@ -9,6 +10,7 @@ using { managed } from '@sap/cds/common';
     }
 
 
+    @assert.unique : { uniqueKey: [ team1_ID, team2_ID, match_time ]}
     entity Matches: managed {
         key match_id      : Integer;// increase automatic
         match_name        : String not null;
@@ -28,13 +30,11 @@ using { managed } from '@sap/cds/common';
 
     }
 
-    entity Users: managed {
-        key user_id    : Integer;// increase automatic
+    entity Users: cuid, managed {
+        key user_id    : String;
         email          : String(100) not null;
-        password       : String(256) not null;
         fullName       : String not null;
-        role           : Integer @assert.range: [ 1, 2 ] enum { admin = 1; bettor = 2} not null;
-        
+        // role           : Integer @assert.range: [ 1, 2 ] enum { admin = 1; bettor = 2} not null;
     }
 
 
@@ -45,11 +45,12 @@ using { managed } from '@sap/cds/common';
         team2_numOfGoals : Integer;
     }
 
-    entity Bets: managed {
-        key bet_id       : Integer;// increase automatic
+
+    @assert.unique : { uniqueKey: [ user_ID, match_ID, team_win_ID ]}
+    entity Bets: cuid, managed {
         bet_time         : DateTime not null;// Date and time when the bet was placed
 
-        user_ID          : Integer not null;
+        user_ID          : String not null;
         match_ID         : Integer not null;
         team_win_ID      : Integer not null;
         isDraw           : Boolean default null;// otherwise must true
@@ -62,10 +63,10 @@ using { managed } from '@sap/cds/common';
     }
 
 
-    entity Scores: managed {
-        key score_id  : Integer;// increase automatic
+    @assert.unique : { uniqueKey: [ user_ID, match_ID, points ]}
+    entity Scores: cuid, managed {
 
-        user_ID       : Integer not null;
+        user_ID       : String not null;
         match_ID      : Integer not null;
         points        : Integer not null;
         

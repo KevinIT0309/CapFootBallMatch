@@ -5,5 +5,9 @@
     },
     "scripts": {
         "start": "node node_modules/@sap/hdi-deploy/deploy.js"
+    },
+    "advancedOptions": {
+        "undeploy": [],
+        "path-parameter": []
     }
 }
