@@ -1,6 +1,8 @@
 sap.ui.define([
     "cap/euro/admin/football/controller/BaseController",
-], function (BaseController) {
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+], function (BaseController, MessageToast, MessageBox) {
     "use strict";
 
     return BaseController.extend("cap.euro.admin.football.controller.MatchResult", {
@@ -14,7 +16,7 @@ sap.ui.define([
                 this._layout = oEvent.getParameter("arguments").layout;
                 this.getModel("mainModel")
                 this.getView().bindElement({
-                    "path": "/Matches(" + this._matchId + ")",
+                    "path": `/Matches(${this._matchId})`,
                     "model": "mainModel",
                     "parameters": { "expand": "team1,team2" }
                 });
@@ -24,7 +26,15 @@ sap.ui.define([
         },
 
         handleSave: function () {
-            this.getModel("mainModel").submitBatch("UpdateGroup");
+            let fnSuccess = function () {
+                MessageToast.show("Match Saved Successfully");
+            }.bind(this);
+
+            let fnError = function (oError) {
+                MessageBox.error(oError.message);
+            }.bind(this);
+
+            this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
             this.getRouter().navTo("matchList");
         },
 

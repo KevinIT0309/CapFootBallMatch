@@ -52,33 +52,38 @@
                             <form:content>
                                 <core:Title text="General" />
                                 <m:Label text="Home" />
+                                
                                 <m:ComboBox
                                     id="selectTeam1"
                                     showSecondaryValues="true"
+                                    selectedKey="{viewModel>/team1_ID}"
                                     items="{ path: 'mainModel>/Teams' }"
                                     change="handleTeamChange"
                                 >
-                                    <core:ListItem
+                                    <core:Item
                                         text="{mainModel>team_name}"
-                                        additionalText="{mainModel>team_id}"
+                                        key="{mainModel>team_id}"
                                     />
                                 </m:ComboBox>
                                 <m:Label text="Away" />
+                                
                                 <m:ComboBox
                                     id="selectTeam2"
                                     showSecondaryValues="true"
+                                    selectedKey="{viewModel>/team2_ID}"
                                     items="{ path: 'mainModel>/Teams' }"
                                     change="handleTeamChange"
                                 >
-                                    <core:ListItem
+                                    <core:Item
                                         text="{mainModel>team_name}"
-                                        additionalText="{mainModel>team_id}"
+                                        key="{mainModel>team_id}"
                                     />
                                 </m:ComboBox>
                                 <core:Title text="" />
                                 <m:Label text="Match Day" />
                                 <m:DateTimePicker
                                     id="matchDateTimeDTP"
+                                    change="handleMatchTimeChange"
                                     value="{
                                         path:'{viewModel>/match_time}',
                                         formatOptions: {

@@ -45,7 +45,7 @@ sap.ui.define([
                 let context = selectedItem.getBindingContext("mainModel");
 
                 context.delete().then(function () {
-                    MessageToast.show("Delete match ok");
+                    MessageToast.show("Delete match successfully");
                 }.bind(this), function (oError) {
                     MessageBox.error(oError.message);
                 }.bind(this));
