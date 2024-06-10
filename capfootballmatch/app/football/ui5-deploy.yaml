@@ -20,6 +20,6 @@ builder:
   - name: ui5-task-zipper
     afterTask: generateCachebusterInfo
     configuration:
-      archiveName: capeuroadminfootball
+      archiveName: capfootballadmin
       additionalFiles:
       - xs-app.json

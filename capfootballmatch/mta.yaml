@@ -23,84 +23,154 @@ modules:
 - name: capfootballmatch_db
   type: hdb
   path: db
-  requires:
-  - name: cfm_hdi_container
-  - name: cfm_xsuaa
   parameters:
-    disk-quota: 512M
     memory: 256M
+    disk-quota: 512M
     no-route: true
     no-start: true
     stack: cflinuxfs4
     tasks:
     - command: npm run start
       name: hdi-deploy
+  requires:
+    - name: cfm_hdi_container
+    - name: cfm_xsuaa
+
 
   #2: Service module
 - name: capfootballmatch_srv
   type: nodejs
   path: gen/srv
-  requires:
-  - name: cfm_hdi_container
-  - name: cfm_xsuaa
-  - name: cfm_destination
-  provides:
-  - name: srv-api
-    properties:
-      srv-url: ${default-url}
   parameters:
     buildpack: nodejs_buildpack
-    readiness-health-check-http-endpoint: /health
-    readiness-health-check-type: http
+    disk-quota: 1024M
+    memory: 512M
+    stack: cflinuxfs4
   build-parameters:
-    builder: npm
+    ignore:
+      - package-lock.json
+      - node_modules/
+  requires:
+    - name: cfm_hdi_container
+    - name: cfm_xsuaa
+    - name: cfm_destination
+  provides:
+    - name: srv-api
+      public: true
+      properties:
+        srv-url: ${default-url}
 
- # Admin UI module
-- name: capfootballmatch-app-content
+
+
+
+
+ # UI (1) module for admin
+- name: capfootballadmin
+  type: html5
+  path: app/football
+  requires:
+    - name: cfm_destination
+  build-parameters:
+    ignore: ["node_modules/"]
+    build-result: dist
+    builder: custom
+    commands:
+      - npm install
+      - npm run build:cf
+    supported-platforms: []
+ # UI (2) module for bettor
+- name: capfootballbettor
+  type: html5
+  path: app/soccer
+  requires:
+    - name: cfm_destination
+  build-parameters:
+    ignore: ["node_modules/"]
+    build-result: dist
+    builder: custom
+    commands:
+      - npm install
+      - npm run build:cf
+    supported-platforms: []
+
+
+ # UI deployer module
+- name: capfootball_ui_deployer
   type: com.sap.application.content
   path: .
   requires:
-  - name: cfm_html5_host
-    parameters:
-      content-target: true
+    - name: cfm_html5_host
+      parameters:
+        content-target: true
   build-parameters:
+    ignore: ["node_modules/"]
     build-result: resources
     requires:
-    - artifacts:
-      - capeuroadminfootball.zip
-      name: capeuroadminfootball
-      target-path: resources/
-    - artifacts:
-      - capeurobettorsoccer.zip
-      name: capeurobettorsoccer
-      target-path: resources/
+      - artifacts:
+          - capfootballadmin.zip
+        name: capfootballadmin
+        target-path: resources/
+      - artifacts:
+          - capfootballbettor.zip
+        name: capfootballbettor
+        target-path: resources/
 
-- name: capeuroadminfootball
-  type: html5
-  path: app/football
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 
-- name: capeurobettorsoccer
-  type: html5
-  path: app/soccer
+
+ # UI repo registry module
+- name: capfootball_destination_content
+  type: com.sap.application.content
+  requires:
+  #1: for xsuaa
+  - name: cfm_xsuaa
+    parameters:
+      service-key:
+        name: cfm_xsuaa_key
+  #2: for html5 host
+  - name: cfm_html5_host
+    parameters:
+      service-key:
+        name: cfm_html5_host_key
+
+  #3: for destination
+  - name: cfm_destination
+    parameters:
+      content-target: true
+
+  # #4: for connectivity
+  - name: cfm_connectivity
   build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
+    no-source: true
+  parameters:      
+    content:
+      instance:
+        existing_destinations_policy: update                     
+        destinations:
+        - Name: cap_football_html5_dest
+          ServiceInstanceName: cfm_html5_host
+          ServiceKeyName: cfm_html5_host_key
+          sap.cloud.service: cap.football.match
+            
+        - Name: cfm_xsuaa_dest
+          Authentication: OAuth2UserTokenExchange
+          ServiceInstanceName: cfm_xsuaa
+          ServiceKeyName: cfm_xsuaa_key
+          sap.cloud.service: cap.football.match
+
+
+
+
+
+
+
+
+
+
 
 #-----------------------------------------------------------------#
 # RESOURCES
 #-----------------------------------------------------------------#
-#1
+#1: hana
 resources:
 - name: cfm_hdi_container
   type: com.sap.xs.hdi-container
@@ -108,7 +178,7 @@ resources:
     service: hana
     service-plan: hdi-shared
 
-#2
+#2: xsuaa
 - name: cfm_xsuaa
   type: org.cloudfoundry.managed-service
   parameters:
@@ -116,7 +186,7 @@ resources:
     service: xsuaa
     service-plan: application
 
-#3
+#3: html5-apps-repo
 - name: cfm_html5_host
   type: org.cloudfoundry.managed-service
   parameters:
@@ -124,33 +194,37 @@ resources:
     service-plan: app-host
     sizeLimit: 100
 
-#4
+#4: destination
 - name: cfm_destination
   type: org.cloudfoundry.managed-service
+  requires:
+    - name: srv-api
   parameters:
+    service: destination
+    service-plan: lite
     config:
+      version: 1.0.0
       HTML5Runtime_enabled: false
       forwardAuthToken: true
       init_data:
         instance:
+          existing_destinations_policy: update
           destinations:
-          - Authentication: NoAuthentication
-            Description: CAP Football Match Service Destination
-            HTML5.DynamicDestination: true
-            HTML5.ForwardAuthToken: true
-            HTML5.Timeout: 600000
-            Name: capfootballmatch_srv_dest
+          - Name: capfootballmatch_srv_dest
+            Description: Cap Football Match Service Destination
+            Authentication: NoAuthentication
             ProxyType: Internet
             Type: HTTP
             URL: ~{srv-api/srv-url}
-          - Authentication: NoAuthentication
-            Name: ui5
-            ProxyType: Internet
-            Type: HTTP
-            URL: https://ui5.sap.com
-          existing_destinations_policy: update
-      version: 1.0.0
-    service: destination
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            HTML5.Timeout: 600000
+
+
+
+#5: connectivity              
+- name: cfm_connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
     service-plan: lite
-  requires:
-  - name: srv-api

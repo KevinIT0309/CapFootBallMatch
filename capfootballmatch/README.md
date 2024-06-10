@@ -32,3 +32,6 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 
 ## Rule Testing at local
 - move folder /data/ from asset directory to folder db for test, when done remove from db.
+
+## Undeploy mta
+cf undeploy capfootballmatch --delete-services --delete-service-keys --delete-service-brokers

@@ -16,7 +16,7 @@ using { cuid, managed } from '@sap/cds/common';
         match_name        : String not null;
         match_time        : DateTime not null;
         
-        status            : Integer @assert.range: [ 1, 2 ] enum { waiting = 1; ongoing = 2; done = 3; } not null;
+        status            : Integer @assert.range: [ 1, 3 ] enum { waiting = 1; ongoing = 2; done = 3; } not null;
         isOver            : Boolean default false;// when the status is [3 = done], set isOver become true, when isOver become true, all data can not be edited anymore
 
         team1_ID          : Integer not null;
