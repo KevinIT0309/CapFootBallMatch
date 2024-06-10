@@ -8,7 +8,7 @@ service FM_SRV {
     entity Users   as select from fms.Users;
     entity Bets    as select from fms.Bets;
     entity Scores  as select from fms.Scores;
-    function TotalBetPointsReceived(userID : Integer) returns Integer;
+    function TotalBetPointsReceived(userID : String) returns Integer;
 
     function GetUserInfo()                            returns {
         id : String
