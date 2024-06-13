@@ -135,7 +135,8 @@
                         text="{
                            parts: [
                                 'mainModel>team1_score',
-                                'mainModel>team2_score'
+                                'mainModel>team2_score',
+                                'mainModel>status'
 						    ],
                             formatter: 'formatter.formatResultText'
                         }"
@@ -165,6 +166,7 @@
                                  <!-- change="handleTeamWinChange" -->
                                 <m:ComboBox
                                     id="selectTeamWin"
+                                    enabled="{= !${viewModel>/isDraw}}"
                                     showSecondaryValues="true"
                                     selectedKey="{viewModel>/team_win_ID}"
                                     items="{ path: 'viewModel>/predictOptions' }"
@@ -259,6 +261,13 @@
                 <m:Button
                     type="Accept"
                     text="Bet"
+                    enabled="{
+                           parts: [
+                                'mainModel>match_time',
+                                'viewModel>/predictGoals'
+						    ],
+                            formatter: 'formatter.determineActiveBetStatus'
+                        }"
                     press="handleSave"
                 />
                 <m:Button

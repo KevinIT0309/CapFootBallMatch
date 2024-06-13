@@ -1,8 +1,9 @@
 sap.ui.define([
     "cap/euro/admin/football/controller/BaseController",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (BaseController, MessageToast, MessageBox) {
+    "sap/m/MessageBox",
+    "../model/formatter"
+], function (BaseController, MessageToast, MessageBox, formatter) {
     "use strict";
 
     return BaseController.extend("cap.euro.admin.football.controller.MatchResult", {

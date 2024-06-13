@@ -15,7 +15,17 @@ sap.ui.define([
                 let oData = {
                     "searchFieldValue": "",
                     "matchStatusKey": "",
-                    "matchDayValue": null
+                    "matchDayValue": null,
+                    "matchStatusList": [{
+                        "matchStatus": 1,
+                        "matchStatusDesc": "Waiting"
+                    },{
+                        "matchStatus": 2,
+                        "matchStatusDesc": "Ongoing"
+                    },{
+                        "matchStatus": 3,
+                        "matchStatusDesc": "Done"
+                    }]
                 };
 
                 // set explored app's demo model on this sample
@@ -57,6 +67,9 @@ sap.ui.define([
                 let viewModel = this.getModel("viewModel");
                 let matchStatusKey = viewModel.getProperty("/matchStatusKey");
                 let matchDayValue = viewModel.getProperty("/matchDayValue");
+                let upperMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(0, 0, 0));
+                let lowerMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(23, 59, 59));
+
                 let filters = [];
 
                 if (matchStatusKey) {
@@ -64,7 +77,7 @@ sap.ui.define([
                 }
 
                 if (matchDayValue) {
-                    filters.push(new Filter("match_time", "EQ", matchDayValue.toISOString()));
+                    filters.push(new Filter("match_time", "BT", upperMatchDatetime.toISOString(), lowerMatchDatetime.toISOString()));
                 }
 
                 if (filters.length) {
@@ -74,6 +87,8 @@ sap.ui.define([
                             "and": true
                         })
                     );
+                } else {
+                    this.byId("table").getBinding("items").filter([]);
                 }
             }
         });

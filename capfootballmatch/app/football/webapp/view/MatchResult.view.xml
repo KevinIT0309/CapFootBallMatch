@@ -7,6 +7,7 @@
     xmlns:form="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
+    core:require="{formatter: 'cap/euro/admin/football/model/formatter'}"
 >
     <ObjectPageLayout
         id="matchResultObjectPageLayout"
@@ -77,12 +78,18 @@
                                     }"
                                 />
                                 <core:Title text="Result" />
-                                <m:Label text="Team win" />
-                                <m:Input />
+                                <!-- <m:Label text="Team win" />
+                                <m:Input value="{mainModel>team1_score}"> -->
                                 <m:Label text="Team 1 Score" />
-                                <m:Input value="{mainModel>team1_score}" />
+                                <m:Input
+                                    type="Number"
+                                    value="{path: 'mainModel>team1_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
                                 <m:Label text="Team 2 Score" />
-                                <m:Input value="{mainModel>team2_score}" />
+                                <m:Input
+                                    type="Number"
+                                    value="{path: 'mainModel>team2_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
                             </form:content>
                         </form:SimpleForm>
                     </ObjectPageSubSection>
@@ -95,6 +102,14 @@
                 <m:Button
                     type="Accept"
                     text="Save"
+                    enabled="{
+                           parts: [
+                                'mainModel>team1_score',
+                                'mainModel>team2_score',
+                                'mainModel>match_time'
+						    ],
+                            formatter: 'formatter.determineSaveButtonStatus'
+                        }"
                     press="handleSave"
                 />
                 <m:Button

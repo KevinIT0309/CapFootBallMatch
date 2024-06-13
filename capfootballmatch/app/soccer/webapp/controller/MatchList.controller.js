@@ -34,10 +34,22 @@ sap.ui.define([
                 this.getRouter().navTo("betMatch", { "layout": fioriLibrary.LayoutType.TwoColumnsMidExpanded, "matchId": matchId });
             },
 
+            handleMatchDayValueChange: function (oEvent) {
+                let bValid = oEvent.getParameter("valid");
+
+                if (!bValid) {
+                    sap.m.MessageToast.show("Entered date range isn't valid");
+                    return;
+                }
+            },
+
             onSearch: function () {
                 let viewModel = this.getModel("viewModel");
                 // let matchStatusKey = viewModel.getProperty("/matchStatusKey");
                 let matchDayValue = viewModel.getProperty("/matchDayValue");
+                let upperMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(0, 0, 0));
+                let lowerMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(23, 59, 59));
+
                 let filters = [];
 
                 // if (matchStatusKey) {
@@ -45,7 +57,7 @@ sap.ui.define([
                 // }
 
                 if (matchDayValue) {
-                    filters.push(new Filter("match_time", "EQ", matchDayValue.toISOString()));
+                    filters.push(new Filter("match_time", "BT", upperMatchDatetime.toISOString(), lowerMatchDatetime.toISOString()));
                 }
 
                 if (filters.length) {
@@ -55,6 +67,8 @@ sap.ui.define([
                             "and": true
                         })
                     );
+                } else {
+                    this.byId("table").getBinding("items").filter([]);
                 }
             }
         });

@@ -19,7 +19,7 @@
                         search=".onSearch"
                     >
                         <fb:filterGroupItems>
-                            <fb:FilterGroupItem
+                            <!-- <fb:FilterGroupItem
                                 name="Search"
                                 label="Search"
                                 groupName="Group1"
@@ -30,7 +30,7 @@
                                         value="{viewModel>/searchFieldValue}"
                                     />
                                 </fb:control>
-                            </fb:FilterGroupItem>
+                            </fb:FilterGroupItem> -->
                             <fb:FilterGroupItem
                                 name="Match Status"
                                 label="Match Status"
@@ -42,13 +42,13 @@
                                         forceSelection="false"
                                         selectedKey="{viewModel>/matchStatusKey}"
                                         items="{
-                                            path: '/ProductCollection',
+                                            path: 'viewModel>/matchStatusList',
                                             sorter: { path: 'Name' }
                                         }"
                                     >
                                         <core:Item
-                                            key="{ProductId}"
-                                            text="{Name}"
+                                            key="{viewModel>matchStatus}"
+                                            text="{viewModel>matchStatusDesc}"
                                         />
                                     </Select>
                                 </fb:control>

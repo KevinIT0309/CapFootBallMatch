@@ -51,8 +51,20 @@
                         >
                             <form:content>
                                 <core:Title text="General" />
+                                <m:Label text="Stage" />
+                                <m:ComboBox
+                                    id="selectStage"
+                                    showSecondaryValues="true"
+                                    selectedKey="{viewModel>/stage}"
+                                    items="{ path: 'viewModel>/stageList' }"
+                                >
+                                    <core:Item
+                                        text="{viewModel>stage}"
+                                        key="{viewModel>stage}"
+                                    />
+                                </m:ComboBox>
+
                                 <m:Label text="Home" />
-                                
                                 <m:ComboBox
                                     id="selectTeam1"
                                     showSecondaryValues="true"
@@ -86,9 +98,11 @@
                                     change="handleMatchTimeChange"
                                     value="{
                                         path:'{viewModel>/match_time}',
+                                        type: 'sap.ui.model.odata.type.DateTimeOffset',
                                         formatOptions: {
                                             style: 'medium',
-                                            strictParsing: true
+                                            strictParsing: true,
+                                            UTC: true
                                         }
                                     }"
                                 />

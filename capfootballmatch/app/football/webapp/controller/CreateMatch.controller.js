@@ -21,7 +21,17 @@ sap.ui.define([
                 "team1_name": "",
                 "team2_ID": "",
                 "team2_name": "",
-                "match_time": new Date()
+                "match_time": new Date(),
+                "stage": "",
+                "stageList": [{
+                    "stage": "1"
+                }, {
+                    "stage": "2"
+                }, {
+                    "stage": "3"
+                }, {
+                    "stage": "4"
+                }]
             };
 
             // set explored app's demo model on this sample
@@ -53,6 +63,7 @@ sap.ui.define([
                 "team2_ID": parseInt(viewModel.getProperty("/team2_ID")),
                 "match_name": viewModel.getProperty("/team1_name") + "_" + viewModel.getProperty("/team2_name"),
                 "status": 1,
+                "stage": viewModel.getProperty("/stage"),
                 "match_time": viewModel.getProperty("/match_time")
             });
 
