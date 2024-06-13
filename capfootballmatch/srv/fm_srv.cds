@@ -22,10 +22,12 @@ service FM_SRV {
     ]) as select from fms.Scores;
 
     
-    function TotalBetPointsReceived(userID : Integer) returns Integer;
+    function TotalBetPointsReceived(userID : String) returns Integer;
+
     function GetUserInfo() returns {
         id : String
     };
+
 }
 
 annotate FM_SRV with @(requires: 'authenticated-user');

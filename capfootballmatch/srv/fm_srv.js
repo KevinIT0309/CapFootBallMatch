@@ -2,14 +2,13 @@ const cds = require('@sap/cds');
 
 class FMService extends cds.ApplicationService {
   init() {
-    const { Bets, Matchs, Scores } = this.entities
 
-    //Bets events
+    /// Bets events
     this.before('CREATE', 'Bets', async req => {
       // only allow to create when the match in this bet not yet take place
       console.log("EVENTS: before CREATE Bets");
       const { match_ID } = req.data;
-
+ 
       if (await hasMatchTaken(req, match_ID)) {
         return req.error(400, 'Match has already taken place');
       }
@@ -49,7 +48,7 @@ class FMService extends cds.ApplicationService {
       return user;
     });
 
-    // Matches events
+    /// Matches events
     this.before('UPDATE', 'Matches', async req => {
       console.log("EVENTS: before UPDATE Matchs - update scores");
       await updateScore(req); // make score for all bets
@@ -58,6 +57,7 @@ class FMService extends cds.ApplicationService {
     return super.init();
   }
 }
+
 
 const hasMatchTaken = async (req, match_ID) => {
   const match = await cds.tx(req).run(SELECT.one.from('football.match.Matches').where({ match_id: match_ID }));
@@ -68,11 +68,13 @@ const hasMatchTaken = async (req, match_ID) => {
   return new Date(match.match_time) <= now;
 }
 
-const updateScore = async (reqData) => {
+const updateScore = async (req) => {
   try {
-    const { match_id } = reqData.params[0];
-    const bets = await cds.tx(reqData).run(SELECT.from('football.match.Bets').where({ match_ID: match_id }));
-
+    const { match_id } = req.params[0];
+    const bets = await cds.tx(req).run(SELECT.from('football.match.Bets').where({ match_ID: match_id }));
+    const match = await cds.tx(req).run(SELECT.one.from('football.match.Matches').where({ match_id: match_id }));
+    const tx = cds.transaction(req);
+    await tx.run(DELETE.from('football.match.Scores').where({ match_ID: match_id }));
     for (const bet of bets) {
       const now = new Date();
       const score = {
@@ -82,21 +84,21 @@ const updateScore = async (reqData) => {
         modifiedBy: "anonymous",
         user_ID: bet.user_ID,
         match_ID: match_id,
-        points: calculatePoints(bet, reqData.data)
+        points: calculatePoints(bet, req.data, match)
       };
       console.log("EVENTS: score " + JSON.stringify(score));
-      await cds.tx(reqData).run(INSERT.into('football.match.Scores').entries(score));
+      await tx.run(INSERT.into('football.match.Scores').entries(score));
     }
   } catch (error) {
     console.error('Error when update scores' + error);
   }
 }
 
-const calculatePoints = (bet, reqData) => {
+const calculatePoints = (bet, reqData, match) => {
   if (bet.isDraw) {
     return reqData.team1_score == reqData.team2_score ? 3 : 0;
   }
-  const team_win_ID = reqData.team1_score > reqData.team2_score ? reqData.team1_ID : reqData.team2_ID;
+  const team_win_ID = reqData.team1_score > reqData.team2_score ? match.team1_ID : match.team2_ID;
 
   return bet.team_win_ID == team_win_ID ? 3 : 0;
 }
