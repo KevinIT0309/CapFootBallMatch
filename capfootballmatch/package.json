@@ -6,15 +6,62 @@
   "license": "UNLICENSED",
   "private": true,
   "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      },
+      "auth": {
+        "kind": "xsuaa"
+      }
+    },
     "hana": {
-      "deploy-format": "hdbtable"
+      "deploy-format": "hdbtable",
+      "syntax": "hdi"
+    },
+    "odata": {
+      "version": "v4"
+    },
+    "auth": {
+      "kind": "xsuaa"
+    },
+    "build": {
+      "target": "gen",
+      "tasks": [
+        {
+          "for": "hana",
+          "options": {
+            "model": [
+              "db",
+              "srv"
+            ]
+          }
+        },
+        {
+          "for": "node-cf",
+          "options": {
+            "model": "srv"
+          }
+        }
+      ]
     }
   },
   "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.9.0",
+    "@sap-cloud-sdk/http-client": "^3.9.0",
+    "@sap-cloud-sdk/odata-v2": "^3.9.0",
+    "@sap-cloud-sdk/odata-v4": "^3.9.0",
+    "@sap-cloud-sdk/util": "^3.9.0",
+    "@sap/audit-logging": "^5.8.2",
     "@sap/cds": "^7",
-    "@sap/xssec": "^4.0.2",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/hana-client": "^2.19.20",
+    "@sap/xsenv": "^4.2.0",
+    "@sap/xssec": "^3.6.1",
+    "axios": "^1.6.3",
     "express": "^4",
-    "rimraf": "^5.0.7"
+    "hdb": "^0.19.7",
+    "mbt": "^1.2.27",
+    "pm2": "^5.3.0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
