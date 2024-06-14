@@ -56,7 +56,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.124.1",
       "libs": {
@@ -127,6 +127,13 @@
             "MatchList",
             "BetMatch"
           ]
+        },
+        {
+          "pattern": "leaderBoard",
+          "name": "leaderBoard",
+          "target": [
+            "leaderBoardTarget"
+          ]
         }
       ],
       "targets": {
@@ -143,6 +150,13 @@
           "viewId": "BetMatch",
           "viewName": "BetMatch",
           "controlAggregation": "midColumnPages"
+        },
+        "leaderBoardTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "leaderBoard",
+          "viewName": "LeaderBoard"
         }
       }
     },
