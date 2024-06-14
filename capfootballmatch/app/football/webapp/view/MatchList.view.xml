@@ -80,7 +80,7 @@
             <Table
                 id="table"
                 inset="false"
-                mode="SingleSelectLeft"
+                mode="MultiSelect"
                 items="{
 						path: 'mainModel>/Matches',
                         parameters: {

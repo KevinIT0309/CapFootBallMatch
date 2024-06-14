@@ -54,6 +54,7 @@
                                 <m:Label text="Stage" />
                                 <m:ComboBox
                                     id="selectStage"
+                                    change="handleStageChange"
                                     showSecondaryValues="true"
                                     selectedKey="{viewModel>/stage}"
                                     items="{ path: 'viewModel>/stageList' }"
@@ -106,6 +107,12 @@
                                         }
                                     }"
                                 />
+                                <m:Label text="Number of Predicts" />
+                                <m:Input
+                                    type="Number"
+                                    change="handleNumberofPredictsChange"
+                                    value="{path: 'viewModel>/predicts', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
                             </form:content>
                         </form:SimpleForm>
                     </ObjectPageSubSection>
@@ -118,6 +125,7 @@
                 <m:Button
                     type="Accept"
                     text="Save"
+                    enabled="{viewModel>/enabledSaveBtn}"
                     press="handleSave"
                 />
                 <m:Button

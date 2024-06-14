@@ -78,8 +78,24 @@
                                     }"
                                 />
                                 <core:Title text="Result" />
-                                <!-- <m:Label text="Team win" />
-                                <m:Input value="{mainModel>team1_score}"> -->
+                                <m:Label text="Number of Predicts" />
+                                <m:Input
+                                    type="Number"
+                                    change="handleNumberofPredictsChange"
+                                    value="{path: 'mainModel>predicts', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
+                                <m:Label text="Team win" />
+                                <m:ComboBox
+                                    id="selectTeamWin"
+                                    showSecondaryValues="true"
+                                    selectedKey="{mainModel>team_win_ID}"
+                                    items="{ path: 'viewModel>/predictOptions' }"
+                                >
+                                    <core:Item
+                                        text="{viewModel>team_name}"
+                                        key="{viewModel>team_id}"
+                                    />
+                                </m:ComboBox>
                                 <m:Label text="Team 1 Score" />
                                 <m:Input
                                     type="Number"

@@ -51,15 +51,15 @@ sap.ui.define([
             },
 
             handleDeleteButtonPressed: function (oEvent) {
-                let selectedItem = this.byId("table").getSelectedItem();
-                let context = selectedItem.getBindingContext("mainModel");
-
-                context.delete().then(function () {
-                    MessageToast.show("Delete match successfully");
-                }.bind(this), function (oError) {
-                    MessageBox.error(oError.message);
-                }.bind(this));
-
+                let selectedItems = this.byId("table").getSelectedItems();
+                selectedItems.forEach((selectedItem) => {
+                    let context = selectedItem.getBindingContext("mainModel");
+                    context.delete().then(function () {
+                        MessageToast.show("Delete match successfully");
+                    }.bind(this), function (oError) {
+                        MessageBox.error(oError.message);
+                    }.bind(this));
+                });
                 this.getModel("mainModel").submitBatch("UpdateGroup");
             },
 

@@ -18,25 +18,10 @@ sap.ui.define([
             this._matchId = oEvent.getParameter("arguments").matchId;
             if (this._matchId) {
                 this._matchId = parseInt(this._matchId);
-
                 let oData = {
                     "enabledBetBtn": true,
                     "predictOptions": [],
-                    "predictGoals": [{
-                        "predict": 1,
-                        "team1_numOfGoals": null,
-                        "team2_numOfGoals": null
-                    },
-                    {
-                        "predict": 2,
-                        "team1_numOfGoals": null,
-                        "team2_numOfGoals": null
-                    },
-                    {
-                        "predict": 3,
-                        "team1_numOfGoals": null,
-                        "team2_numOfGoals": null
-                    }],
+                    "predictGoals": [],
                     "team_win_ID": "",
                     "isDraw": false,
                     "userId": "",
@@ -70,6 +55,18 @@ sap.ui.define([
                 });
 
                 let matchContext = await matchContextBinding.requestObject();
+                let predicts = matchContext.predicts;
+                let predictGoals = [];
+                for (let i = 0; i < predicts; i++) {
+                    predictGoals.push({
+                        "predict": i + 1,
+                        "team1_numOfGoals": null,
+                        "team2_numOfGoals": null
+                    });
+                    
+                }
+                oModel.setProperty("/predictGoals", predictGoals);
+
                 oModel.setProperty("/predictOptions", [
                     {
                         "team_name": matchContext.team1.team_name,
