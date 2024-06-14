@@ -6,6 +6,7 @@ gen/
 mta_archives/
 node_modules/
 target/
+resources/
 
 .DS_Store
 *.log
