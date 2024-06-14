@@ -2,18 +2,19 @@ sap.ui.define([], () => {
     "use strict";
 
     return {
-        statusText(sStatus) {
-            const oResourceBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-            switch (sStatus) {
-                case "A":
-                    return oResourceBundle.getText("invoiceStatusA");
-                case "B":
-                    return oResourceBundle.getText("invoiceStatusB");
-                case "C":
-                    return oResourceBundle.getText("invoiceStatusC");
-                default:
-                    return sStatus;
+        determineSaveButtonStatus: function (team1_score, team2_score, match_time) {    
+            let matchDate = new Date(match_time);
+            let instant = new Date();
+
+            if (isNaN(parseInt(team1_score)) || isNaN(parseInt(team2_score))) {
+                return false;
             }
+
+            if (matchDate.getTime() < instant.getTime()) {
+                return true;
+            }
+
+            return false;
         }
     };
 });

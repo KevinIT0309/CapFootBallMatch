@@ -7,9 +7,7 @@
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core"
 >
-    <f:DynamicPage
-        id="page"
-    >
+    <f:DynamicPage id="page">
         <f:header>
             <f:DynamicPageHeader>
                 <f:content>
@@ -19,7 +17,7 @@
                         search=".onSearch"
                     >
                         <fb:filterGroupItems>
-                            <fb:FilterGroupItem
+                            <!-- <fb:FilterGroupItem
                                 name="Search"
                                 label="Search"
                                 groupName="Group1"
@@ -30,28 +28,6 @@
                                         value="{viewModel>/searchFieldValue}"
                                     />
                                 </fb:control>
-                            </fb:FilterGroupItem>
-                            <!-- <fb:FilterGroupItem
-                                name="Match Status"
-                                label="Match Status"
-                                groupName="Group1"
-                                visibleInFilterBar="true"
-                            >
-                                <fb:control>
-                                    <Select
-                                        forceSelection="false"
-                                        selectedKey="{viewModel>/matchStatusKey}"
-                                        items="{
-                                            path: '/ProductCollection',
-                                            sorter: { path: 'Name' }
-                                        }"
-                                    >
-                                        <core:Item
-                                            key="{ProductId}"
-                                            text="{Name}"
-                                        />
-                                    </Select>
-                                </fb:control>
                             </fb:FilterGroupItem> -->
                             <fb:FilterGroupItem
                                 name="MatchDay"
@@ -61,11 +37,14 @@
                             >
                                 <fb:control>
                                     <DatePicker
+                                        change="handleMatchDayValueChange"
                                         value="{
                                         'path': 'viewModel>/matchDayValue',
                                         'type': 'sap.ui.model.odata.type.DateTimeOffset',
                                         'formatOptions': {
-                                            'pattern': 'dd/MM/yyyy'
+                                            'pattern': 'dd/MM/yyyy',
+                                            'strictParsing': true,
+                                            'UTC': true
                                         }
                                     }"
                                     />

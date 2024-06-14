@@ -80,7 +80,9 @@
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
     "watch-soccer": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false",
     "dev:fb": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false",
-    "dev:sc": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false"
+    "dev:sc": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false",
+    "cf:init": "cf login -a https://api.cf.eu10-004.hana.ondemand.com",
+    "deploy:cf": "npm run build && npm run deploy"
   },
   "sapux": [
     "app/football",
