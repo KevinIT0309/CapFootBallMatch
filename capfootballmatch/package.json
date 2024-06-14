@@ -82,7 +82,8 @@
     "dev:fb": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false",
     "dev:sc": "cds watch --open soccer/webapp/index.html?sap-ui-xx-viewCache=false",
     "cf:init": "cf login -a https://api.cf.eu10-004.hana.ondemand.com",
-    "deploy:cf": "npm run build && npm run deploy"
+    "deploy:cf": "npm run build && npm run deploy",
+    "fix:git": "git rm -r --cached ."
   },
   "sapux": [
     "app/football",

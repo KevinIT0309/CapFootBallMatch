@@ -42,7 +42,7 @@
 				height="100px"
 				alignItems="Center"
 				justifyContent="Center">
-                <Image src="./public/images/leaderboard.png" width="100px"></Image>
+                <Image src="https://cdn.tinhtd.info/aisc/leaderboard.png" width="100px"></Image>
 			</FlexBox>
             </VBox>
                 </f:content>

@@ -37,7 +37,7 @@ sap.ui.define([], () => {
             //return false;
         // },
         fnGetLeaderBoardBadge: function (rank) {
-            const badgePath = `./public/images`;
+            const badgePath = `https://cdn.tinhtd.info/aisc/`;
             const oRankBadge = {
                 "1": `${badgePath}/1st.png`,
                 "2": `${badgePath}/2nd.png`,
