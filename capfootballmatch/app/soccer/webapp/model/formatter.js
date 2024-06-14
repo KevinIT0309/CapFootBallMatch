@@ -35,6 +35,60 @@ sap.ui.define([], () => {
             }
 
             return false;
+        },
+        fnGetLeaderBoardBadge: function (rank) {
+            const badgePath = `./public/images`;
+            const oRankBadge = {
+                "1": `${badgePath}/1st.png`,
+                "2": `${badgePath}/2nd.png`,
+                "3": `${badgePath}/3rd.png`,
+            };
+            if (oRankBadge[rank]) {
+                return oRankBadge[rank];
+            }
+
+            return `${badgePath}/default-badge.jpg`;
+
+        },
+        fnGetLeaderBoardFont: function (rank) {
+
+
+        },
+        fnGetLeaderBoardState: function (rank) {
+            try {
+                const oRankBadge = {
+                    "1": 1,
+                    "2": 4,
+                    "3": 6,
+                };
+                if (oRankBadge[rank]) {
+                    return oRankBadge[rank];
+                }
+
+                return 7;
+            } catch (error) {
+                console.log(`fnGetLeaderBoardState -  Error: ${error}`);
+                return 1;
+            }
+
+        },
+        fnGetLeaderBoardObjectState: function (rank) {
+            try {
+                const oRankBadge = {
+                    "1": "Warning",
+                    "2": "Error",
+                    "3": "Success",
+                };
+                if (oRankBadge[rank]) {
+                    return oRankBadge[rank];
+                }
+
+                return "None";
+            } catch (error) {
+                console.log(`fnGetLeaderBoardObjectState -  Error: ${error}`);
+                return "None";
+            }
+
         }
     };
 });

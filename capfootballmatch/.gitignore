@@ -21,4 +21,4 @@ package-lock.json
 
 @types/
 @cds-models/
-capfootballmatch/resources/
+capfootballmatch/resources/*.zip
