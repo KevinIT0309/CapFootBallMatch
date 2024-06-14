@@ -14,27 +14,27 @@ sap.ui.define([], () => {
             }
         },
 
-        determineActiveBetStatus: function (match_time, predictGoals) {
-            let matchDate = new Date(match_time);
-            let instant = new Date();
+        // determineActiveBetStatus: function (match_time, predictGoals) {
+        //     let matchDate = new Date(match_time);
+        //     let instant = new Date();
 
-            if (predictGoals.length > 0) {
-                predictGoals.forEach(({ team1_numOfGoals, team2_numOfGoals }) => {
-                    if (isNaN(parseInt(team1_numOfGoals))) {
-                        return false;
-                    }
+        //     if (predictGoals.length > 0) {
+        //         predictGoals.forEach(({ team1_numOfGoals, team2_numOfGoals }) => {
+        //             if (isNaN(parseInt(team1_numOfGoals))) {
+        //                 return false;
+        //             }
 
-                    if (isNaN(parseInt(team2_numOfGoals))) {
-                        return false;
-                    }
-                })
-            }
+        //             if (isNaN(parseInt(team2_numOfGoals))) {
+        //                 return false;
+        //             }
+        //         })
+        //     }
 
-            if (matchDate.getTime() < instant.getTime()) {
-                return true;
-            }
+        //     if (matchDate.getTime() < instant.getTime()) {
+        //         return true;
+        //     }
 
-            return false;
-        }
+        //     return false;
+        // }
     };
 });

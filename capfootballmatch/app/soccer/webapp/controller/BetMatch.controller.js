@@ -20,6 +20,7 @@ sap.ui.define([
                 this._matchId = parseInt(this._matchId);
 
                 let oData = {
+                    "enabledBetBtn": true,
                     "predictOptions": [],
                     "predictGoals": [{
                         "predict": 1,
@@ -49,7 +50,6 @@ sap.ui.define([
                 let matchPath = `/Matches(${this._matchId})`;
 
                 this._layout = oEvent.getParameter("arguments").layout;
-                this.getModel("mainModel")
                 this.getView().bindElement({
                     "path": matchPath,
                     "model": "mainModel",
@@ -81,12 +81,18 @@ sap.ui.define([
                     }
                 ]);
 
+                const matchTime = matchContext.match_time;
+                const matchDateTime = new Date(matchTime);
+                const instant = new Date();
+                const matchDate = new Date(matchDateTime.toDateString());
+                const today = new Date(instant.toDateString());
+                oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);
+
                 let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
                 await getUserInfoContextBinding.invoke();
                 let email = getUserInfoContextBinding.getBoundContext().getObject().id;
 
-                const userFilters = new Filter("email", "EQ", "email2@gmail.com");
-                // const userFilters = new Filter("email", "EQ", email);
+                const userFilters = new Filter("email", "EQ", email);
                 const usersFiltered = await this._filterUsers(userFilters);
                 const userId = usersFiltered?.[0]?.user_id;
                 oModel.setProperty("/userId", userId);
@@ -222,6 +228,15 @@ sap.ui.define([
         handleClose: function (oEvent) {
             this.getModel("mainModel").resetChanges("UpdateGroup");
             this.getRouter().navTo("matchList");
+        },
+
+        handleNumberofGoalsChange: function () {
+            let oModel = this.getModel("viewModel");
+            const predictGoals = oModel.getProperty("/predictGoals");
+            let invalidNumberofGoals = predictGoals.some(function (el) {
+                return isNaN(parseInt(el.team1_numOfGoals)) || parseInt(el.team1_numOfGoals) < 0 && isNaN(parseInt(el.team2_numOfGoals)) || parseInt(el.team2_numOfGoals) < 0;
+            });
+            oModel.setProperty("/enabledBetBtn", !invalidNumberofGoals);
         }
     });
 });

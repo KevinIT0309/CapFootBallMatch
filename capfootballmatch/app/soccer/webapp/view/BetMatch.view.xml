@@ -233,7 +233,8 @@
                                     <m:Input
                                         type="Number"
                                         width="75%"
-                                        value="{viewModel>team1_numOfGoals}"
+                                        change="handleNumberofGoalsChange"
+                                        value="{path: 'viewModel>team1_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
                                     >
                                         <m:layoutData>
                                             <m:FlexItemData growFactor="1" />
@@ -242,7 +243,8 @@
                                     <m:Input
                                         type="Number"
                                         width="75%"
-                                        value="{viewModel>team2_numOfGoals}"
+                                        change="handleNumberofGoalsChange"
+                                        value="{path: 'viewModel>team2_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
                                     >
                                         <m:layoutData>
                                             <m:FlexItemData growFactor="1" />
@@ -261,13 +263,7 @@
                 <m:Button
                     type="Accept"
                     text="Bet"
-                    enabled="{
-                           parts: [
-                                'mainModel>match_time',
-                                'viewModel>/predictGoals'
-						    ],
-                            formatter: 'formatter.determineActiveBetStatus'
-                        }"
+                    enabled="{viewModel>/enabledBetBtn}"
                     press="handleSave"
                 />
                 <m:Button

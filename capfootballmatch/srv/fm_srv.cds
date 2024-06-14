@@ -6,21 +6,26 @@ service FM_SRV {
     entity Users as select from fms.Users;
     entity Teams as select from fms.Teams;
 
-    entity Matches @(restrict: [
-        { grant:'WRITE', to: 'ADMIN' },
-        { grant:'READ', to: ['ADMIN','BETTOR'] }
-    ]) as select from fms.Matches;
+    entity Matches as select from fms.Matches;
 
-    entity Bets @(restrict: [
-        { grant:'READ', to: ['ADMIN', 'BETTOR'] },
-        { grant:'WRITE', to: 'BETTOR' }
-    ]) as select from fms.Bets;
+    entity Bets as select from fms.Bets;
 
-    entity Scores @(restrict: [
-        { grant:'READ', to: ['ADMIN', 'BETTOR'] },
-        { grant:'WRITE', to: 'BETTOR' }
-    ]) as select from fms.Scores;
+    entity Scores as select from fms.Scores;
 
+    // entity Matches @(restrict: [
+    //     { grant:'WRITE', to: 'ADMIN' },
+    //     { grant:'READ', to: ['ADMIN','BETTOR'] }
+    // ]) as select from fms.Matches;
+
+    // entity Bets @(restrict: [
+    //     { grant:'READ', to: ['ADMIN', 'BETTOR'] },
+    //     { grant:'WRITE', to: 'BETTOR' }
+    // ]) as select from fms.Bets;
+
+    // entity Scores @(restrict: [
+    //     { grant:'READ', to: ['ADMIN', 'BETTOR'] },
+    //     { grant:'WRITE', to: 'BETTOR' }
+    // ]) as select from fms.Scores;
     
     function TotalBetPointsReceived(userID : String) returns Integer;
 
@@ -30,4 +35,4 @@ service FM_SRV {
 
 }
 
-annotate FM_SRV with @(requires: 'authenticated-user');
+// annotate FM_SRV with @(requires: 'authenticated-user');
