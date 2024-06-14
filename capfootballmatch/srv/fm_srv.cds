@@ -20,7 +20,6 @@ service FM_SRV {
         { grant:'READ', to: ['ADMIN', 'BETTOR'] },
         { grant:'WRITE', to: 'BETTOR' }
     ]) as select from fms.Scores;
-
     
     function TotalBetPointsReceived(userID : String) returns Integer;
 
