@@ -1,4 +1,5 @@
 using football.match as fms from '../db/schema';
+using football.match.view as fmsv from '../db/view/SoccerView';
 
 @path: 'ces/FM_SRV'
 service FM_SRV {
@@ -26,6 +27,8 @@ service FM_SRV {
     function GetUserInfo() returns {
         id : String
     };
+
+    @readonly entity LeaderBoards as select from fmsv.LeaderBoards;
 
 }
 
