@@ -49,13 +49,25 @@ class FMService extends cds.ApplicationService {
     });
 
     /// Matches events
+    this.before('CREATE', 'Matches', async req => {
+      req.data.match_id = req.data.match_id || await getNextId(req)
+    })
+
     this.before('UPDATE', 'Matches', async req => {
       console.log("EVENTS: before UPDATE Matchs - update scores");
       await updateScore(req); // make score for all bets
     });
 
     return super.init();
+
+
   }
+}
+
+
+async function getNextId(req) {
+  const result = await cds.tx(req).run(SELECT.one.from('football.match.Matches').orderBy({ match_id: 'desc' }));
+  return result ? result.id + 1 : 1
 }
 
 
@@ -102,5 +114,8 @@ const calculatePoints = (bet, reqData, match) => {
 
   return bet.team_win_ID == team_win_ID ? 3 : 0;
 }
+
+
+
 
 module.exports = FMService;
