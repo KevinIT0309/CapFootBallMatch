@@ -1,0 +1,277 @@
+<mvc:View
+    controllerName="cap.euro.bettor.soccer.controller.BetMatch"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
+>
+    <ObjectPageLayout
+        id="betMatchObjectPageLayout"
+        alwaysShowContentHeader="true"
+        showTitleInHeaderContent="true"
+        preserveHeaderStateOnScroll="true"
+        headerContentPinnable="true"
+        isChildPage="true"
+        showFooter="true"
+    >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <heading>
+                    <m:Title text="{mainModel>match_name}" />
+                </heading>
+                <navigationActions>
+                    <m:OverflowToolbarButton
+                        type="Transparent"
+                        icon="sap-icon://decline"
+                        press="handleClose"
+                        id="exitFullScreenBtn"
+                        tooltip="Exit Full Screen Mode"
+                    />
+                </navigationActions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <headerContent>
+            <m:FlexBox
+                wrap="Wrap"
+                fitContainer="true"
+            >
+                <m:Avatar
+                    class="sapUiMediumMarginEnd sapUiSmallMarginBottom"
+                    src="https://seeklogo.com/images/U/uefa-euro-2024-logo-124EEA67D8-seeklogo.com.png"
+                    displaySize="L"
+                    displayShape="Square"
+                />
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Home:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:Text text="{mainModel>team1/team_name}" />
+                    </m:HBox>
+
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Away:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:Text text="{mainModel>team2/team_name}" />
+                    </m:HBox>
+
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Round:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:Text text="{mainModel>stage}" />
+                    </m:HBox>
+                </m:VBox>
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:Title
+                        class="sapUiTinyMarginBottom"
+                        text="Status"
+                    />
+                    <m:ObjectStatus
+                        text="{mainModel>status}"
+                        state="Success"
+                        class="sapMObjectStatusLarge"
+                    />
+                </m:VBox>
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:Title
+                        text="Match Day"
+                        class="sapUiTinyMarginBottom"
+                    />
+                    <m:Text
+                        text="{
+                            path: 'mainModel>match_time',
+                            type: 'sap.ui.model.odata.type.DateTimeOffset',
+                            formatOptions: {
+                                pattern: 'dd/MM/yyyy'
+                            }
+                        }"
+                    />
+                </m:VBox>
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:Title
+                        text="Match Time"
+                        class="sapUiTinyMarginBottom"
+                    />
+                    <m:Text
+                        text="{
+                            path: 'mainModel>match_time',
+                            type: 'sap.ui.model.odata.type.DateTimeOffset',
+                            formatOptions: {
+                                pattern : 'HH:mm'
+                            }
+                        }"
+                    />
+                </m:VBox>
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:Title
+                        text="Result"
+                        class="sapUiTinyMarginBottom"
+                    />
+                    <m:Text
+                        text="{
+                           parts: [
+                                'mainModel>team1_score',
+                                'mainModel>team2_score',
+                                'mainModel>status'
+						    ],
+                            formatter: 'formatter.formatResultText'
+                        }"
+                    />
+                </m:VBox>
+            </m:FlexBox>
+        </headerContent>
+
+        <sections>
+            <ObjectPageSection
+                titleUppercase="false"
+                id="Predict"
+                title="Predict"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <form:SimpleForm
+                            editable="true"
+                            layout="ColumnLayout"
+                            columnsM="3"
+                            columnsL="3"
+                            columnsXL="3"
+                        >
+                            <form:content>
+                                <core:Title text="Predict Result" />
+                                <m:Label text="Team Win" />
+                                 <!-- change="handleTeamWinChange" -->
+                                <m:ComboBox
+                                    id="selectTeamWin"
+                                    enabled="{= !${viewModel>/isDraw}}"
+                                    showSecondaryValues="true"
+                                    selectedKey="{viewModel>/team_win_ID}"
+                                    items="{ path: 'viewModel>/predictOptions' }"
+                                >
+                                    <core:Item
+                                        text="{viewModel>team_name}"
+                                        key="{viewModel>team_id}"
+                                    />
+                                </m:ComboBox>
+                                <m:Label text="Draw Option" />
+                                <m:CheckBox
+                                    text="Draw"
+                                    selected="{viewModel>/isDraw}"
+                                />
+                            </form:content>
+                        </form:SimpleForm>
+                    </ObjectPageSubSection>
+
+                    <ObjectPageSubSection titleUppercase="false">
+                        <m:FlexBox
+                            direction="Column"
+                            alignItems="Start"
+                        >
+                            <m:FlexBox alignItems="Start">
+                                <m:Text
+                                    text="Teams"
+                                    class="sapUiLargeMarginEnd"
+                                >
+                                    <m:layoutData>
+                                        <m:FlexItemData growFactor="1" />
+                                    </m:layoutData>
+                                </m:Text>
+                                <m:Text
+                                    text="{mainModel>team1/team_name}:"
+                                    class="sapUiLargeMarginEnd sapUiSmallMarginBegin"
+                                >
+                                    <m:layoutData>
+                                        <m:FlexItemData growFactor="1" />
+                                    </m:layoutData>
+                                </m:Text>
+                                <m:Text
+                                    text="{mainModel>team2/team_name}:"
+                                    class="sapUiLargeMarginEnd sapUiLargeMarginBegin"
+                                >
+                                    <m:layoutData>
+                                        <m:FlexItemData growFactor="1" />
+                                    </m:layoutData>
+                                </m:Text>
+                            </m:FlexBox>
+                            <m:FlexBox
+                                direction="Column"
+                                alignItems="Start"
+                                items="{viewModel>/predictGoals}"
+                            >
+                                <m:FlexBox alignItems="Start">
+                                    <m:Text
+                                        text="Predict {viewModel>predict}"
+                                        class="sapUiSmallMarginEnd sapUiTinyMarginTopBottom"
+                                    >
+                                        <m:layoutData>
+                                            <m:FlexItemData growFactor="1" />
+                                        </m:layoutData>
+                                    </m:Text>
+                                    <m:Input
+                                        type="Number"
+                                        width="75%"
+                                        change="handleNumberofGoalsChange"
+                                        value="{path: 'viewModel>team1_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                    >
+                                        <m:layoutData>
+                                            <m:FlexItemData growFactor="1" />
+                                        </m:layoutData>
+                                    </m:Input>
+                                    <m:Input
+                                        type="Number"
+                                        width="75%"
+                                        change="handleNumberofGoalsChange"
+                                        value="{path: 'viewModel>team2_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                    >
+                                        <m:layoutData>
+                                            <m:FlexItemData growFactor="1" />
+                                        </m:layoutData>
+                                    </m:Input>
+                                </m:FlexBox>
+                            </m:FlexBox>
+                        </m:FlexBox>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+        <footer>
+            <m:OverflowToolbar id="otbFooter">
+                <m:ToolbarSpacer />
+                <m:Button
+                    type="Accept"
+                    text="Bet"
+                    enabled="{viewModel>/enabledBetBtn}"
+                    press="handleSave"
+                />
+                <m:Button
+                    type="Reject"
+                    text="Cancel"
+                    press="handleClose"
+                />
+            </m:OverflowToolbar>
+        </footer>
+    </ObjectPageLayout>
+</mvc:View>

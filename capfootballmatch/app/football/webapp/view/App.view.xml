@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="cap.euro.admin.football.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+>
+    <App id="app">
+        <f:FlexibleColumnLayout
+            id="flexibleColumnLayout"
+            backgroundDesign="Solid"
+            layout="{layoutMod>/layout}"
+        >
+        </f:FlexibleColumnLayout>
+    </App>
+</mvc:View>

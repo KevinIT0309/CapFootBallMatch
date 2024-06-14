@@ -1,0 +1,45 @@
+{
+    "xsappname": "cap_fm",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.ADMIN",
+            "description": "Admin"
+        },
+        {
+            "name": "$XSAPPNAME.BETTOR",
+            "description": "Bettor"
+        }
+    ],
+    "attributes": [],
+
+
+
+    "role-templates": [
+        {
+            "name": "CAP_FM_ADMIN",
+            "description": "Admin Role Template",
+            "scope-references": [
+                "$XSAPPNAME.ADMIN"
+            ],
+            "attribute-references": []
+        },
+
+        {
+            "name": "CAP_FM_BETTOR",
+            "description": "Bettor Role Template",
+            "scope-references": [
+                "$XSAPPNAME.BETTOR"
+            ],
+            "attribute-references": []
+        }
+    ],
+
+    "oauth2-configuration": {
+        "redirect-uris": [
+            "https://*.applicationstudio.cloud.sap/**",
+            "https://*.cfapps.eu10.hana.ondemand.com/**"
+        ],
+        "credential-types": ["binding-secret", "x509", "instance-secret"]
+    }
+}

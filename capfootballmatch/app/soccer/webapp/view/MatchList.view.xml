@@ -1,0 +1,145 @@
+<mvc:View
+    controllerName="cap.euro.bettor.soccer.controller.MatchList"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:core="sap.ui.core"
+>
+    <f:DynamicPage id="page">
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        id="filterBar"
+                        useToolbar="false"
+                        search=".onSearch"
+                    >
+                        <fb:filterGroupItems>
+                            <!-- <fb:FilterGroupItem
+                                name="Search"
+                                label="Search"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <SearchField
+                                        value="{viewModel>/searchFieldValue}"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem> -->
+                            <fb:FilterGroupItem
+                                name="MatchDay"
+                                label="Match Day"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <DatePicker
+                                        change="handleMatchDayValueChange"
+                                        value="{
+                                        'path': 'viewModel>/matchDayValue',
+                                        'type': 'sap.ui.model.odata.type.DateTimeOffset',
+                                        'formatOptions': {
+                                            'pattern': 'dd/MM/yyyy',
+                                            'strictParsing': true,
+                                            'UTC': true
+                                        }
+                                    }"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table
+                id="table"
+                inset="false"
+                items="{
+						path: 'mainModel>/Matches',
+                        parameters: {
+                            expand: 'team1,team2'
+                        }
+					}"
+            >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            text="Matches"
+                            level="H2"
+                        />
+                        <!-- <ToolbarSpacer /> -->
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Match No." />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Date of March" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Match Time" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Home" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Away" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem
+                        vAlign="Middle"
+                        type="Active"
+                        press="onItemPress"
+                    >
+                        <cells>
+                            <Text text="{mainModel>match_name}" />
+                            <Text
+                                text="{
+				        path: 'mainModel>match_time',
+				        type: 'sap.ui.model.odata.type.DateTimeOffset',
+				        formatOptions: {
+				          pattern: 'dd/MM/yyyy'
+				        }
+				      }"
+                            />
+                            <Text
+                                text="{
+				        path:'mainModel>match_time',  
+                        type: 'sap.ui.model.odata.type.DateTimeOffset',
+                        formatOptions: {  
+                            pattern : 'HH:mm'
+                        }
+				      }"
+                            />
+                            <Text text="{mainModel>team1/team_name}" />
+                            <Text text="{mainModel>team2/team_name}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
