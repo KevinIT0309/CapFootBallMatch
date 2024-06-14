@@ -31,7 +31,9 @@ sap.ui.define([
                     "stage": "3"
                 }, {
                     "stage": "4"
-                }]
+                }],
+                "predicts": null,
+                "enabledSaveBtn": false
             };
 
             // set explored app's demo model on this sample
@@ -42,6 +44,7 @@ sap.ui.define([
         handleMatchTimeChange: function (oEvent) {
             let viewModel = this.getModel("viewModel");
             viewModel.setProperty("/match_time", oEvent.getSource().getDateValue());
+            this._validateEnabledSaveBtn();
         },
 
         handleTeamChange: function (oEvent) {
@@ -52,6 +55,7 @@ sap.ui.define([
             } else {
                 viewModel.setProperty("/team2_name", oEvent.getSource().getSelectedItem().getText());
             }
+            this._validateEnabledSaveBtn();
         },
 
         handleSave: function () {
@@ -64,6 +68,7 @@ sap.ui.define([
                 "match_name": viewModel.getProperty("/team1_name") + "_" + viewModel.getProperty("/team2_name"),
                 "status": 1,
                 "stage": viewModel.getProperty("/stage"),
+                "predicts": viewModel.getProperty("/predicts"),
                 "match_time": viewModel.getProperty("/match_time")
             });
 
@@ -82,6 +87,26 @@ sap.ui.define([
 
         handleClose: function (oEvent) {
             this.getRouter().navTo("matchList");
+        },
+
+        handleNumberofPredictsChange: function (oEvent) {
+            this._validateEnabledSaveBtn();
+        },
+
+        handleStageChange: function () {
+            this._validateEnabledSaveBtn();
+        },
+
+        _validateEnabledSaveBtn: function () {
+            let oModel = this.getModel("viewModel");
+            const stage = oModel.getProperty("/stage");
+            const team1_ID = oModel.getProperty("/team1_ID");
+            const team2_ID = oModel.getProperty("/team2_ID");
+            const predicts = oModel.getProperty("/predicts");
+            const matchTime = oModel.getProperty("/match_time");
+
+            let enabledSaveBtn = stage && team1_ID && team2_ID && team1_ID !== team2_ID && matchTime  && !isNaN(parseInt(predicts)) && predicts >= 0 ? true : false;
+            oModel.setProperty("/enabledSaveBtn", enabledSaveBtn);
         }
     });
 });

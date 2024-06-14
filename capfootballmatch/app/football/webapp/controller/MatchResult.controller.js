@@ -14,7 +14,8 @@ sap.ui.define([
 
         onPatternMatched: async function (oEvent) {
             let oData = {
-                "enabledSaveBtn": true
+                "enabledSaveBtn": true,
+                "predictOptions": []
             };
 
             // set explored app's demo model on this sample
@@ -33,15 +34,38 @@ sap.ui.define([
                     "parameters": { "expand": "team1,team2" }
                 });
 
-                let matchContextBinding = this.getModel("mainModel").bindContext(matchPath);
+                let matchContextBinding = this.getModel("mainModel").bindContext(matchPath, null, {
+                    $expand: {
+                        "team1": {
+                            $select: ["team_name"]
+                        },
+                        "team2": {
+                            $select: ["team_name"]
+                        }
+                    }
+                });
                 let matchContext = await matchContextBinding.requestObject();
+                oModel.setProperty("/predictOptions", [
+                    {
+                        "team_name": matchContext.team1.team_name,
+                        "team_id": parseInt(matchContext.team1_ID)
+                    },
+                    {
+                        "team_name": matchContext.team2.team_name,
+                        "team_id": parseInt(matchContext.team2_ID)
+                    }
+                ]);
                 const matchTime = matchContext.match_time;
 
                 const matchDateTime = new Date(matchTime);
                 const instant = new Date();
                 const matchDate = new Date(matchDateTime.toDateString());
                 const today = new Date(instant.toDateString());
-                oModel.setProperty("/enabledSaveBtn", matchDate < today ? false : true);
+                if (matchDate <= today) {
+                    oModel.setProperty("/enabledSaveBtn", false);
+                } else {
+                    this._validateEnabledSaveBtn();
+                }
             }
         },
 
@@ -64,11 +88,25 @@ sap.ui.define([
         },
 
         handleScoreChange: function (oEvent) {
+            this._validateEnabledSaveBtn();
+        },
+
+        handleNumberofPredictsChange: function () {
+            this._validateEnabledSaveBtn();
+        },
+
+        _validateEnabledSaveBtn: function () {
             const object = this.getView().getBindingContext("mainModel").getObject();
-            const team1_score = object.team1_score;
-            const team2_score = object.team2_score;
-            const enabledSaveBtn = !isNaN(parseInt(team1_score)) && team1_score >= 0 && !isNaN(parseInt(team2_score)) && team2_score >= 0 ? true : false;
-            this.getModel("viewModel").setProperty("/enabledSaveBtn", enabledSaveBtn);
+            const isOver = object.isOver;
+            if (isOver) {
+                this.getModel("viewModel").setProperty("/enabledSaveBtn", false);
+            } else {
+                const team1_score = object.team1_score;
+                const team2_score = object.team2_score;
+                const predicts = object.predicts;
+                let enabledSaveBtn =  (!isNaN(parseInt(team1_score)) && team1_score >= 0) || (!isNaN(parseInt(team2_score)) && team2_score >= 0) || (!isNaN(parseInt(predicts)) && predicts >= 0) ? true : false;
+                this.getModel("viewModel").setProperty("/enabledSaveBtn", enabledSaveBtn);
+            }
         }
     });
 });
