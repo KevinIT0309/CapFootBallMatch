@@ -4,12 +4,14 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
+    "../model/formatter",
     "cap/euro/bettor/soccer/utils/UICommon"
 ],
-    function (BaseController, JSONModel, MessageBox, Filter, FilterOperator, UICommon) {
+    function (BaseController, JSONModel, MessageBox, Filter, FilterOperator, formatter, UICommon) {
         "use strict";
 
         return BaseController.extend("cap.euro.bettor.soccer.controller.LeaderBoard", {
+            formatter: formatter,
             onInit: function () {
                 this.oView = this.getView();
                 this.oResourceBundle = this.getResourceBundle();
@@ -99,7 +101,8 @@ sap.ui.define([
                         }
                     ];
                     if (UICommon.fnIsDevEnv()) {
-                        oLocalModal.setProperty("/leaderBoards", fakeLeaderBoards);
+                        const aLeaderBoards = this._buildLeaderBoardList(fakeLeaderBoards);
+                        oLocalModal.setProperty("/leaderBoards", aLeaderBoards);
                         oLocalModal.refresh();
                     }
                 } catch (error) {
@@ -108,7 +111,14 @@ sap.ui.define([
                     return;
                 }
             },
-
+            _buildLeaderBoardList: function(leaderBoads){
+                const aFinalLeaderBoards = [];
+                leaderBoads.forEach((leaderBoardItem)=>{
+                    leaderBoardItem.badge = formatter.fnGetLeaderBoardBadge(leaderBoardItem.rank);
+                    aFinalLeaderBoards.push(leaderBoardItem);
+                });
+                return aFinalLeaderBoards;
+            }
             //EOF
         });
     });

@@ -6,13 +6,17 @@
     xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
 >
     <f:DynamicPage
         id="page"
     >
         <f:header>
+        
             <f:DynamicPageHeader>
                 <f:content>
+                 <VBox>
                     <fb:FilterBar
                         id="filterBar"
                         useToolbar="false"
@@ -34,6 +38,13 @@
                             </fb:FilterGroupItem>
                         </fb:filterGroupItems>
                     </fb:FilterBar>
+            	<FlexBox
+				height="100px"
+				alignItems="Center"
+				justifyContent="Center">
+                <Image src="./public/images/leaderboard.png" width="100px"></Image>
+			</FlexBox>
+            </VBox>
                 </f:content>
             </f:DynamicPageHeader>
         </f:header>
@@ -45,7 +56,7 @@
             >
                 <headerToolbar>
                     <OverflowToolbar>
-                        <Title
+                       <Title
                             text="Leader Board"
                             level="H2"
                         />
@@ -55,6 +66,7 @@
                 <columns>
                     <Column
                         minScreenWidth="Tablet"
+                        width="8rem"
                         demandPopin="true"
                     >
                         <Text text="Rank" />
@@ -92,11 +104,29 @@
                         press="onItemPress"
                     >
                         <cells>
-                            <Text text="{local>rank}" />
-                            <Text text="{local>playerName}" />
+                            <!-- <Text text="{local>rank}" /> -->
+                            <tnt:InfoLabel
+                            text="#{local>rank}"
+                            colorScheme= "{ path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
+                            <HBox alignItems="Center">
+                                <Avatar
+                                src="{local>badge}"
+                                displayShape="Square"
+                                displaySize="L"
+                                class="sapUiSmallMarginTop"/>
+                                <Text text="{local>playerName}" />
+                            </HBox>
+                          
                             <Text text="{local>playerEmail}" />
-                            <Text text="{local>winning}" />
-                            <Text text="{local>score}" />
+                           
+                            <ObjectNumber
+                            number="{local>winning}"
+                            unit="Match"
+                            state="{path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
+                            <ObjectNumber
+                            number="{local>score}"
+                            unit="Point"
+                            state="{path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
                         </cells>
                     </ColumnListItem>
                 </items>
