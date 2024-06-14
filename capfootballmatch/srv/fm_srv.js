@@ -8,7 +8,7 @@ class FMService extends cds.ApplicationService {
       // only allow to create when the match in this bet not yet take place
       console.log("EVENTS: before CREATE Bets");
       const { match_ID } = req.data;
- 
+
       if (await hasMatchTaken(req, match_ID)) {
         return req.error(400, 'Match has already taken place');
       }
@@ -19,7 +19,7 @@ class FMService extends cds.ApplicationService {
       console.log("EVENTS: before UPDATE Bets ");
       const bet_ID = req.params[0];
       const bet = await cds.tx(req).run(SELECT.one.from('football.match.Bets').where({ ID: bet_ID }));
-      
+
       if (!bet) {
         return req.error(400, 'Bet does not exist');
       }
@@ -50,8 +50,11 @@ class FMService extends cds.ApplicationService {
 
     /// Matches events
     this.before('CREATE', 'Matches', async req => {
+      await hasMatchByUnique(req);
+      
       req.data.match_id = req.data.match_id || await getNextId(req)
     })
+
 
     this.before('UPDATE', 'Matches', async req => {
       console.log("EVENTS: before UPDATE Matchs - update scores");
@@ -64,10 +67,21 @@ class FMService extends cds.ApplicationService {
   }
 }
 
+async function hasMatchByUnique(req) {
+
+  const match_time = req.data.match_time;
+  const team1_ID = req.data.team1_ID;
+  const team2_ID = req.data.team2_ID;
+
+  const match = await cds.tx(req).run(SELECT.one.from('football.match.Matches').where({ match_time, team1_ID, team2_ID }));
+  if (match) {
+    return req.error(409, 'Match exist');
+  }
+}
 
 async function getNextId(req) {
   const result = await cds.tx(req).run(SELECT.one.from('football.match.Matches').orderBy({ match_id: 'desc' }));
-  return result ? result.id + 1 : 1
+  return result ? result.match_id + 1 : 1
 }
 
 
