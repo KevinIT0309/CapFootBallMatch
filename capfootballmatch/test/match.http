@@ -1,0 +1,26 @@
+@server = http://localhost:4004
+@auth = Authorization: Basic alice:
+
+
+### FM_SRV.Matches
+GET {{server}}/odata/v4/ces/FM_SRV/Matches
+Content-Type: application/json
+{{auth}}
+
+
+### FM_SRV.Matches
+POST  {{server}}/odata/v4/ces/FM_SRV/Matches
+Content-Type: application/json
+{{auth}}
+
+{
+    "match_name": "HUN_ENG",
+    "match_time": "2024-06-15T20:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1_ID": 3,
+    "team2_ID": 8,
+    "team1_score": 0,
+    "team2_score": 0,
+    "stage": "stage-3924362"
+}
