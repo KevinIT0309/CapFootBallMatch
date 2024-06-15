@@ -7,7 +7,7 @@ view LeaderBoards as select from fms.Users as u
     left join fms.Bets as b on b.user_ID = u.user_id and b.match_ID = s.match_ID
     join fms.Matches as m on m.match_id = s.match_ID
 {
-    key u.user_id as userId : String,
+    key u.user_id as userId : String, 
     u.fullName as userFullName : String,
     u.email as userEmail : String,
     sum(s.points) as currentPoints : Integer,
