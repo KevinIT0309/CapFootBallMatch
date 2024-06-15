@@ -20,7 +20,7 @@
                     <fb:FilterBar
                         id="filterBar"
                         useToolbar="false"
-                        search=".onSearch"
+                        search=".onFilterList"
                     >
                         <fb:filterGroupItems>
                             <fb:FilterGroupItem
@@ -31,7 +31,7 @@
                             >
                                 <fb:control>
                                     <SearchField
-                                        value="{viewModel>/searchFieldValue}"
+                                        value="{local>/searchFieldValue}"
                                         placeholder="Search by player"
                                     />
                                 </fb:control>
@@ -50,7 +50,7 @@
         </f:header>
         <f:content>
             <Table
-                id="table"
+                id="leaderBoard"
                 inset="false"
                 items="{local>/leaderBoards}"
             >

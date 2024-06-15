@@ -14,4 +14,8 @@ view LeaderBoards as select from fms.Users as u
     count(case when m.team_win_ID = b.team_win_ID then 1 else null end) as winning : Integer,
     rank() over (order by sum(s.points) desc, count(case when m.team_win_ID = b.team_win_ID then 1 else null end) asc) as rank : Integer
 }
+group by
+    u.user_id,
+    u.fullName,
+    u.email
 order by rank;
