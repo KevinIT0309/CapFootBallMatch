@@ -33,26 +33,23 @@ sap.ui.define([
                 }
                 let aFilters = [];
                 if (sQuery && sQuery.length > 0) {
-                    aFilters.push(new Filter("playerName", FilterOperator.Contains, sQuery));
+                    aFilters.push(new Filter("userFullName", FilterOperator.Contains, sQuery));
                 }
-
+                
                 const oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
+            },
+            onLeaderBoardUpdateFinished: function(oEvent){
+                this.hideBusy();
             },
             /**************************************************************************************************************************************************
              * PRIVATE METHOD
              **************************************************************************************************************************************************/
             _onRouteMatched: function (oEvent) {
                 try {
-                    this.showBusy();
+                    // this.showBusy();
                     let oLocalModal = this.oView.getModel("local");
-                    const oRequestLeaderBoardList = this._fnGetLeaderBoards();
-                    $.when(oRequestLeaderBoardList).done((aOriginalLeaderBoards) => {
-                        this.hideBusy();
-                        const aLeaderBoards = this._buildLeaderBoardList(aOriginalLeaderBoards);
-                        oLocalModal.setProperty("/leaderBoards", aLeaderBoards);
-                        oLocalModal.refresh();
-                    });
+                   
                 } catch (error) {
                     this.hideBusy();
                     console.log(`_onRouteMatched - Error: ${error}`);

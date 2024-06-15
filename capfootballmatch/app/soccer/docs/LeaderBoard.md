@@ -1,4 +1,6 @@
 ## Counting Data
+items="{local>/leaderBoards}"
+items="{path: 'mainModel>/LeaderBoards'}"
 Nếu 2 user cùng match, cùng điểm -> sort theo timebet của latest match
 ### Winning
 - Check team_win_ID với Match data xem user đoán đúng hay ko
@@ -81,9 +83,17 @@ Nếu 2 user cùng match, cùng điểm -> sort theo timebet của latest match
                             "score": 65
                         }
                     ];
-                    // if (UICommon.fnIsDevEnv()) {
-                    //     const aLeaderBoards = this._buildLeaderBoardList(fakeLeaderBoards);
-                    //     oLocalModal.setProperty("/leaderBoards", aLeaderBoards);
-                    //     oLocalModal.refresh();
-                    // }
+                    if (UICommon.fnIsDevEnv()) {
+                        this.hideBusy();
+                        oLocalModal.setProperty("/leaderBoards", fakeLeaderBoards);
+                        oLocalModal.refresh();
+                    }
+
+                     const oRequestLeaderBoardList = this._fnGetLeaderBoards();
+                    $.when(oRequestLeaderBoardList).done((aOriginalLeaderBoards) => {
+                        this.hideBusy();
+                        const aLeaderBoards = this._buildLeaderBoardList(aOriginalLeaderBoards);
+                        oLocalModal.setProperty("/leaderBoards", aLeaderBoards);
+                        oLocalModal.refresh();
+                    });
 ```
