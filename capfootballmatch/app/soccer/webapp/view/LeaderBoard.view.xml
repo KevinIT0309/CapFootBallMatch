@@ -32,7 +32,7 @@
                                 <fb:control>
                                     <SearchField
                                         value="{local>/searchFieldValue}"
-                                        placeholder="Search by player"
+                                        placeholder="Search by Player Name"
                                     />
                                 </fb:control>
                             </fb:FilterGroupItem>
@@ -52,7 +52,9 @@
             <Table
                 id="leaderBoard"
                 inset="false"
-                items="{local>/leaderBoards}"
+                items="{path: 'mainModel>/LeaderBoards'}"
+                enableBusyIndicator="true"
+                updateFinished="onLeaderBoardUpdateFinished"
             >
                 <headerToolbar>
                     <OverflowToolbar>
@@ -104,29 +106,28 @@
                         press="onItemPress"
                     >
                         <cells>
-                            <!-- <Text text="{local>rank}" /> -->
                             <tnt:InfoLabel
-                            text="#{local>rank}"
-                            colorScheme= "{ path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
+                            text="#{mainModel>rank}"
+                            colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
                             <HBox alignItems="Center">
                                 <Avatar
-                                src="{local>badge}"
+                                src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
                                 displayShape="Square"
                                 displaySize="L"
                                 class="sapUiSmallMarginTop"/>
-                                <Text text="{local>playerName}" />
+                                <Text text="{mainModel>userFullName}" />
                             </HBox>
                           
-                            <Text text="{local>playerEmail}" />
+                            <Text text="{mainModel>userEmail}" />
                            
                             <ObjectNumber
-                            number="{local>winning}"
+                            number="{mainModel>winning}"
                             unit="Match"
-                            state="{path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
+                            state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
                             <ObjectNumber
-                            number="{local>score}"
+                            number="{mainModel>currentPoints}"
                             unit="Point"
-                            state="{path: 'local>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
+                            state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
                         </cells>
                     </ColumnListItem>
                 </items>
