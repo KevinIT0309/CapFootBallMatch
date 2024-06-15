@@ -1,7 +1,0 @@
-[
-    "src/gen/data/football.match.Teams.hdbtable",
-    "src/gen/data/football.match.Matches.hdbtable",
-    "src/gen/data/football.match.Users.hdbtable",
-    "src/gen/data/football.match.Bets.hdbtable",
-    "src/gen/data/football.match.Scores.hdbtable"
-]

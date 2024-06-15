@@ -1,5 +1,0 @@
-ID,bet_time,user_ID,match_ID,team_win_ID,isDraw,predictGoals
-07464855-d834-48d5-988b-9d7d6a21d76a,2009-08-24T00:00:00.000Z,U01,1,1,true,"[{""team1_ID"":1,""team1_numOfGoals"":25,""team2_ID"":5,""team2_numOfGoals"":18}]"
-07464855-d834-48d5-988b-9d7d6a21d76b,2002-09-17T00:00:00.000Z,U01,2,6,false,"[{""team1_ID"":4,""team1_numOfGoals"":28,""team2_ID"":6,""team2_numOfGoals"":4}]"
-07464855-d834-48d5-988b-9d7d6a21d76c,2001-10-19T00:00:00.000Z,U01,3,7,true,"[{""team1_ID"":2,""team1_numOfGoals"":7,""team2_ID"":8,""team2_numOfGoals"":31}]"
-07464855-d834-48d5-988b-9d7d6a21d76d,2011-06-30T00:00:00.000Z,U01,4,3,false,"[{""team1_ID"":3,""team1_numOfGoals"":61,""team2_ID"":7,""team2_numOfGoals"":81}]"
