@@ -251,8 +251,6 @@ sap.ui.define([
             //Hot fix fore golive optimize later
             let oCurrentPredict = oSource.getBindingContext("viewModel").getObject();
             const currentPath = oSource.getBindingContext("viewModel").sPath;
-            oCurrentPredict.team1_numOfGoals = oSource.getValue();
-            // let teamGoalPath="team1_numOfGoals";
             if(oSource.getId().includes('goalTeam1')){
                 // teamGoalPath = "team2_numOfGoals"
                 oCurrentPredict.team1_numOfGoals = oSource.getValue();;

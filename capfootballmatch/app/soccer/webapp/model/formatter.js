@@ -161,6 +161,15 @@ sap.ui.define([
                 return false;
             }
 
+        },
+        fnVisibleLeaderBoardAvatar: function(winning){
+            try {
+                UICommon.devLog(`fnVisibleLeaderBoardAvatar - winning: ${winning}`);
+                return winning != 0;
+            } catch (error) {
+                console.log(`fnVisibleLeaderBoardAvatar -  Error: ${error}`);
+                return false;
+            }
         }
         //EOF
     };

@@ -52,9 +52,9 @@
                         >
                             <form:content>
                                 <core:Title text="General" />
-                                <m:Label text="Home" />
+                                <m:Label text="Team 1/ Home" />
                                 <m:Text text="{mainModel>team1/team_name}" />
-                                <m:Label text="Away" />
+                                <m:Label text="Team 2/ Away" />
                                 <m:Text text="{mainModel>team2/team_name}" />
                                 <m:Label text="Is Over" />
                                 <m:Switch customTextOn="Yes" customTextOff="No" change="handleIsOverChange" state="{mainModel>isOver}"></m:Switch>
@@ -116,14 +116,14 @@
                                         key="{viewModel>team_id}"
                                     />
                                 </m:ComboBox>
-                                <m:Label text="Team 1 Score" />
+                                <m:Label text="Team 1 Goal" />
                                 <m:Input
                                     type="Number"
                                     enabled="{viewModel>/enabledOtherInputs}"
                                     change="handleScoreChange"
                                     value="{path: 'mainModel>team1_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
                                 />
-                                <m:Label text="Team 2 Score" />
+                                <m:Label text="Team 2 Goal" />
                                 <m:Input
                                     type="Number"
                                     enabled="{viewModel>/enabledOtherInputs}"

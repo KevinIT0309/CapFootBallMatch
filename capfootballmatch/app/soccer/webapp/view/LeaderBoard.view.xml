@@ -52,7 +52,10 @@
             <Table
                 id="leaderBoard"
                 inset="false"
-                items="{path: 'mainModel>/LeaderBoards'}"
+                items="{path: 'mainModel>/LeaderBoards',
+                parameters: {
+                    $orderby: 'rank'
+                }}"
                 enableBusyIndicator="true"
                 updateFinished="onLeaderBoardUpdateFinished"
             >
@@ -111,7 +114,7 @@
                             colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
                             <HBox alignItems="Center">
                                 <Avatar
-                                visible="{=${mainModel>winning != 0}}"
+                                visible="{ path: 'mainModel>winning',formatter: 'formatter.fnVisibleLeaderBoardAvatar'}"
                                 src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
                                 displayShape="Square"
                                 displaySize="L"
@@ -125,9 +128,8 @@
                             number="{mainModel>winning}"
                             unit="Match"
                             state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
-                            <ObjectNumber
-                            number="{mainModel>currentPoints}"
-                            unit="Point"
+                            <ObjectStatus
+                            text="{mainModel>currentPoints} Point"
                             state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
                         </cells>
                     </ColumnListItem>
