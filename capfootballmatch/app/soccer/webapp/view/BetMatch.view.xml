@@ -88,8 +88,18 @@
                         text="Status"
                     />
                     <m:ObjectStatus
-                        text="{mainModel>status}"
-                        state="Success"
+                        text="{
+                            parts: [
+                                'mainModel>status'
+						    ],
+                            formatter: 'formatter.getMatchStatusText'
+                        }"
+                        state="{
+                            parts: [
+                                'mainModel>status'
+						    ],
+                            formatter: 'formatter.getMatchStatusState'
+                        }"
                         class="sapMObjectStatusLarge"
                     />
                 </m:VBox>

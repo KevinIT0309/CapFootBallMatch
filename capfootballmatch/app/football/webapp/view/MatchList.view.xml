@@ -6,10 +6,9 @@
     xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core"
+    core:require="{formatter: 'cap/euro/admin/football/model/formatter'}"
 >
-    <f:DynamicPage
-        id="page"
-    >
+    <f:DynamicPage id="page">
         <f:header>
             <f:DynamicPageHeader>
                 <f:content>
@@ -42,8 +41,7 @@
                                         forceSelection="false"
                                         selectedKey="{viewModel>/matchStatusKey}"
                                         items="{
-                                            path: 'viewModel>/matchStatusList',
-                                            sorter: { path: 'Name' }
+                                            path: 'viewModel>/matchStatusList'
                                         }"
                                     >
                                         <core:Item
@@ -174,7 +172,15 @@
                             />
                             <Text text="{mainModel>team1/team_name}" />
                             <Text text="{mainModel>team2/team_name}" />
-                            <Text text="{mainModel>status}" />
+
+                            <Text
+                                text="{
+                                    parts: [
+                                        'mainModel>status'
+						            ],
+                                    formatter: 'formatter.getMatchStatusText'
+                                }"
+                            />
                         </cells>
                     </ColumnListItem>
                 </items>

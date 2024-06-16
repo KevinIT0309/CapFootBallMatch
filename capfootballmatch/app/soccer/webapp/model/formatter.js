@@ -2,6 +2,32 @@ sap.ui.define([], () => {
     "use strict";
 
     return {
+        getMatchStatusState: function (status) {
+            switch (status) {
+                case "1":
+                    return "Information";
+                case "2":
+                    return "Success";
+                case "3":
+                    return "Error";
+                default:
+                    return status;
+            }
+        },
+
+        getMatchStatusText: function (status) {
+            switch (status) {
+                case "1":
+                    return "Waiting";
+                case "2":
+                    return "Ongoing";
+                case "3":
+                    return "Done";
+                default:
+                    return status;
+            }
+        },
+
         formatResultText: function (team1_score, team2_score, status) {
             if (parseInt(status) !== 3) {
                 return "N/A";
