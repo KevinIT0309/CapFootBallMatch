@@ -4,23 +4,45 @@ using football.match.view as fmsv from '../db/view/SoccerView';
 @path: 'ces/FM_SRV'
 service FM_SRV {
 
-    entity Users as select from fms.Users;
-    entity Teams as select from fms.Teams;
-
-    entity Matches @(restrict: [
+    entity Users
+    @(restrict: [
+        { grant: '*', to: ['system-user', 'technical-user']},
         { grant:'WRITE', to: 'ADMIN' },
         { grant:'READ', to: ['ADMIN','BETTOR'] }
-    ]) as select from fms.Matches;
+    ])
+    as select from fms.Users;
 
-    entity Bets @(restrict: [
+    entity Teams
+    @(restrict: [
+        { grant: '*', to: ['system-user', 'technical-user']},
+        { grant:'WRITE', to: 'ADMIN' },
+        { grant:'READ', to: ['ADMIN','BETTOR'] }
+    ])
+    as select from fms.Teams;
+
+    entity Matches
+    @(restrict: [
+        { grant: '*', to: ['system-user', 'technical-user']},
+        { grant:'WRITE', to: 'ADMIN' },
+        { grant:'READ', to: ['ADMIN','BETTOR'] }
+    ])
+    as select from fms.Matches;
+
+    entity Bets
+    @(restrict: [
+        { grant: '*', to: ['system-user', 'technical-user']},
         { grant:'READ', to: ['ADMIN', 'BETTOR'] },
         { grant:'WRITE', to: 'BETTOR' }
-    ]) as select from fms.Bets;
+    ])
+    as select from fms.Bets;
 
-    entity Scores @(restrict: [
+    entity Scores
+    @(restrict: [
+        { grant: '*', to: ['system-user', 'technical-user']},
         { grant:'READ', to: ['ADMIN', 'BETTOR'] },
-        { grant:'WRITE', to: 'BETTOR' }
-    ]) as select from fms.Scores;
+        { grant:'WRITE', to: 'ADMIN' }
+    ])
+    as select from fms.Scores;
     
     function TotalBetPointsReceived(userID : String) returns Integer;
 

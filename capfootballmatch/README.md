@@ -36,5 +36,5 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 ## Undeploy mta
 cf undeploy capfootballmatch --delete-services --delete-service-keys --delete-service-brokers
 
-## Test Local
+## Config Test Local
 ![re-config](./assets/images/image.png)
