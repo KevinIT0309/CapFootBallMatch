@@ -37,7 +37,7 @@ sap.ui.define([
 
             onRouteMatched: function (oEvent) {
                 this.getModel("layoutMod").setProperty("/layout", fioriLibrary.LayoutType.OneColumn);
-                this.byId("table").getBinding("items").refresh();
+                this.byId("table").getBinding("items").refresh("$auto");
             },
 
             onItemPress: function (oEvent) {

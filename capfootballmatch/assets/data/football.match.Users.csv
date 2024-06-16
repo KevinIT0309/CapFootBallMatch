@@ -1,3 +1,29 @@
-ID;user_id;email;fullName
-10e8c2b4-56c4-448a-9bad-be4f8a8bacc1;U01;email1@gmail.com;fullName_1
-10e8c2b4-56c4-448a-9bad-be4f8a8bacc2;U02;email2@gmail.com;fullName_2
+ID,createdAt,createdBy,modifiedAt,modifiedBy,user_id,email,fullName
+7a819931-06db-4c25-b775-973ea920a01a,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U01,phong.tranqui@conarum.com,Phong
+43608276-19f7-4592-bf8a-cdac70fbc1b4,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U02,tam.nguyen@conarum.com,Tam
+45b60706-3c13-4272-8e91-29b03341c3b2,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U03,bang.nq13@gmail.com,Bang
+c351c8bd-2a4c-4b30-a4e6-3a50677a56b5,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U04,naduy1810@gmail.com,Duy
+26f1a4e1-2ff0-4f5a-ab52-52cf95dddca4,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U05,khanh.pham@ais-tech.vn,Khanh
+27102c46-53fa-4573-a46c-e67983a31dd7,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U06,khanh.voduy@conarum.com,Khanh (Kevin)
+5050f752-f61b-4843-adc1-3733e0cdd55e,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U07,huy.nguyenhoangthai@conarum.com,Huy (Henry)
+e730b7eb-7221-426e-9b24-36c70f54693e,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U08,hieu.ngoxuan@conarum.com,Hieu
+a0dec6a9-747f-492f-a6dd-3329e8065a86,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U09,lampn156@gmail.com,Liam
+d319e403-4fb3-4a77-9539-0d84d2c3a1a2,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U10,lu.nguyen@conarum.com,Lu (Ken)
+3edacbe5-77cc-49b4-b2e2-e4392d1d53ad,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U11,trung.tranthanh@ais-tech.vn,Trung
+0b978728-6f86-491a-bc50-8e64475d2a0a,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U12,leo.trinh@conarum.com,Tinh (Leo)
+764cb727-08ed-4fb3-b1ab-97613af00b2a,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U13,tri.leminh@ais-tech.vn,Tri
+f595f58a-9162-4676-aa6e-0d785ad20e98,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U14,lulyluly147@gmail.com,Hai (Della)
+9285f969-85fc-43c3-a513-e50754f2c118,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U15,nguyenphu26297@gmail.com,Phu
+04e159ca-4cd9-4d9f-b946-e2afbce1e959,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U16,pmh13797@gmail.com,Huy (Bosch)
+e1f52f1b-0c62-4dc7-91ce-fd39c69c2d1b,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U17,vinhthuan38@gmail.com,Thuan (Bosch)
+f31cf220-d094-47a3-8171-dcc5d853edab,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U18,diemmanle@gmail.com,Man
+32a4b174-233c-41f0-8bb2-e802838eeb4b,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U19,thangtuanvan@gmail.com,Van (Bosch)
+b03b5b1c-75be-415e-970b-ace891c68e1f,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U20,kiennt104@gmail.com,Kien
+e6448962-3a28-4793-b5f0-79b110b5fa65,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U21,abadeer1988@gmail.com,Hoang Anh
+2d80c1da-5633-40a4-932f-3dc099320b0f,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U22,anhtuan270393@gmail.com,Tuan
+12376a03-022d-4713-958e-dcd8a551eb05,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U23,thien.dang@ais-tech.vn,Thien
+8d344b6e-ebd4-4070-af11-6c9f16577612,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U24,tuteresaamerica@gmail.com,Tu
+e5d94178-6d6c-4a9b-8bb7-db5a18174266,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U25,thunga9383@gmail.com,Nga
+33d796a8-eb16-4fd4-b7d4-7f0639f4410b,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U26,hoaidanh0108@gmail.com,Hoai Danh
+1b7c9865-f0af-4a95-bf59-b43c2c2f5175,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U27,phong.bui@ais-tech.vn,Phong Bui
+4c62e0dd-7d42-40ae-915d-b53075d7e6cc,2024-06-01T00:00:00Z,system,2024-06-01T00:00:00Z,system,U28,tranglth07@gmail.com,Trang(Rei)

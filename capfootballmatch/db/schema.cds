@@ -37,7 +37,6 @@ using { cuid, managed } from '@sap/cds/common';
         key user_id    : String;
         email          : String(100) not null;
         fullName       : String not null;
-        // role           : Integer @assert.range: [ 1, 2 ] enum { admin = 1; bettor = 2} not null;
     }
 
 
@@ -71,7 +70,7 @@ using { cuid, managed } from '@sap/cds/common';
 
         user_ID       : String not null;
         match_ID      : Integer not null;
-        points        : Integer not null;
+        points        : Decimal(5,2) not null;
         
         user             : Association to one Users on user.user_id = $self.user_ID; // Referential Constraint
         match            : Association to one Matches on match.match_id = $self.match_ID; // Referential Constraint

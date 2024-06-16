@@ -2,19 +2,17 @@ sap.ui.define([], () => {
     "use strict";
 
     return {
-        // determineSaveButtonStatus: function (team1_score, team2_score, match_time) {    
-        //     let matchDate = new Date(match_time);
-        //     let instant = new Date();
-
-        //     if (isNaN(parseInt(team1_score)) || isNaN(parseInt(team2_score))) {
-        //         return false;
-        //     }
-
-        //     if (matchDate.getTime() < instant.getTime()) {
-        //         return true;
-        //     }
-
-        //     return false;
-        // }
+        getMatchStatusText: function (status) {
+            switch (status) {
+                case "1":
+                    return "Waiting";
+                case "2":
+                    return "Ongoing";
+                case "3":
+                    return "Done";
+                default:
+                    return status;
+            }
+        }
     };
 });

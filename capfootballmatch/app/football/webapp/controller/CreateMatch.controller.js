@@ -74,6 +74,7 @@ sap.ui.define([
 
             let fnSuccess = function () {
                 MessageToast.show("Match Saved Successfully");
+                this.getRouter().navTo("matchList");
             }.bind(this);
 
             let fnError = function (oError) {
@@ -82,7 +83,6 @@ sap.ui.define([
 
             this.getView().setBindingContext(context, "mainModel");
             this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
-            this.getRouter().navTo("matchList");
         },
 
         handleClose: function (oEvent) {
