@@ -91,7 +91,7 @@ const hasMatchTaken = async (req, match_ID) => {
     return req.error(400, 'Match does not exist');
   }
   const now = new Date();
-  return new Date(match.match_time) <= now;
+  return match.isOver;//new Date(match.match_time) <= now;
 }
 
 const updateScore = async (req) => {
