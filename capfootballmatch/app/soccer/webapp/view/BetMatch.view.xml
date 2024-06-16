@@ -166,7 +166,7 @@
                                  <!-- change="handleTeamWinChange" -->
                                 <m:ComboBox
                                     id="selectTeamWin"
-                                    enabled="{= !${viewModel>/isDraw}}"
+                                    enabled="{= !${viewModel>/isDraw} &amp;&amp; (${viewModel>/matchStatus} === 1 || ${viewModel>/matchStatus} === '1') }"
                                     showSecondaryValues="true"
                                     selectedKey="{viewModel>/team_win_ID}"
                                     items="{ path: 'viewModel>/predictOptions' }"
@@ -178,6 +178,7 @@
                                 </m:ComboBox>
                                 <m:Label text="Draw Option" />
                                 <m:CheckBox
+                                    enabled="{= ${viewModel>/matchStatus} === 1 || ${viewModel>/matchStatus} === '1'}"
                                     text="Draw"
                                     selected="{viewModel>/isDraw}"
                                 />
@@ -231,6 +232,7 @@
                                         </m:layoutData>
                                     </m:Text>
                                     <m:Input
+                                        enabled="{= ${viewModel>/matchStatus} === 1 || ${viewModel>/matchStatus} === '1'}"
                                         type="Number"
                                         width="75%"
                                         change="handleNumberofGoalsChange"
@@ -242,6 +244,7 @@
                                         </m:layoutData>
                                     </m:Input>
                                     <m:Input
+                                        enabled="{= ${viewModel>/matchStatus} === 1 || ${viewModel>/matchStatus} === '1'}"
                                         type="Number"
                                         width="75%"
                                         change="handleNumberofGoalsChange"
@@ -264,8 +267,14 @@
                 <m:ToolbarSpacer />
                 <m:Button
                     type="Accept"
-                    text="Bet"
-                    enabled="{viewModel>/enabledBetBtn}"
+                    text="{= ${viewModel>/betMatchID} ? 'Update' : 'Bet'}"
+                    enabled="{
+                        parts: [
+                        'viewModel>/enabledBetBtn',
+                        'viewModel>/matchStatus'
+                        ],
+                        formatter: 'formatter.fnHandleEnabledBetButton'
+                    }"
                     press="handleSave"
                 />
                 <m:Button
