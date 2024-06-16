@@ -88,18 +88,8 @@
                         text="Status"
                     />
                     <m:ObjectStatus
-                        text="{
-                            parts: [
-                                'mainModel>status'
-						    ],
-                            formatter: 'formatter.getMatchStatusText'
-                        }"
-                        state="{
-                            parts: [
-                                'mainModel>status'
-						    ],
-                            formatter: 'formatter.getMatchStatusState'
-                        }"
+                        text="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusText'}"
+                        state="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
                         class="sapMObjectStatusLarge"
                     />
                 </m:VBox>
@@ -136,7 +126,7 @@
                     />
                 </m:VBox>
 
-                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom" id="vbResult">
                     <m:Title
                         text="Result"
                         class="sapUiTinyMarginBottom"
@@ -245,6 +235,7 @@
                                         width="75%"
                                         change="handleNumberofGoalsChange"
                                         value="{path: 'viewModel>team1_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                        id="goalTeam1"
                                     >
                                         <m:layoutData>
                                             <m:FlexItemData growFactor="1" />
@@ -255,6 +246,7 @@
                                         width="75%"
                                         change="handleNumberofGoalsChange"
                                         value="{path: 'viewModel>team2_numOfGoals', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                        id="goalTeam2"
                                     >
                                         <m:layoutData>
                                             <m:FlexItemData growFactor="1" />

@@ -3,13 +3,16 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "../model/formatter",
+    "cap/euro/bettor/soccer/model/formatter",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (BaseController, JSONModel, Filter, FilterOperator, formatter, MessageToast, MessageBox) {
+    "sap/m/MessageBox",
+    "cap/euro/bettor/soccer/utils/UICommon",
+    "cap/euro/bettor/soccer/constants/AppGlobalConstant",
+], function (BaseController, JSONModel, Filter, FilterOperator, formatter, MessageToast, MessageBox, UICommon, AppGlobalConstant) {
     "use strict";
 
     return BaseController.extend("cap.euro.bettor.soccer.controller.BetMatch", {
+        formatter: formatter,
         onInit: function () {
             this.getRouter().getRoute("betMatch").attachPatternMatched(this.onPatternMatched, this);
         },
@@ -36,9 +39,12 @@ sap.ui.define([
 
                 this._layout = oEvent.getParameter("arguments").layout;
                 this.getView().bindElement({
-                    "path": matchPath,
-                    "model": "mainModel",
-                    "parameters": { "expand": "team1,team2" }
+                    path: matchPath,
+                    model: "mainModel",
+                    parameters: {
+                        $select: "*",
+                        expand: "team1,team2"
+                    }
                 });
 
                 this.getModel("layoutMod").setProperty("/layout", this._layout);
@@ -55,6 +61,13 @@ sap.ui.define([
                 });
 
                 let matchContext = await matchContextBinding.requestObject();
+                //Set visible result
+                const oResultBox = this.getView().byId("vbResult");
+                if (oResultBox) {
+                    console.log(`Visible Result by Status: ${matchContext.status}`);
+                    const { MATCH_STATUS } = AppGlobalConstant;
+                    oResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
+                }
                 let predicts = matchContext.predicts;
                 let predictGoals = [];
                 for (let i = 0; i < predicts; i++) {
@@ -63,7 +76,7 @@ sap.ui.define([
                         "team1_numOfGoals": null,
                         "team2_numOfGoals": null
                     });
-                    
+
                 }
                 oModel.setProperty("/predictGoals", predictGoals);
 
@@ -227,12 +240,32 @@ sap.ui.define([
             this.getRouter().navTo("matchList");
         },
 
-        handleNumberofGoalsChange: function () {
+        handleNumberofGoalsChange: function (oEvent) {
+            const oSource = oEvent.getSource();
             let oModel = this.getModel("viewModel");
+            //Hot fix fore golive optimize later
+            let oCurrentPredict = oSource.getBindingContext("viewModel").getObject();
+            const currentPath = oSource.getBindingContext("viewModel").sPath;
+            oCurrentPredict.team1_numOfGoals = oSource.getValue();
+            // let teamGoalPath="team1_numOfGoals";
+            if(oSource.getId().includes('goalTeam1')){
+                // teamGoalPath = "team2_numOfGoals"
+                oCurrentPredict.team1_numOfGoals = oSource.getValue();;
+            }else{
+                oCurrentPredict.team2_numOfGoals = oSource.getValue();
+            }
+            oModel.setProperty(`${currentPath}`,oCurrentPredict);
+            oModel.refresh();
             const predictGoals = oModel.getProperty("/predictGoals");
             let invalidNumberofGoals = predictGoals.some(function (el) {
-                return isNaN(parseInt(el.team1_numOfGoals)) || parseInt(el.team1_numOfGoals) < 0 && isNaN(parseInt(el.team2_numOfGoals)) || parseInt(el.team2_numOfGoals) < 0;
+                return (
+                    (UICommon.fnIsNumber(el.team1_numOfGoals) && UICommon.fnIsEmpty(el.team2_numOfGoals)) ||
+                    (UICommon.fnIsNumber(el.team2_numOfGoals) && UICommon.fnIsEmpty(el.team1_numOfGoals)) ||
+                    isNaN(parseInt(el.team1_numOfGoals)) || parseInt(el.team1_numOfGoals) < 0 ||
+                    isNaN(parseInt(el.team2_numOfGoals)) || parseInt(el.team2_numOfGoals) < 0
+                );
             });
+
             oModel.setProperty("/enabledBetBtn", !invalidNumberofGoals);
         }
     });

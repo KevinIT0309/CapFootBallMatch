@@ -24,3 +24,4 @@ package-lock.json
 @cds-models/
 resources/*.zip
 .history
+mta-op*
