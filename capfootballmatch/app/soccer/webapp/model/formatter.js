@@ -1,6 +1,7 @@
 sap.ui.define([
     "cap/euro/bettor/soccer/constants/AppGlobalConstant",
-], (AppGlobalConstant) => {
+    "cap/euro/bettor/soccer/utils/UICommon"
+], (AppGlobalConstant, UICommon) => {
     "use strict";
 
     return {
@@ -144,8 +145,23 @@ sap.ui.define([
             }
 
         },
-        fnStringToNumber: function(){
-            
+        fnStringToNumber: function () {
+
+        },
+        fnHandleEnabledBetButton: function (bUiEnabled, status) {
+            try {
+                UICommon.devLog(`fnHandleEnabledBetButton - UiEnabled: ${bUiEnabled} - Status: ${status}`);
+                if (!status) {
+                    console.warn('status is undefined or null');
+                }
+                const { MATCH_STATUS } = AppGlobalConstant;
+                return !!bUiEnabled && status == MATCH_STATUS.WAITING;
+            } catch (error) {
+                console.error('Error in fnHandleEnabledBetButton:', error);
+                return false;
+            }
+
         }
+        //EOF
     };
 });
