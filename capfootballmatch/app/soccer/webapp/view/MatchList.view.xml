@@ -109,11 +109,18 @@
                 </columns>
 
                 <items>
+                    
                     <ColumnListItem
                         vAlign="Middle"
                         type="Active"
                         press="onItemPress"
                     >
+                        <customData>
+                            <core:CustomData
+                                    key="isOver"
+                                    value="{isOver}"
+                            />
+                        </customData>
                         <cells>
                             <Text text="{mainModel>match_name}" />
                             <Text

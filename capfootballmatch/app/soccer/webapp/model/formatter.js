@@ -1,4 +1,6 @@
-sap.ui.define([], () => {
+sap.ui.define([
+    "cap/euro/bettor/soccer/constants/AppGlobalConstant",
+], (AppGlobalConstant) => {
     "use strict";
 
     return {
@@ -34,7 +36,7 @@ sap.ui.define([], () => {
         //         return true;
         //     }
 
-            //return false;
+        //return false;
         // },
         fnGetLeaderBoardBadge: function (rank) {
             const badgePath = `https://cdn.tinhtd.info/aisc/`;
@@ -87,6 +89,32 @@ sap.ui.define([], () => {
             } catch (error) {
                 console.log(`fnGetLeaderBoardObjectState -  Error: ${error}`);
                 return "None";
+            }
+
+        },
+        fnGetMatchStatusText: function (status) {
+            try {
+                const { MATCH_STATUS_CONF } = AppGlobalConstant;
+                if (MATCH_STATUS_CONF[status]) {
+                    return MATCH_STATUS_CONF[status].text;
+                }
+                return status;
+            } catch (error) {
+                console.log(`fnGetMatchStatusText - Error: ${error}`);
+                return status;
+            }
+
+        },
+        fnGetMatchStatusState: function (status) {
+            try {
+                const { MATCH_STATUS_CONF } = AppGlobalConstant;
+                if (MATCH_STATUS_CONF[status]) {
+                    return MATCH_STATUS_CONF[status].state;
+                }
+                return status;
+            } catch (error) {
+                console.log(`fnGetMatchStatusState - Error: ${error}`);
+                return status;
             }
 
         },

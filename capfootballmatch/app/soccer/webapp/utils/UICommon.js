@@ -560,6 +560,52 @@ sap.ui.define([
             }
 
         },
-        //end
+        /**
+         * Check value is number or not
+         * @param sValue - value to check
+         * @returns true or false
+         * */
+        fnIsNumber: function (sValue) {
+            let bIsNumber = true;
+            if (isNaN(sValue) || this.fnIsEmpty(sValue)) {
+                bIsNumber = false;
+            }
+            return bIsNumber;
+        },
+        /**
+         * Check value is empty or not
+         * @param sValue - value to check
+         * @return true or false
+         * */
+        fnIsEmpty: function (sValue) {
+            let bIsEmpty = false;
+            if (sValue === null || sValue === "" || sValue === undefined) {
+                bIsEmpty = true;
+            }
+            return bIsEmpty;
+        },
+        fnIsValidPredicGoal: function (value) {
+            try {
+                if (!this.fnIsNumber(value)) {
+                    return false;
+                }
+                console.log(`fnIsValidPredicGoal: ${value}`);
+                const iGoal = parseInt(value)
+                if (iGoal < 0) {
+                    return false;
+                }
+                return true;
+                // const integerType = new sap.ui.model.type.Integer({
+                //     constraints: {
+                //       minimum: 0
+                //     }
+                //   });
+                // return integerType.validateValue(value.toString());
+            } catch (error) {
+                console.log(`fnIsValidPredicGoal - Error:${error}`);
+                return false;
+            }
+        }
+        //EOF
     };
 });
