@@ -124,7 +124,7 @@ const stageMultipliers = {
   "1": 1,
   "2": 2,
   "3": 4,
-  "4": 7
+  "4": 6.5
 };
 
 const calculatePoints = (bet, reqData, match) => {
