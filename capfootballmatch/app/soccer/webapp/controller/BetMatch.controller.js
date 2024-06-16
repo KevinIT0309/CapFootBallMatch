@@ -96,7 +96,9 @@ sap.ui.define([
                 const instant = new Date();
                 const matchDate = new Date(matchDateTime.toDateString());
                 const today = new Date(instant.toDateString());
-                oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);
+                // oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);//Old Logic based on bet date
+                oModel.setProperty("/enabledBetBtn", !matchContext.isOver);//Leo: Hotfix based on isOver
+                
 
                 let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
                 await getUserInfoContextBinding.invoke();

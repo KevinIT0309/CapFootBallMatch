@@ -103,9 +103,9 @@ sap.ui.define([
         handleSave: function () {
             const bindingPath = this.getView().getBindingContext("mainModel").getPath();
             const object = this.getView().getBindingContext("mainModel").getObject();
-            if (object.status === "3" || object.status === 3 && !object.isOver) { // Done
-                this.getView().getBindingContext("mainModel").setProperty(`${bindingPath}/isOver`, true, "UpdateGroup");
-            }
+            // if (object.status === "3" || object.status === 3 && !object.isOver) { // Done
+            //     this.getView().getBindingContext("mainModel").setProperty(`${bindingPath}/isOver`, true, "UpdateGroup");
+            // }
             let fnSuccess = function () {
                 MessageToast.show("Match Saved Successfully");
                 this.getRouter().navTo("matchList");
@@ -134,7 +134,9 @@ sap.ui.define([
         handleMatchStatusChange: function () {
             this._validateEnabledProperty();
         },
-
+        handleIsOverChange:  function () {
+            const object = this.getView().getBindingContext("mainModel").getObject();
+        },
         _validateEnabledProperty: function () {
             let viewModel = this.getModel("viewModel");
             const object = this.getView().getBindingContext("mainModel").getObject();

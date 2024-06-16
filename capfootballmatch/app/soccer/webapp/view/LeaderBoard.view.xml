@@ -111,6 +111,7 @@
                             colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
                             <HBox alignItems="Center">
                                 <Avatar
+                                visible="{=${mainModel>winning != 0}}"
                                 src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
                                 displayShape="Square"
                                 displaySize="L"

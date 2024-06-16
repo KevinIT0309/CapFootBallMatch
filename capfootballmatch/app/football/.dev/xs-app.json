@@ -1,0 +1,18 @@
+{
+    "welcomeFile": "/index-dev.html",
+    "authenticationMethod": "route",
+    "routes": [{
+            "source": "^/odata/v4/ces/(.*)$",
+            "target": "/odata/v4/ces/$1",
+            "authenticationType": "xsuaa",
+            "destination": "capfootballmatch_srv_dest",
+            "csrfProtection": false
+        },
+        {
+            "source": "^(.*)$",
+            "target": "$1",
+            "localDir": "../webapp",
+            "cacheControl": "no-cache, no-store, must-revalidate"
+        }
+    ]
+}
