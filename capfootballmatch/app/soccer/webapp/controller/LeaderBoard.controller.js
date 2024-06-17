@@ -46,7 +46,7 @@ sap.ui.define([
             },
             onViewPlayerBetHistory: function (oEvent) {
                 try {
-                    this.showBusy();
+                    
                     let oItem = oEvent.getSource();
                     let userId = oItem.getBindingContext("mainModel").getObject("userId");
                     if(UICommon.fnIsEmpty(userId)){

@@ -29,7 +29,7 @@ sap.ui.define([
             },
 
             onItemPress: function (oEvent) {
-                this.showBusy();
+               
                 let oItem = oEvent.getSource();
                 let matchId = oItem.getBindingContext("mainModel").getObject("match_id");
                 this.getRouter().navTo("betMatch", { "layout": fioriLibrary.LayoutType.TwoColumnsMidExpanded, "matchId": matchId });
