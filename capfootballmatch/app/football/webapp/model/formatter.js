@@ -1,4 +1,4 @@
-sap.ui.define([], () => {
+sap.ui.define([ "cap/euro/admin/football/constants/AppGlobalConstant"], (AppGlobalConstant) => {
     "use strict";
 
     return {
@@ -13,6 +13,19 @@ sap.ui.define([], () => {
                 default:
                     return status;
             }
-        }
+        },
+        fnGetMatchStatusState: function (status) {
+            try {
+                const { MATCH_STATUS_CONF } = AppGlobalConstant;
+                if (MATCH_STATUS_CONF[status]) {
+                    return MATCH_STATUS_CONF[status].state;
+                }
+                return status;
+            } catch (error) {
+                console.log(`fnGetMatchStatusState - Error: ${error}`);
+                return status;
+            }
+
+        },
     };
 });

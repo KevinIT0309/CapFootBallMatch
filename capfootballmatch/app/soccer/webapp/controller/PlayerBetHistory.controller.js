@@ -19,6 +19,7 @@ sap.ui.define([
 
         onPatternMatched: async function (oEvent) {
             try {
+                this.showBusy();
                 const playerUserId = oEvent.getParameter("arguments").userId;
                 const layout = oEvent.getParameter("arguments").layout;
                 if (UICommon.fnIsEmpty(playerUserId)) {

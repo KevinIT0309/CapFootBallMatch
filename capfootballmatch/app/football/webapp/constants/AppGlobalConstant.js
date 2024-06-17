@@ -15,9 +15,9 @@ sap.ui.define([
         DONE: 3
     };
     const MATCH_STATUS_CONF = {
-        1: { text: "Betting", state: "Warning" },
+        1: { text: "Waiting", state: "Warning" },
         2: { text: "On Going", state: "Error" },
-        3: { text: "Finished", state: "Success" }
+        3: { text: "Done", state: "Success" }
     };
 
     return {

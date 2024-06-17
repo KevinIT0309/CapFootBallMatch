@@ -19,6 +19,7 @@ sap.ui.define([
 
         onPatternMatched: async function (oEvent) {
             try {
+                this.showBusy();
                 this._matchId = oEvent.getParameter("arguments").matchId;
                 if (UICommon.fnIsEmpty(this._matchId)) {
                     this.hideBusy();
