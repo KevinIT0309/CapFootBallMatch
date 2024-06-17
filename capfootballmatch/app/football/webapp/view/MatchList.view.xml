@@ -110,6 +110,12 @@
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
+                        <Text text="Match ID" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
                         <Text text="Match No." />
                     </Column>
                     <Column
@@ -151,6 +157,7 @@
                         press="onItemPress"
                     >
                         <cells>
+                            <Text text="{mainModel>match_id}" />
                             <Text text="{mainModel>match_name}" />
                             <Text
                                 text="{

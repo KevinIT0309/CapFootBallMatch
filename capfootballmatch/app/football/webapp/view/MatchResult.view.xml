@@ -60,16 +60,28 @@
                                 <m:Switch customTextOn="Yes" customTextOff="No" change="handleIsOverChange" state="{mainModel>isOver}"></m:Switch>
                                 <core:Title text="" />
                                 <m:Label text="Match Day" />
-                                <m:Text
+                                <m:DateTimePicker
+                                    id="matchDateTimeDTP"
+                                    change="handleMatchTimeChange"
+                                    value="{
+                                        path: 'viewModel>/match_time',
+                                        type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                        formatOptions: {
+                                            style: 'medium',
+                                            strictParsing: true
+                                        }
+                                    }"
+                                />
+                                <!-- <m:Text
                                     text="{
                                         path: 'mainModel>match_time',
                                         type: 'sap.ui.model.odata.type.DateTimeOffset',
                                         formatOptions: {
-                                        pattern: 'dd/MM/yyyy'
+                                            pattern: 'dd/MM/yyyy'
                                         }
                                     }"
-                                />
-                                <m:Label text="Match Time" />
+                                /> -->
+                                <!-- <m:Label text="Match Time" />
                                 <m:Text
                                     text="{
                                         path:'mainModel>match_time',  
@@ -78,7 +90,7 @@
                                             pattern : 'HH:mm'
                                         }
                                     }"
-                                />
+                                /> -->
                                 <m:Label text="Match Status" />
                                 <m:Select
                                     enabled="{viewModel>/enabledMatchStatus}"

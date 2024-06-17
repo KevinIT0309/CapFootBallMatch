@@ -54,7 +54,7 @@ using { cuid, managed } from '@sap/cds/common';
 
         user_ID          : String not null;
         match_ID         : Integer not null;
-        team_win_ID      : Integer not null;
+        team_win_ID      : Integer;
         isDraw           : Boolean default null;// otherwise must true
 
         predictGoals     : many Goals;

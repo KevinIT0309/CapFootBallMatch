@@ -48,9 +48,6 @@ sap.ui.define([
                 let viewModel = this.getModel("viewModel");
                 // let matchStatusKey = viewModel.getProperty("/matchStatusKey");
                 let matchDayValue = viewModel.getProperty("/matchDayValue");
-                let upperMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(0, 0, 0));
-                let lowerMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(23, 59, 59));
-
                 let filters = [];
 
                 // if (matchStatusKey) {
@@ -58,6 +55,8 @@ sap.ui.define([
                 // }
 
                 if (matchDayValue) {
+                    let upperMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(0, 0, 0));
+                    let lowerMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(23, 59, 59));
                     filters.push(new Filter("match_time", "BT", upperMatchDatetime.toISOString(), lowerMatchDatetime.toISOString()));
                 }
 
