@@ -1,0 +1,185 @@
+<mvc:View
+    controllerName="cap.euro.bettor.soccer.controller.PlayerBetHistory"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
+>
+    <ObjectPageLayout
+        id="playerBetHistoryObjectPageLayout"
+        alwaysShowContentHeader="true"
+        showTitleInHeaderContent="true"
+        preserveHeaderStateOnScroll="true"
+        headerContentPinnable="true"
+        isChildPage="true"
+        showFooter="true"
+    >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <heading>
+                    <m:Title text="{local>match_name}" />
+                </heading>
+                <navigationActions>
+                    <m:OverflowToolbarButton
+                        type="Transparent"
+                        icon="sap-icon://decline"
+                        press="handleClosePlayerHistory"
+                        id="exitFullScreenBtn"
+                        tooltip="Exit Full Screen Mode"
+                    />
+                </navigationActions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <headerContent>
+            <m:FlexBox
+                wrap="Wrap"
+                fitContainer="true"
+            >
+                <m:Avatar
+                    class="sapUiMediumMarginEnd sapUiSmallMarginBottom"
+                    src="https://seeklogo.com/images/U/uefa-euro-2024-logo-124EEA67D8-seeklogo.com.png"
+                    displaySize="L"
+                    displayShape="Square"
+                />
+
+                <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Player Name:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:Text text="{local>/playerName}" />
+                    </m:HBox>
+
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Note:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:Text text="Please be aware that win status  is based on Team win only, and is not included predicting Goal" />
+                    </m:HBox>
+                </m:VBox>
+            </m:FlexBox>
+        </headerContent>
+
+        <sections>
+            <ObjectPageSection
+                titleUppercase="false"
+                id="betHistory"
+            >
+                <subSections>
+                    <ObjectPageSubSection titleUppercase="false">
+                        <m:Table
+                            id="table"
+                            inset="false"
+                            items="{path: 'local>/betItems'}"
+                            growing="true"
+                            growingScrollToLoad="true"
+                            growingThreshold="20"
+                        >
+                            <m:headerToolbar>
+                                <m:OverflowToolbar>
+                                    <m:Title
+                                        text="Bets"
+                                        level="H2"
+                                    />
+                                    <!-- <m:ToolbarSpacer /> -->
+                                </m:OverflowToolbar>
+                            </m:headerToolbar>
+                            <m:columns>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Match No." />
+                                </m:Column>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Match time" />
+                                </m:Column>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Bet time" />
+                                </m:Column>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Bet Status" />
+                                </m:Column>
+                            </m:columns>
+
+                            <m:items>
+                                <m:ColumnListItem
+                                    vAlign="Middle"
+                                    type="Active"
+                                    press="onBetItemPress"
+                                >
+                                    <m:customData>
+                                        <core:CustomData
+                                            key="isOver"
+                                            value="{isOver}"
+                                        />
+                                    </m:customData>
+                                    <m:cells>
+                                        <m:Text text="{local>match/match_name}" />
+                                        <m:ObjectIdentifier
+                                        title="{
+                                                    path: 'local>match/match_time',
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {
+                                                        pattern: 'dd/MM/yyyy'
+                                                    }
+                                                }"
+                                        text="{
+                                                    path: 'local>match/match_time',  
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {  
+                                                        pattern : 'HH:mm'
+                                                    }
+                                                }"/>
+                                        <m:ObjectIdentifier
+                                        title="{
+                                                    path: 'local>bet_time',
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {
+                                                        pattern: 'dd/MM/yyyy'
+                                                    }
+                                                }"
+                                        text="{
+                                                    path: 'local>bet_time',  
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {  
+                                                        pattern : 'HH:mm'
+                                                    }
+                                                }"/>
+                                        
+                                        <tnt:InfoLabel
+                                        text="{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusTextByTeamWin'}"
+                                        colorScheme= "{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusStateByTeamWin'}" />
+                                    </m:cells>
+                                </m:ColumnListItem>
+                            </m:items>
+                        </m:Table>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>

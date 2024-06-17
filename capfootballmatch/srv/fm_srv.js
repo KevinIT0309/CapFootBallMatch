@@ -61,6 +61,11 @@ class FMService extends cds.ApplicationService {
       await updateScore(req); // make score for all bets
     });
 
+    this.after('READ','LeaderBoards', async req => {
+      console.log("EVENTS: before READS LeaderBoards");
+      
+    });
+
     return super.init();
 
 

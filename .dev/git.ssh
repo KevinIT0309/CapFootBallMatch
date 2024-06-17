@@ -3,3 +3,5 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/tinhtd_github
 fi
+
+git pull origin main --rebase=false

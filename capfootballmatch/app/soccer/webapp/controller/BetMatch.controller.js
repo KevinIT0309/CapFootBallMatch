@@ -18,8 +18,14 @@ sap.ui.define([
         },
 
         onPatternMatched: async function (oEvent) {
-            this._matchId = oEvent.getParameter("arguments").matchId;
-            if (this._matchId) {
+            try {
+                this._matchId = oEvent.getParameter("arguments").matchId;
+                if (UICommon.fnIsEmpty(this._matchId)) {
+                    this.hideBusy();
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
+
                 this._matchId = parseInt(this._matchId);
                 let oData = {
                     "enabledBetBtn": true,
@@ -68,7 +74,7 @@ sap.ui.define([
                     UICommon.devLog(`Visible Result by Status: ${matchContext.status}`);
                     const { MATCH_STATUS } = AppGlobalConstant;
                     oResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
-                    oModel.setProperty("/matchStatus",matchContext.status);//using for formatter
+                    oModel.setProperty("/matchStatus", matchContext.status);//using for formatter
                 }
                 let predicts = matchContext.predicts;
                 let predictGoals = [];
@@ -100,7 +106,7 @@ sap.ui.define([
                 const today = new Date(instant.toDateString());
                 // oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);//Old Logic based on bet date
                 oModel.setProperty("/enabledBetBtn", !matchContext.isOver);//Leo: Hotfix based on isOver
-                
+
 
                 let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
                 await getUserInfoContextBinding.invoke();
@@ -109,6 +115,12 @@ sap.ui.define([
                 const userFilters = new Filter("email", "EQ", email);
                 const usersFiltered = await this._filterUsers(userFilters);
                 const userId = usersFiltered?.[0]?.user_id;
+                if (UICommon.fnIsEmpty(userId)) {
+                    this.hideBusy();
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
+
                 oModel.setProperty("/userId", userId);
 
                 if (userId && this._matchId) {
@@ -128,9 +140,17 @@ sap.ui.define([
                         }));
 
                         oModel.setProperty("/betMatchID", betMatch.ID);
-                        
+
                     }
+                    this.hideBusy();
                 }
+
+            } catch (error) {
+                this.hideBusy();
+                console.log(`Route Match - Error:${error}`);
+                MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                return;
+
             }
         },
 
@@ -181,62 +201,75 @@ sap.ui.define([
         },
 
         handleSave: async function () {
-            const viewModel = this.getModel("viewModel");
-            const userId = viewModel.getProperty("/userId");
+            this.showBusy();
+            try {
 
-            if (this._validateBetMatch()) {
-                const listBinding = this.getModel("mainModel").bindList("/Bets");
-                const predictOptions = viewModel.getProperty("/predictOptions");
-                const team1_ID = predictOptions[0].team_id;
-                const team2_ID = predictOptions[1].team_id;
-                const predictGoals = viewModel.getProperty("/predictGoals");
-                const betMatchID = viewModel.getProperty("/betMatchID");
-                let predictGoalsPayload = predictGoals.map((predictGoal) => {
-                    return {
-                        "team1_ID": team1_ID,
-                        "team1_numOfGoals": predictGoal.team1_numOfGoals ? parseInt(predictGoal.team1_numOfGoals) : 0,
-                        "team2_ID": team2_ID,
-                        "team2_numOfGoals": predictGoal.team2_numOfGoals ? parseInt(predictGoal.team2_numOfGoals) : 0,
+                const viewModel = this.getModel("viewModel");
+                const userId = viewModel.getProperty("/userId");
+
+                if (this._validateBetMatch()) {
+                    const listBinding = this.getModel("mainModel").bindList("/Bets");
+                    const predictOptions = viewModel.getProperty("/predictOptions");
+                    const team1_ID = predictOptions[0].team_id;
+                    const team2_ID = predictOptions[1].team_id;
+                    const predictGoals = viewModel.getProperty("/predictGoals");
+                    const betMatchID = viewModel.getProperty("/betMatchID");
+                    let predictGoalsPayload = predictGoals.map((predictGoal) => {
+                        return {
+                            "team1_ID": team1_ID,
+                            "team1_numOfGoals": predictGoal.team1_numOfGoals ? parseInt(predictGoal.team1_numOfGoals) : 0,
+                            "team2_ID": team2_ID,
+                            "team2_numOfGoals": predictGoal.team2_numOfGoals ? parseInt(predictGoal.team2_numOfGoals) : 0,
+                        }
+                    });
+
+                    if (betMatchID) {
+                        let betMatchPath = `/Bets(${betMatchID})`;
+                        await this.getModel("mainModel").delete(betMatchPath, "$single");
+                        // let betMatchContextBinding = this.getModel("mainModel").bindContext(betMatchPath);
+                        // const boundContext = await betMatchContextBinding.getBoundContext();
+                        // boundContext.setProperty("team_win_ID", parseInt(viewModel.getProperty("/team_win_ID")));
+                        // boundContext.setProperty("isDraw", viewModel.getProperty("/isDraw"));
+                        // boundContext.setProperty("predictGoals", predictGoalsPayload);
+
                     }
-                });
 
-                if (betMatchID) {
-                    let betMatchPath = `/Bets(${betMatchID})`;
-                    await this.getModel("mainModel").delete(betMatchPath, "$single");
-                    // let betMatchContextBinding = this.getModel("mainModel").bindContext(betMatchPath);
-                    // const boundContext = await betMatchContextBinding.getBoundContext();
-                    // boundContext.setProperty("team_win_ID", parseInt(viewModel.getProperty("/team_win_ID")));
-                    // boundContext.setProperty("isDraw", viewModel.getProperty("/isDraw"));
-                    // boundContext.setProperty("predictGoals", predictGoalsPayload);
+                    let context = listBinding.create({
+                        "user_ID": userId,
+                        "bet_time": new Date().toISOString(),
+                        "match_ID": this._matchId,
+                        "team_win_ID": parseInt(viewModel.getProperty("/team_win_ID")),
+                        "isDraw": viewModel.getProperty("/isDraw"),
+                        "predictGoals": predictGoalsPayload
+                    });
 
+                    let oView = this.getView();
+
+                    // lock UI until submitBatch is resolved, to prevent errors caused by updates while submitBatch is pending
+                    oView.setBusy(true);
+
+                    let fnSuccess = function (oResponse) {
+                        console.log(`Success response:${oResponse}`);
+                        oView.setBusy(false);
+                        this.hideBusy();
+                        MessageToast.show("Bet Saved Successfully");
+                    }.bind(this);
+
+                    let fnError = function (oError) {
+                        oView.setBusy(false);
+                        this.hideBusy();
+                        MessageBox.error(oError.message);
+                    }.bind(this);
+
+                    this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
+                    // this.getRouter().navTo("matchList");
                 }
-
-                let context = listBinding.create({
-                    "user_ID": userId,
-                    "bet_time": new Date().toISOString(),
-                    "match_ID": this._matchId,
-                    "team_win_ID": parseInt(viewModel.getProperty("/team_win_ID")),
-                    "isDraw": viewModel.getProperty("/isDraw"),
-                    "predictGoals": predictGoalsPayload
-                });
-
-                let oView = this.getView();
-
-                // lock UI until submitBatch is resolved, to prevent errors caused by updates while submitBatch is pending
-                oView.setBusy(true);
-
-                let fnSuccess = function () {
-                    oView.setBusy(false);
-                    MessageToast.show("Bet Saved Successfully");
-                }.bind(this);
-
-                let fnError = function (oError) {
-                    oView.setBusy(false);
-                    MessageBox.error(oError.message);
-                }.bind(this);
-
-                this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
-                this.getRouter().navTo("matchList");
+                this.hideBusy();
+            } catch (error) {
+                this.hideBusy();
+                console.log(`handleSave - Error:${error}`);
+                MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                return;
             }
         },
 
@@ -251,13 +284,13 @@ sap.ui.define([
             //Hot fix fore golive optimize later
             let oCurrentPredict = oSource.getBindingContext("viewModel").getObject();
             const currentPath = oSource.getBindingContext("viewModel").sPath;
-            if(oSource.getId().includes('goalTeam1')){
+            if (oSource.getId().includes('goalTeam1')) {
                 // teamGoalPath = "team2_numOfGoals"
                 oCurrentPredict.team1_numOfGoals = oSource.getValue();;
-            }else{
+            } else {
                 oCurrentPredict.team2_numOfGoals = oSource.getValue();
             }
-            oModel.setProperty(`${currentPath}`,oCurrentPredict);
+            oModel.setProperty(`${currentPath}`, oCurrentPredict);
             oModel.refresh();
             const predictGoals = oModel.getProperty("/predictGoals");
             let invalidNumberofGoals = predictGoals.some(function (el) {
