@@ -134,6 +134,14 @@
           "target": [
             "leaderBoardTarget"
           ]
+        },
+        {
+          "pattern": "betHistory/{userId}/{layout}",
+          "name": "playerBetHistory",
+          "target": [
+            "leaderBoardTarget",
+            "playerBetHistoryTarget"
+          ]
         }
       ],
       "targets": {
@@ -157,6 +165,13 @@
           "clearControlAggregation": false,
           "viewId": "leaderBoard",
           "viewName": "LeaderBoard"
+        },
+        "playerBetHistoryTarget": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "playerBetHistory",
+          "viewName": "PlayerBetHistory",
+          "controlAggregation": "midColumnPages"
         }
       }
     },

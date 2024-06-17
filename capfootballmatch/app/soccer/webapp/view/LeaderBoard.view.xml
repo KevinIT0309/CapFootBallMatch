@@ -106,7 +106,7 @@
                     <ColumnListItem
                         vAlign="Middle"
                         type="Active"
-                        press="onItemPress"
+                        press="onViewPlayerBetHistory"
                     >
                         <cells>
                             <tnt:InfoLabel

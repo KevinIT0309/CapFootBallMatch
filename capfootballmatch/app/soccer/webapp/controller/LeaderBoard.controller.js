@@ -2,13 +2,15 @@ sap.ui.define([
     "cap/euro/bettor/soccer/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
+    "sap/m/MessageToast",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
+    "sap/f/library",
     "../model/formatter",
     "cap/euro/bettor/soccer/utils/UICommon",
     "cap/euro/bettor/soccer/utils/HttpRequest"
 ],
-    function (BaseController, JSONModel, MessageBox, Filter, FilterOperator, formatter, UICommon, HttpRequest) {
+    function (BaseController, JSONModel, MessageBox,MessageToast, Filter, FilterOperator,FioriLibrary, formatter, UICommon, HttpRequest) {
         "use strict";
 
         return BaseController.extend("cap.euro.bettor.soccer.controller.LeaderBoard", {
@@ -35,21 +37,40 @@ sap.ui.define([
                 if (sQuery && sQuery.length > 0) {
                     aFilters.push(new Filter("userFullName", FilterOperator.Contains, sQuery));
                 }
-                
+
                 const oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
             },
-            onLeaderBoardUpdateFinished: function(oEvent){
+            onLeaderBoardUpdateFinished: function (oEvent) {
                 this.hideBusy();
+            },
+            onViewPlayerBetHistory: function (oEvent) {
+                try {
+                    this.showBusy();
+                    let oItem = oEvent.getSource();
+                    let userId = oItem.getBindingContext("mainModel").getObject("userId");
+                    if(UICommon.fnIsEmpty(userId)){
+                        this.hideBusy();
+                        console.log(`onViewPlayerBetHistory - Can not get Usr`);
+                        MessageToast.show("Click too fast. Please try again");
+                        return;
+                    }
+                    this.getRouter().navTo("playerBetHistory", { "layout": FioriLibrary.LayoutType.TwoColumnsMidExpanded, "userId": userId });
+                } catch (error) {
+                    this.hideBusy();
+                    console.log(`onViewPlayerBetHistory - Error:${error}`);
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
             },
             /**************************************************************************************************************************************************
              * PRIVATE METHOD
              **************************************************************************************************************************************************/
             _onRouteMatched: function (oEvent) {
                 try {
-                    // this.showBusy();
-                    let oLocalModal = this.oView.getModel("local");
-                   
+                    this.getModel("layoutMod").setProperty("/layout", FioriLibrary.LayoutType.OneColumn);
+                    this.byId("leaderBoard").getBinding("items").refresh("$auto");
+
                 } catch (error) {
                     this.hideBusy();
                     console.log(`_onRouteMatched - Error: ${error}`);
@@ -84,7 +105,10 @@ sap.ui.define([
             },
             _buildLeaderBoardList: function (leaderBoads) {
                 const aFinalLeaderBoards = [];
+                let iRank = 1;
                 leaderBoads.forEach((leaderBoardItem) => {
+                    leaderBoardItem.rank = iRank;
+                    iRank++;
                     leaderBoardItem.badge = formatter.fnGetLeaderBoardBadge(leaderBoardItem.rank);
                     aFinalLeaderBoards.push(leaderBoardItem);
                 });

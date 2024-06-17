@@ -170,6 +170,9 @@ sap.ui.define([
                 console.log(`fnVisibleLeaderBoardAvatar -  Error: ${error}`);
                 return false;
             }
+        },
+        fnGetRowIndex: function(){
+            
         }
         //EOF
     };

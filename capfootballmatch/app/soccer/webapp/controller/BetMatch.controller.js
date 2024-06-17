@@ -18,8 +18,14 @@ sap.ui.define([
         },
 
         onPatternMatched: async function (oEvent) {
-            this._matchId = oEvent.getParameter("arguments").matchId;
-            if (this._matchId) {
+            try {
+                this._matchId = oEvent.getParameter("arguments").matchId;
+                if (UICommon.fnIsEmpty(this._matchId)) {
+                    this.hideBusy();
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
+
                 this._matchId = parseInt(this._matchId);
                 let oData = {
                     "enabledBetBtn": true,
@@ -68,7 +74,7 @@ sap.ui.define([
                     UICommon.devLog(`Visible Result by Status: ${matchContext.status}`);
                     const { MATCH_STATUS } = AppGlobalConstant;
                     oResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
-                    oModel.setProperty("/matchStatus",matchContext.status);//using for formatter
+                    oModel.setProperty("/matchStatus", matchContext.status);//using for formatter
                 }
                 let predicts = matchContext.predicts;
                 let predictGoals = [];
@@ -100,7 +106,7 @@ sap.ui.define([
                 const today = new Date(instant.toDateString());
                 // oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);//Old Logic based on bet date
                 oModel.setProperty("/enabledBetBtn", !matchContext.isOver);//Leo: Hotfix based on isOver
-                
+
 
                 let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
                 await getUserInfoContextBinding.invoke();
@@ -109,6 +115,12 @@ sap.ui.define([
                 const userFilters = new Filter("email", "EQ", email);
                 const usersFiltered = await this._filterUsers(userFilters);
                 const userId = usersFiltered?.[0]?.user_id;
+                if (UICommon.fnIsEmpty(userId)) {
+                    this.hideBusy();
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
+
                 oModel.setProperty("/userId", userId);
 
                 if (userId && this._matchId) {
@@ -128,9 +140,17 @@ sap.ui.define([
                         }));
 
                         oModel.setProperty("/betMatchID", betMatch.ID);
-                        
+
                     }
+                    this.hideBusy();
                 }
+
+            } catch (error) {
+                this.hideBusy();
+                console.log(`Route Match - Error:${error}`);
+                MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                return;
+
             }
         },
 
@@ -251,13 +271,13 @@ sap.ui.define([
             //Hot fix fore golive optimize later
             let oCurrentPredict = oSource.getBindingContext("viewModel").getObject();
             const currentPath = oSource.getBindingContext("viewModel").sPath;
-            if(oSource.getId().includes('goalTeam1')){
+            if (oSource.getId().includes('goalTeam1')) {
                 // teamGoalPath = "team2_numOfGoals"
                 oCurrentPredict.team1_numOfGoals = oSource.getValue();;
-            }else{
+            } else {
                 oCurrentPredict.team2_numOfGoals = oSource.getValue();
             }
-            oModel.setProperty(`${currentPath}`,oCurrentPredict);
+            oModel.setProperty(`${currentPath}`, oCurrentPredict);
             oModel.refresh();
             const predictGoals = oModel.getProperty("/predictGoals");
             let invalidNumberofGoals = predictGoals.some(function (el) {
