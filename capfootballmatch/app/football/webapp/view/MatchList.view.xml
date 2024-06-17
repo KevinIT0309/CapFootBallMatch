@@ -180,13 +180,10 @@
                             <Text text="{mainModel>team1/team_name}" />
                             <Text text="{mainModel>team2/team_name}" />
 
-                            <Text
-                                text="{
-                                    parts: [
-                                        'mainModel>status'
-						            ],
-                                    formatter: 'formatter.getMatchStatusText'
-                                }"
+                            <ObjectStatus
+                            text="{ path: 'mainModel>status',formatter: 'formatter.getMatchStatusText'}"
+                            state="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
+                            class="sapMObjectStatusLarge"
                             />
                         </cells>
                     </ColumnListItem>

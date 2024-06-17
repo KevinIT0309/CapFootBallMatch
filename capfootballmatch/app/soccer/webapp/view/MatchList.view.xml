@@ -6,6 +6,7 @@
     xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core"
+    core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
 >
     <f:DynamicPage id="page">
         <f:header>
@@ -106,6 +107,12 @@
                     >
                         <Text text="Away" />
                     </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Match Status" />
+                    </Column>
                 </columns>
 
                 <items>
@@ -143,6 +150,11 @@
                             />
                             <Text text="{mainModel>team1/team_name}" />
                             <Text text="{mainModel>team2/team_name}" />
+                        <ObjectStatus
+                        text="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusText'}"
+                        state="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
+                        class="sapMObjectStatusLarge"
+                        />
                         </cells>
                     </ColumnListItem>
                 </items>
