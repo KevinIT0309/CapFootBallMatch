@@ -98,7 +98,7 @@
                                     id="matchDateTimeDTP"
                                     change="handleMatchTimeChange"
                                     value="{
-                                        path:'{viewModel>/match_time}',
+                                        path: 'viewModel>/match_time',
                                         type: 'sap.ui.model.odata.type.DateTimeOffset',
                                         formatOptions: {
                                             style: 'medium',
