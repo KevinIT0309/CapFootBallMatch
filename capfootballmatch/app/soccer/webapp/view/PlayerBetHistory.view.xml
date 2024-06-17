@@ -7,6 +7,7 @@
     xmlns:form="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
     core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
 >
     <ObjectPageLayout
@@ -56,7 +57,7 @@
                             text="Player Name:"
                             class="sapUiTinyMarginEnd"
                         />
-                        <m:Text text="{local>team1/team_name}" />
+                        <m:Text text="{local>/playerName}" />
                     </m:HBox>
 
                     <m:HBox
@@ -64,21 +65,10 @@
                         renderType="Bare"
                     >
                         <m:Label
-                            text="Total Bets:"
+                            text="Note:"
                             class="sapUiTinyMarginEnd"
                         />
-                        <m:Text text="{local>team2/team_name}" />
-                    </m:HBox>
-
-                    <m:HBox
-                        class="sapUiTinyMarginBottom"
-                        renderType="Bare"
-                    >
-                        <m:Label
-                            text="Wining:"
-                            class="sapUiTinyMarginEnd"
-                        />
-                        <m:Text text="{local>stage}" />
+                        <m:Text text="Please be aware that win status  is based on Team win only, and is not included predicting Goal" />
                     </m:HBox>
                 </m:VBox>
             </m:FlexBox>
@@ -88,7 +78,6 @@
             <ObjectPageSection
                 titleUppercase="false"
                 id="betHistory"
-                title="Bet by {local>/playerUserId}"
             >
                 <subSections>
                     <ObjectPageSubSection titleUppercase="false">
@@ -96,6 +85,9 @@
                             id="table"
                             inset="false"
                             items="{path: 'local>/betItems'}"
+                            growing="true"
+                            growingScrollToLoad="true"
+                            growingThreshold="20"
                         >
                             <m:headerToolbar>
                                 <m:OverflowToolbar>
@@ -117,19 +109,13 @@
                                     minScreenWidth="Tablet"
                                     demandPopin="true"
                                 >
-                                    <m:Text text="Date of March" />
+                                    <m:Text text="Match time" />
                                 </m:Column>
                                 <m:Column
                                     minScreenWidth="Tablet"
                                     demandPopin="true"
                                 >
-                                    <m:Text text="Match Time" />
-                                </m:Column>
-                                <m:Column
-                                    minScreenWidth="Tablet"
-                                    demandPopin="true"
-                                >
-                                    <m:Text text="Bet Time" />
+                                    <m:Text text="Bet time" />
                                 </m:Column>
                                 <m:Column
                                     minScreenWidth="Tablet"
@@ -152,27 +138,41 @@
                                         />
                                     </m:customData>
                                     <m:cells>
-                                        <m:Text text="{local>match_name}" />
-                                        <m:Text
-                                            text="{
-                                                path: 'local>match_time',
-                                                type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                                formatOptions: {
-                                                    pattern: 'dd/MM/yyyy'
-                                                }
-                                            }"
-                                        />
-                                        <m:Text
-                                            text="{
-                                                path: 'local>match_time',  
-                                                type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                                formatOptions: {  
-                                                    pattern : 'HH:mm'
-                                                }
-                                            }"
-                                        />
-                                        <m:Text text="{local>team1/team_name}" />
-                                        <m:Text text="{local>team2/team_name}" />
+                                        <m:Text text="{local>match/match_name}" />
+                                        <m:ObjectIdentifier
+                                        title="{
+                                                    path: 'local>match/match_time',
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {
+                                                        pattern: 'dd/MM/yyyy'
+                                                    }
+                                                }"
+                                        text="{
+                                                    path: 'local>match/match_time',  
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {  
+                                                        pattern : 'HH:mm'
+                                                    }
+                                                }"/>
+                                        <m:ObjectIdentifier
+                                        title="{
+                                                    path: 'local>bet_time',
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {
+                                                        pattern: 'dd/MM/yyyy'
+                                                    }
+                                                }"
+                                        text="{
+                                                    path: 'local>bet_time',  
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {  
+                                                        pattern : 'HH:mm'
+                                                    }
+                                                }"/>
+                                        
+                                        <tnt:InfoLabel
+                                        text="{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusTextByTeamWin'}"
+                                        colorScheme= "{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusStateByTeamWin'}" />
                                     </m:cells>
                                 </m:ColumnListItem>
                             </m:items>

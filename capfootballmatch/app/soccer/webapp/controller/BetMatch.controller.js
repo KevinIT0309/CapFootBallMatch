@@ -201,62 +201,75 @@ sap.ui.define([
         },
 
         handleSave: async function () {
-            const viewModel = this.getModel("viewModel");
-            const userId = viewModel.getProperty("/userId");
+            this.showBusy();
+            try {
 
-            if (this._validateBetMatch()) {
-                const listBinding = this.getModel("mainModel").bindList("/Bets");
-                const predictOptions = viewModel.getProperty("/predictOptions");
-                const team1_ID = predictOptions[0].team_id;
-                const team2_ID = predictOptions[1].team_id;
-                const predictGoals = viewModel.getProperty("/predictGoals");
-                const betMatchID = viewModel.getProperty("/betMatchID");
-                let predictGoalsPayload = predictGoals.map((predictGoal) => {
-                    return {
-                        "team1_ID": team1_ID,
-                        "team1_numOfGoals": predictGoal.team1_numOfGoals ? parseInt(predictGoal.team1_numOfGoals) : 0,
-                        "team2_ID": team2_ID,
-                        "team2_numOfGoals": predictGoal.team2_numOfGoals ? parseInt(predictGoal.team2_numOfGoals) : 0,
+                const viewModel = this.getModel("viewModel");
+                const userId = viewModel.getProperty("/userId");
+
+                if (this._validateBetMatch()) {
+                    const listBinding = this.getModel("mainModel").bindList("/Bets");
+                    const predictOptions = viewModel.getProperty("/predictOptions");
+                    const team1_ID = predictOptions[0].team_id;
+                    const team2_ID = predictOptions[1].team_id;
+                    const predictGoals = viewModel.getProperty("/predictGoals");
+                    const betMatchID = viewModel.getProperty("/betMatchID");
+                    let predictGoalsPayload = predictGoals.map((predictGoal) => {
+                        return {
+                            "team1_ID": team1_ID,
+                            "team1_numOfGoals": predictGoal.team1_numOfGoals ? parseInt(predictGoal.team1_numOfGoals) : 0,
+                            "team2_ID": team2_ID,
+                            "team2_numOfGoals": predictGoal.team2_numOfGoals ? parseInt(predictGoal.team2_numOfGoals) : 0,
+                        }
+                    });
+
+                    if (betMatchID) {
+                        let betMatchPath = `/Bets(${betMatchID})`;
+                        await this.getModel("mainModel").delete(betMatchPath, "$single");
+                        // let betMatchContextBinding = this.getModel("mainModel").bindContext(betMatchPath);
+                        // const boundContext = await betMatchContextBinding.getBoundContext();
+                        // boundContext.setProperty("team_win_ID", parseInt(viewModel.getProperty("/team_win_ID")));
+                        // boundContext.setProperty("isDraw", viewModel.getProperty("/isDraw"));
+                        // boundContext.setProperty("predictGoals", predictGoalsPayload);
+
                     }
-                });
 
-                if (betMatchID) {
-                    let betMatchPath = `/Bets(${betMatchID})`;
-                    await this.getModel("mainModel").delete(betMatchPath, "$single");
-                    // let betMatchContextBinding = this.getModel("mainModel").bindContext(betMatchPath);
-                    // const boundContext = await betMatchContextBinding.getBoundContext();
-                    // boundContext.setProperty("team_win_ID", parseInt(viewModel.getProperty("/team_win_ID")));
-                    // boundContext.setProperty("isDraw", viewModel.getProperty("/isDraw"));
-                    // boundContext.setProperty("predictGoals", predictGoalsPayload);
+                    let context = listBinding.create({
+                        "user_ID": userId,
+                        "bet_time": new Date().toISOString(),
+                        "match_ID": this._matchId,
+                        "team_win_ID": parseInt(viewModel.getProperty("/team_win_ID")),
+                        "isDraw": viewModel.getProperty("/isDraw"),
+                        "predictGoals": predictGoalsPayload
+                    });
 
+                    let oView = this.getView();
+
+                    // lock UI until submitBatch is resolved, to prevent errors caused by updates while submitBatch is pending
+                    oView.setBusy(true);
+
+                    let fnSuccess = function (oResponse) {
+                        console.log(`Success response:${oResponse}`);
+                        oView.setBusy(false);
+                        this.hideBusy();
+                        MessageToast.show("Bet Saved Successfully");
+                    }.bind(this);
+
+                    let fnError = function (oError) {
+                        oView.setBusy(false);
+                        this.hideBusy();
+                        MessageBox.error(oError.message);
+                    }.bind(this);
+
+                    this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
+                    // this.getRouter().navTo("matchList");
                 }
-
-                let context = listBinding.create({
-                    "user_ID": userId,
-                    "bet_time": new Date().toISOString(),
-                    "match_ID": this._matchId,
-                    "team_win_ID": parseInt(viewModel.getProperty("/team_win_ID")),
-                    "isDraw": viewModel.getProperty("/isDraw"),
-                    "predictGoals": predictGoalsPayload
-                });
-
-                let oView = this.getView();
-
-                // lock UI until submitBatch is resolved, to prevent errors caused by updates while submitBatch is pending
-                oView.setBusy(true);
-
-                let fnSuccess = function () {
-                    oView.setBusy(false);
-                    MessageToast.show("Bet Saved Successfully");
-                }.bind(this);
-
-                let fnError = function (oError) {
-                    oView.setBusy(false);
-                    MessageBox.error(oError.message);
-                }.bind(this);
-
-                this.getModel("mainModel").submitBatch("UpdateGroup").then(fnSuccess, fnError);
-                this.getRouter().navTo("matchList");
+                this.hideBusy();
+            } catch (error) {
+                this.hideBusy();
+                console.log(`handleSave - Error:${error}`);
+                MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                return;
             }
         },
 

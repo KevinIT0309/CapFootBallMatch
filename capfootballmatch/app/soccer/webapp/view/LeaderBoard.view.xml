@@ -56,7 +56,9 @@
                 parameters: {
                     $orderby: 'rank'
                 }}"
-                enableBusyIndicator="true"
+                growing="true"
+                growingScrollToLoad="true"
+                growingThreshold="20"
                 updateFinished="onLeaderBoardUpdateFinished"
             >
                 <headerToolbar>
@@ -111,10 +113,9 @@
                         <cells>
                             <tnt:InfoLabel
                             text="#{mainModel>rank}"
-                            colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardState'}" />
+                            colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardRankState'}" />
                             <HBox alignItems="Center">
                                 <Avatar
-                                visible="{ path: 'mainModel>winning',formatter: 'formatter.fnVisibleLeaderBoardAvatar'}"
                                 src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
                                 displayShape="Square"
                                 displaySize="L"

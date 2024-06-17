@@ -83,7 +83,7 @@ sap.ui.define([
 
 
         },
-        fnGetLeaderBoardState: function (rank) {
+        fnGetLeaderBoardRankState: function (rank) {
             try {
                 const oRankBadge = {
                     "1": 1,
@@ -162,7 +162,7 @@ sap.ui.define([
             }
 
         },
-        fnVisibleLeaderBoardAvatar: function(winning){
+        fnVisibleLeaderBoardAvatar: function (winning) {
             try {
                 UICommon.devLog(`fnVisibleLeaderBoardAvatar - winning: ${winning}`);
                 return winning != 0;
@@ -171,8 +171,28 @@ sap.ui.define([
                 return false;
             }
         },
-        fnGetRowIndex: function(){
-            
+        fnGetRowIndex: function () {
+
+        },
+        fnGetBetStatusTextByTeamWin: function (betTeamWin, matchTeamWin) {
+            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            if (UICommon.fnIsEmpty(matchTeamWin)) {
+                return "N/A"
+            }
+            if (betTeamWin == matchTeamWin) {
+                return "Win";
+            }
+            return "Lose";
+        },
+        fnGetBetStatusStateByTeamWin: function (betTeamWin, matchTeamWin) {
+            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            if (UICommon.fnIsEmpty(matchTeamWin)) {
+                return 7;
+            }
+            if (betTeamWin == matchTeamWin) {
+                return 1;
+            }
+            return 6;
         }
         //EOF
     };
