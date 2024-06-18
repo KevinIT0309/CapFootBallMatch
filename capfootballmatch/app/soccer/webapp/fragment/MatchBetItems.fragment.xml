@@ -1,0 +1,108 @@
+<core:FragmentDefinition
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
+>
+    <m:Table
+        id="table"
+        inset="false"
+        items="{path: 'viewModel>/matchBetItems'}"
+        growing="true"
+        growingScrollToLoad="true"
+        growingThreshold="20"
+    >
+        <m:headerToolbar>
+            <m:OverflowToolbar>
+                <m:Title
+                    text="Latest Bets"
+                    level="H2"
+                />
+                <!-- <m:ToolbarSpacer /> -->
+            </m:OverflowToolbar>
+        </m:headerToolbar>
+        <m:columns>
+            <m:Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <m:Text text="Player Name" />
+            </m:Column>
+            <m:Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <m:Text text="Bet time" />
+            </m:Column>
+            <m:Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+            >
+                <m:Text text="Predict Match" />
+            </m:Column>
+            <m:Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                width="30rem"
+            >
+                <m:Text text="Predict Goal" />
+            </m:Column>
+        </m:columns>
+
+        <m:items>
+            <m:ColumnListItem
+                vAlign="Middle"
+                type="Active"
+                press="onPlayerBetItemPress"
+            >
+                <m:customData>
+                    <core:CustomData
+                        key="isOver"
+                        value="{isOver}"
+                    />
+                </m:customData>
+                <m:cells>
+                    <m:Text text="{viewModel>user/fullName}" />
+                    <m:ObjectIdentifier
+                        title="{
+                                                    path: 'viewModel>bet_time',
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {
+                                                        pattern: 'dd/MM/yyyy'
+                                                    }
+                                                }"
+                        text="{
+                                                    path: 'viewModel>bet_time',  
+                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                                    formatOptions: {  
+                                                        pattern : 'HH:mm'
+                                                    }
+                                                }"
+                    />
+                    <m:VBox>
+                        <m:Text text="Draw" visible="{= ${viewModel>isDraw} }" />
+                        <m:Text text="Team Win: {viewModel>teamWinName}" visible="{= !${viewModel>isDraw} }" />
+                    </m:VBox>
+                    <m:VBox>
+                        <!-- <m:Text text="No Predicts Goal" visible="{= !${viewModel>isVisiblePredictGoal}}" /> -->
+                        <m:VBox visible="{= ${viewModel>isVisiblePredictGoal}}">
+                            <m:HBox alignItems="Start">
+                                <m:Text text="Teams" class="sapUiLargeMarginEnd" textAlign="Left" />
+                                <m:Text text="{mainModel>team1/team_name}:" class="sapUiLargeMarginEnd sapUiSmallMarginBegin" textAlign="Left" />
+                                <m:Text text="{mainModel>team2/team_name}:" class="sapUiLargeMarginEnd sapUiLargeMarginBegin" textAlign="Left" />
+                            </m:HBox>
+                            <m:VBox items="{viewModel>predictGoals}">
+                                <m:HBox alignItems="Start">
+                                    <m:Text text="Predict {viewModel>predict}" class="sapUiSmallMarginEnd sapUiTinyMarginTopBottom" textAlign="Left" />
+                                    <m:Input editable="false" value="{path: 'viewModel>team1_numOfGoals'}" />
+                                    <m:Input editable="false" value="{path: 'viewModel>team2_numOfGoals'}" />
+                                </m:HBox>
+                            </m:VBox>
+                        </m:VBox>
+                    </m:VBox>
+                    <!-- <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.MatchBetItemPredict" type="XML" /> -->
+                </m:cells>
+            </m:ColumnListItem>
+        </m:items>
+    </m:Table>
+</core:FragmentDefinition>

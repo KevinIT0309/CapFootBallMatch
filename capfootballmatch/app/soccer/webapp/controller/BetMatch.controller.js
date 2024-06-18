@@ -36,7 +36,8 @@ sap.ui.define([
                     "isDraw": false,
                     "userId": "",
                     "betMatchID": "",
-                    "matchStatus": 1
+                    "matchStatus": 1,
+                    "matchBetItems":[]
                 };
 
                 // set explored app's demo model on this sample
@@ -88,8 +89,7 @@ sap.ui.define([
 
                 }
                 oModel.setProperty("/predictGoals", predictGoals);
-
-                oModel.setProperty("/predictOptions", [
+                const aPredictOptions =  [
                     {
                         "team_name": matchContext.team1.team_name,
                         "team_id": parseInt(matchContext.team1_ID)
@@ -98,7 +98,8 @@ sap.ui.define([
                         "team_name": matchContext.team2.team_name,
                         "team_id": parseInt(matchContext.team2_ID)
                     }
-                ]);
+                ];
+                oModel.setProperty("/predictOptions",aPredictOptions);
 
                 const matchTime = matchContext.match_time;
                 const matchDateTime = new Date(matchTime);
@@ -108,7 +109,7 @@ sap.ui.define([
                 // oModel.setProperty("/enabledBetBtn", matchDate < today ? false : true);//Old Logic based on bet date
                 oModel.setProperty("/enabledBetBtn", !matchContext.isOver);//Leo: Hotfix based on isOver
 
-
+                //Get logged user
                 let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
                 await getUserInfoContextBinding.invoke();
                 let email = getUserInfoContextBinding.getBoundContext().getObject().id;
@@ -124,12 +125,14 @@ sap.ui.define([
 
                 oModel.setProperty("/userId", userId);
 
-                if (userId && this._matchId) {
-                    let betMatchesFilters = this._buildFilterBetMatch(userId, this._matchId);
-                    const betMatchesFiltered = await this._filterBetMatches(betMatchesFilters);
-
-                    if (betMatchesFiltered.length > 0) {
-                        let betMatch = betMatchesFiltered[0];
+                //Get match bets
+                const oMatchBetFilters = this._buildMatchBetFilter(this._matchId);
+                let aMatchBetItems = await this._getMatchBets(oMatchBetFilters);
+                if (aMatchBetItems && aMatchBetItems.length > 0) {
+                    //Get Match for upsert by userId, matchId
+                    const betMatch = UICommon.fnFindObjectInArray(aMatchBetItems, "user_ID", userId);
+                    if(betMatch && betMatch!=null){
+                        UICommon.devLog(`Found exist betMatch User: ${userId} - MatchId: ${this._matchId}`);
                         oModel.setProperty("/team_win_ID", betMatch.team_win_ID);
                         oModel.setProperty("/isDraw", betMatch.isDraw);
                         oModel.setProperty("/predictGoals", betMatch.predictGoals.map((predictGoal, index) => {
@@ -139,12 +142,28 @@ sap.ui.define([
                                 "team2_numOfGoals": predictGoal.team2_numOfGoals
                             }
                         }));
-
                         oModel.setProperty("/betMatchID", betMatch.ID);
-
                     }
-                    this.hideBusy();
+                    
                 }
+                //Bind match bets
+                aMatchBetItems.forEach((bet)=>{
+                    if(bet.isDraw){
+                        return;//skip bet draw
+                    }
+                    const oTeam = UICommon.fnFindObjectInArray(aPredictOptions, "team_id", bet.team_win_ID);
+                    if(oTeam){
+                        bet.teamWinName  = oTeam.team_name;
+                    }
+                    if(bet.predictGoals.length == 0){
+                        bet.isVisiblePredictGoal = false;
+                    }else{
+                        bet.isVisiblePredictGoal = true;
+                    }
+                });
+                oModel.setProperty("/matchBetItems", aMatchBetItems);
+                this.hideBusy();
+
 
             } catch (error) {
                 this.hideBusy();
@@ -160,46 +179,7 @@ sap.ui.define([
             viewModel.setProperty("/team_win_ID", parseInt(oEvent.getSource().getSelectedItem().getAdditionalText()));
         },
 
-        _filterUsers: async function (filters) {
-            const usersBinding = this.getModel("mainModel").bindList("/Users", {
-                "$select": "user_ID"
-            }).filter(filters);//use new listbinding instance - otherwise not all books will be in the list
-            const usersContext = await usersBinding.requestContexts();
 
-            return usersContext.map(userContext => userContext.getObject());
-        },
-
-        _buildFilterBetMatch: function (user_ID, match_ID) {
-            let filters = [
-                new Filter("user_ID", "EQ", user_ID),
-                new Filter("match_ID", "EQ", match_ID),
-            ]
-
-            return new Filter({
-                "filters": filters,
-                "and": true
-            })
-        },
-
-        _filterBetMatches: async function (filters) {
-            const betMatchesBinding = this.getModel("mainModel").bindList("/Bets").filter(filters);//use new listbinding instance - otherwise not all books will be in the list
-            const betMatchesContext = await betMatchesBinding.requestContexts();
-
-            return betMatchesContext.map(betMatchContext => betMatchContext.getObject());
-        },
-
-        _validateBetMatch: function () {
-            const viewModel = this.getModel("viewModel");
-            const userId = viewModel.getProperty("/userId");
-            let valid = true;
-
-            if (!userId) {
-                MessageBox.error("User not found");
-                return false;
-            }
-
-            return valid;
-        },
 
         handleSave: async function () {
             this.showBusy();
@@ -304,6 +284,75 @@ sap.ui.define([
             });
 
             oModel.setProperty("/enabledBetBtn", !invalidNumberofGoals);
+        },
+        /**************************************************************************************************************************************************
+        * PRIVATE METHOD
+        **************************************************************************************************************************************************/
+        _filterUsers: async function (filters) {
+            const usersBinding = this.getModel("mainModel").bindList("/Users", {
+                "$select": "user_ID"
+            }).filter(filters);//use new listbinding instance - otherwise not all books will be in the list
+            const usersContext = await usersBinding.requestContexts();
+
+            return usersContext.map(userContext => userContext.getObject());
+        },
+
+        _buildFilterBetMatch: function (user_ID, match_ID) {
+            let filters = [
+                new Filter("user_ID", "EQ", user_ID),
+                new Filter("match_ID", "EQ", match_ID),
+            ]
+
+            return new Filter({
+                "filters": filters,
+                "and": true
+            })
+        },
+
+        _filterBetMatches: async function (filters) {
+            const betMatchesBinding = this.getModel("mainModel").bindList("/Bets").filter(filters);//use new listbinding instance - otherwise not all books will be in the list
+            const betMatchesContext = await betMatchesBinding.requestContexts();
+
+            return betMatchesContext.map(betMatchContext => betMatchContext.getObject());
+        },
+
+        _validateBetMatch: function () {
+            const viewModel = this.getModel("viewModel");
+            const userId = viewModel.getProperty("/userId");
+            let valid = true;
+
+            if (!userId) {
+                MessageBox.error("User not found");
+                return false;
+            }
+
+            return valid;
+        },
+        _buildMatchBetFilter: function (matchId) {
+            let filters = [
+                new Filter("match_ID", "EQ", matchId),
+            ]
+            return new Filter({
+                "filters": filters,
+                "and": true
+            })
+        },
+
+        _getMatchBets: async function (filters) {
+            try {
+                //use new listbinding instance
+                const matchBetsBinding = this.getModel("mainModel").bindList("/Bets", null, null, filters, {
+                    $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time)",
+                    $orderby: "bet_time desc"
+                });
+
+                const matchBetContexts = await matchBetsBinding.requestContexts();
+
+                return matchBetContexts.map(matchBetContext => matchBetContext.getObject());
+            } catch (error) {
+                console.error(`_getMatchBets - error: ${error.message}`);
+                throw error;
+            }
         }
     });
 });

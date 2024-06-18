@@ -7,6 +7,7 @@
     xmlns:form="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
     core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
 >
     <ObjectPageLayout
@@ -141,7 +142,25 @@
                             formatter: 'formatter.formatResultText'
                         }"
                     />
+                    <m:ObjectStatus
+                        text="{
+                           parts: [
+                                'viewModel>/team_win_ID',
+                                'mainModel>team_win_ID'
+						    ],
+                            formatter: 'formatter.fnGetLoggedUserBetResultText'
+                        }"
+                        state="{
+                           parts: [
+                                'viewModel>/team_win_ID',
+                                'mainModel>team_win_ID'
+						    ],
+                            formatter: 'formatter.fnGetLoggedUserBetResultState'
+                        }"
+                        class="sapMObjectStatusLarge"
+                    />
                 </m:VBox>
+
             </m:FlexBox>
         </headerContent>
 
@@ -152,7 +171,7 @@
                 title="Predict"
             >
                 <subSections>
-                    <ObjectPageSubSection titleUppercase="false">
+                    <ObjectPageSubSection title="Predicts Match" titleUppercase="false">
                         <form:SimpleForm
                             editable="true"
                             layout="ColumnLayout"
@@ -186,7 +205,7 @@
                         </form:SimpleForm>
                     </ObjectPageSubSection>
 
-                    <ObjectPageSubSection titleUppercase="false">
+                    <ObjectPageSubSection title="Predicts Goal" titleUppercase="false">
                         <m:FlexBox
                             direction="Column"
                             alignItems="Start"
@@ -260,6 +279,19 @@
                         </m:FlexBox>
                     </ObjectPageSubSection>
                 </subSections>
+            </ObjectPageSection>
+            <!-- Latest Bet -->
+            <ObjectPageSection
+             titleUppercase="false"
+                id="matchBets"
+                title="Bet History"
+            >
+            <subSections>
+                <!-- Latest bet -->
+                <ObjectPageSubSection titleUppercase="false">
+                    <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.MatchBetItems" type="XML" />
+                </ObjectPageSubSection>
+             </subSections>
             </ObjectPageSection>
         </sections>
         <footer>
