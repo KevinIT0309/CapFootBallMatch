@@ -4,8 +4,10 @@ sap.ui.define([
     "sap/m/MessageBox",
     "../model/formatter",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/library"
-], function (BaseController, MessageToast, MessageBox, formatter, JSONModel, coreLibrary) {
+    "sap/ui/core/library",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function (BaseController, MessageToast, MessageBox, formatter, JSONModel, coreLibrary, Filter, FilterOperator) {
     "use strict";
 
     let ValueState = coreLibrary.ValueState;
@@ -17,6 +19,7 @@ sap.ui.define([
 
         onPatternMatched: async function (oEvent) {
             let oData = {
+                "userPredicts": 0,
                 "enabledSaveBtn": true,
                 "enabledOtherInputs": true,
                 "enabledPredictInput": true,
@@ -77,16 +80,32 @@ sap.ui.define([
                 const matchTime = matchContext.match_time;
                 oModel.setProperty("/match_time", matchTime);
 
-                const matchDateTime = new Date(matchTime);
-                const instant = new Date();
-                const matchDate = new Date(matchDateTime.toDateString());
-                const today = new Date(instant.toDateString());
+                const matchId = matchContext.match_id;
+                // Get number of user predicts
+                let matchIdFilter = new Filter("match_ID", "EQ", matchId);
+
+                const betMatchesBinding = this.getModel("mainModel").bindList("/Bets", undefined, undefined, matchIdFilter, {
+                    "$count": true
+                });
+                betMatchesBinding.requestContexts().then(function (aContexts) {
+                    const count = betMatchesBinding.getCount();
+                    oModel.setProperty("/userPredicts", count);
+                },
+                    function (oError) {
+
+                    });
+
+                this._validateEnabledProperty();
+
+                // const matchDateTime = new Date(matchTime);
+                // const instant = new Date();
+                // const matchDate = new Date(matchDateTime.toDateString());
+                // const today = new Date(instant.toDateString());
                 // if (matchDate < today) {
                 //     oModel.setProperty("/enabledSaveBtn", false);
                 //     oModel.setProperty("/enabledPredictInput", false);
                 //     oModel.setProperty("/enabledMatchStatus", false);
                 // } else {
-                this._validateEnabledProperty();
                 // }
             }
         },

@@ -58,6 +58,8 @@
                                 <m:Text text="{mainModel>team2/team_name}" />
                                 <m:Label text="Is Over" />
                                 <m:Switch customTextOn="Yes" customTextOff="No" change="handleIsOverChange" state="{mainModel>isOver}"></m:Switch>
+                                <m:Label text="User Predicts" />
+                                <m:Text text="{viewModel>/userPredicts}" />
                                 <core:Title text="" />
                                 <m:Label text="Match Day" />
                                 <m:DateTimePicker
