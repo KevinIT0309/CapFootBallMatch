@@ -193,6 +193,26 @@ sap.ui.define([
                 return 1;
             }
             return 6;
+        },
+        fnGetLoggedUserBetResultText: function (betTeamWin, matchTeamWin) {
+            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            if (UICommon.fnIsEmpty(matchTeamWin)) {
+                return "N/A";
+            }
+            if (betTeamWin == matchTeamWin) {
+                return "YOU WIN";
+            }
+            return "YOU LOSS";
+        },
+        fnGetLoggedUserBetResultState: function (betTeamWin, matchTeamWin) {
+            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            if (UICommon.fnIsEmpty(matchTeamWin)) {
+                return "None";
+            }
+            if (betTeamWin == matchTeamWin) {
+                return "Success";
+            }
+            return "Error";
         }
         //EOF
     };

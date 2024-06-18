@@ -93,7 +93,8 @@ sap.ui.define([
             try {
                 //use new listbinding instance
                 const playerBetsBinding = this.getModel("mainModel").bindList("/Bets", null, null, filters, {
-                    $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time)"
+                    $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time)",
+                    $orderby: "match/match_time"
                 });
 
                 const playerBetContexts = await playerBetsBinding.requestContexts();
@@ -104,6 +105,6 @@ sap.ui.define([
                 throw error;
             }
         }
-        ,
+        //EOF
     });
 });
