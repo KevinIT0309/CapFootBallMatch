@@ -13,7 +13,8 @@ view LeaderBoards as select from fms.Users as u
     coalesce(sum(s.points), 0) as currentPoints : String,
     count(b.ID) as totalBet: Integer,
     coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) as winning : Integer,//Count winning by team win id only for draw should update later
-    dense_rank() over (order by coalesce(sum(s.points), 0) desc) as rank : Integer
+    row_number() over (order by coalesce(sum(s.points), 0) desc, coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) desc, count(b.ID) desc) as rank: Integer
+    // dense_rank() over (order by coalesce(sum(s.points), 0) desc) as rank : Integer
     // rank() over (order by coalesce(sum(s.points), 0) desc, coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) asc) as rank : Integer
 }
 group by
