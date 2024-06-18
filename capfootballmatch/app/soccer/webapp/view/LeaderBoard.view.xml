@@ -94,6 +94,12 @@
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
+                        <Text text="Total Bets" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
                         <Text text="Winning" />
                     </Column>
                     <Column
@@ -124,7 +130,7 @@
                             </HBox>
                           
                             <Text text="{mainModel>userEmail}" />
-                           
+                            <Text text="{mainModel>totalBet}" />
                             <ObjectNumber
                             number="{mainModel>winning}"
                             unit="Match"
