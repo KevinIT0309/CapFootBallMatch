@@ -107,7 +107,8 @@ select u.user_id as userId,
 	count(b.id) as totalBet,
     coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) as winning,
 	coalesce(sum(s.points), 0) as currentPoints,
-    dense_rank() over (order by coalesce(sum(s.points), 0) desc) as rank
+    row_number() over (order by coalesce(sum(s.points), 0) desc, coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) desc, count(b.id) desc) as rank
+    //dense_rank() over (order by coalesce(sum(s.points), 0) desc) as rank
 from "689785D5384B4DE7BD97D328387AE724"."FOOTBALL_MATCH_USERS" as u
     inner join "689785D5384B4DE7BD97D328387AE724"."FOOTBALL_MATCH_BETS" as b on b.user_ID = u.user_id
     inner join "689785D5384B4DE7BD97D328387AE724"."FOOTBALL_MATCH_MATCHES" as m on m.match_id = b.match_ID
