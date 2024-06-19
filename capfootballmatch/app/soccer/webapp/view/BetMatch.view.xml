@@ -142,7 +142,10 @@
                             formatter: 'formatter.formatResultText'
                         }"
                     />
-                    <m:ObjectStatus
+                </m:VBox>
+
+                <m:VBox id="vbPlayerResult">
+                        <m:ObjectStatus
                         text="{
                            parts: [
                                 'viewModel>/team_win_ID',

@@ -48,7 +48,7 @@ using { cuid, managed } from '@sap/cds/common';
     }
 
 
-    @assert.unique : { uniqueKey: [ user_ID, match_ID, team_win_ID ]}
+    @assert.unique : { uniqueKey: [ user_ID, match_ID ]}
     entity Bets: cuid, managed {
         bet_time         : DateTime not null;// Date and time when the bet was placed
 
