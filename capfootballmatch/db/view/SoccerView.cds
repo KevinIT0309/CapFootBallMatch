@@ -36,3 +36,44 @@ view BetStatistics as select from fms.Bets as b
     m.match_name as matchName: String,
     m.match_time as matchTime: String
 }
+
+view UserPoints as
+    select from fms.Users as u
+    left outer join fms.Scores as s
+        on s.user_ID = u.user_id
+    {
+        key u.user_id  as userId        : String,
+            u.fullName as userFullName  : String,
+            u.email    as userEmail     : String,
+            coalesce(
+                sum(
+                    s.points
+                ), 0
+            )          as currentPoints : String,
+    }
+    group by
+        s.user_ID;
+
+view BetHistory as
+    select from UserPoints as tp
+    inner join fms.Bets as b
+        on b.user_ID = tp.userId
+    inner join fms.Teams as t
+        on t.team_id = b.team_win_ID
+    {
+        tp.userFullName  as userName      : String,
+        tp.currentPoints as currentPoints : Integer,
+        b.ID             as betID         : String,
+        b.team_win_ID    as teamWinID     : String,
+        b.match_ID       as match_ID      : Integer,
+        b.bet_time       as betTime       : String,
+        t.team_name      as teamWinName   : String,
+        b.predictGoals,
+        b.modifiedAt     as modifiedAt    : String,
+        b.modifiedBy     as modifiedBy    : String,
+        dense_rank() over(
+            order by tp.currentPoints desc, tp.userId
+        )                as rank          : Integer
+    }
+    order by
+        tp.currentPoints desc;
