@@ -211,7 +211,7 @@
                     <ObjectPageSubSection title="Predicts Goal" titleUppercase="false" >
                         <m:Text text="No Predicts Goal for this Match" visible="{= ${viewModel>/matchPredicts} === 0 }" />
                         <m:FlexBox
-                            visible="{= !${viewModel>/matchPredicts} === 0 }"
+                           
                             direction="Column"
                             alignItems="Start"
                         >

@@ -8,8 +8,9 @@
 sap.ui.define([
     "sap/ui/core/format/DateFormat",
     "sap/ui/model/json/JSONModel",
-    "sap/m/MessageBox"
-], function (DateFormat, JSONModel, MessageBox) {
+    "sap/m/MessageBox",
+    "cap/euro/bettor/soccer/constants/AppGlobalConstant",
+], function (DateFormat, JSONModel, MessageBox,AppGlobalConstant) {
     "use strict";
     return {
         DEFAULT_CONVERSION_ROUTINE: 0,
@@ -441,7 +442,7 @@ sap.ui.define([
          * @param {*} timeZoneOffset
          * @returns 
          */
-        fnGetDateStringFormatAsUtcOffset: function (date, formatPattern = Constants.DATE_FORMAT_TIME_PATTERN, timeZoneOffset = Constants.UTC_TIMEZONE_OFFSET) {
+        fnGetDateStringFormatAsUtcOffset: function (date, formatPattern = AppGlobalConstant.DATE_CONFIG.DATE_FORMAT_TIME_PATTERN, timeZoneOffset = AppGlobalConstant.DATE_CONFIG.UTC_TIMEZONE_OFFSET) {
             try {
 
                 let adjustedDate = new Date(date.getTime() + timeZoneOffset * 60000);

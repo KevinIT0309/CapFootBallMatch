@@ -176,6 +176,9 @@ sap.ui.define([
                     if(oTeam){
                         bet.teamWinName  = oTeam.team_name;
                     }
+                    // if(bet.modifiedAt){
+                    //     bet.modifiedAt = UICommon.fnGetDateStringFormatAsUtcOffset(new Date(bet.modifiedAt));
+                    // }
                 });
                 oModel.setProperty("/matchBetItems", aMatchBetItems);
                 this.hideBusy();
