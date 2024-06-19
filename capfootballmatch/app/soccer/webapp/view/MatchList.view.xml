@@ -78,6 +78,7 @@
                 </headerToolbar>
                 <columns>
                     <Column
+                        width="4rem"
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
