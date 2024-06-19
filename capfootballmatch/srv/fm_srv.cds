@@ -52,6 +52,7 @@ service FM_SRV {
 
     @readonly entity LeaderBoards as select from fmsv.LeaderBoards;
 
+    @readonly entity BetStatistics as select from fmsv.BetStatistics;
 }
 
 annotate FM_SRV with @(requires: 'authenticated-user');
