@@ -37,6 +37,7 @@ sap.ui.define([
                     "userId": "",
                     "betMatchID": "",
                     "matchStatus": 1,
+                    "matchPredicts": 0,
                     "matchBetItems":[]
                 };
 
@@ -78,9 +79,11 @@ sap.ui.define([
                     oResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
                     oModel.setProperty("/matchStatus", matchContext.status);//using for formatter
                 }
-                let predicts = matchContext.predicts;
+                let matchPredicts = matchContext.predicts;
+                oModel.setProperty("/matchPredicts",matchPredicts);
+                
                 let predictGoals = [];
-                for (let i = 0; i < predicts; i++) {
+                for (let i = 0; i < matchPredicts; i++) {
                     predictGoals.push({
                         "predict": i + 1,
                         "team1_numOfGoals": null,
@@ -135,13 +138,29 @@ sap.ui.define([
                         UICommon.devLog(`Found exist betMatch User: ${userId} - MatchId: ${this._matchId}`);
                         oModel.setProperty("/team_win_ID", betMatch.team_win_ID);
                         oModel.setProperty("/isDraw", betMatch.isDraw);
-                        oModel.setProperty("/predictGoals", betMatch.predictGoals.map((predictGoal, index) => {
-                            return {
-                                "predict": index + 1,
-                                "team1_numOfGoals": predictGoal.team1_numOfGoals,
-                                "team2_numOfGoals": predictGoal.team2_numOfGoals
+                        //Handle load predict base on mathPredicts
+                        const aBetMatchPredictGoals = betMatch.predictGoals;
+                        let aUserBetPredictGoals = [];
+                        UICommon.devLog(`matchPredicts: ${matchPredicts}`);
+                        if(matchPredicts != 0){
+                            for (let i = 0; i < matchPredicts; i++) {
+                                const oPredictGoal = aBetMatchPredictGoals[i];//if got bet match predicts set it to UI if NOT do nothing
+                                if(oPredictGoal){
+                                    aUserBetPredictGoals.push({
+                                        "predict": i + 1,
+                                        "team1_numOfGoals": oPredictGoal.team1_numOfGoals,
+                                        "team2_numOfGoals": oPredictGoal.team2_numOfGoals,
+                                    });
+                                }else{
+                                    aUserBetPredictGoals.push({
+                                        "predict": i + 1,
+                                        "team1_numOfGoals": null,
+                                        "team2_numOfGoals": null,
+                                    });
+                                }      
                             }
-                        }));
+                        }
+                        oModel.setProperty("/predictGoals",aUserBetPredictGoals);
                         oModel.setProperty("/betMatchID", betMatch.ID);
                     }
                     
@@ -154,11 +173,6 @@ sap.ui.define([
                     const oTeam = UICommon.fnFindObjectInArray(aPredictOptions, "team_id", bet.team_win_ID);
                     if(oTeam){
                         bet.teamWinName  = oTeam.team_name;
-                    }
-                    if(bet.predictGoals.length == 0){
-                        bet.isVisiblePredictGoal = false;
-                    }else{
-                        bet.isVisiblePredictGoal = true;
                     }
                 });
                 oModel.setProperty("/matchBetItems", aMatchBetItems);
