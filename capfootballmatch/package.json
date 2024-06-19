@@ -62,6 +62,8 @@
     "hdb": "^0.19.7",
     "mbt": "^1.2.27",
     "pm2": "^5.3.0",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.6.1",
     "tall": "^8.0.0"
   },
   "devDependencies": {
