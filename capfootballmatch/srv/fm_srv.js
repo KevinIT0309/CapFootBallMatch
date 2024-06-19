@@ -66,6 +66,10 @@ class FMService extends cds.ApplicationService {
       
     });
 
+    this.after('READ', 'BetStatistics', async req => {
+      console.log("EVENTS: before READS BetStatistics");
+
+    });
     return super.init();
 
 

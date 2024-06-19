@@ -22,3 +22,17 @@ group by
     u.fullName,
     u.email
 order by currentPoints desc, winning desc, totalBet desc;
+
+
+view BetStatistics as select from fms.Bets as b 
+    inner join fms.Matches as m on m.match_id = b.match_ID
+    inner join fms.Teams as t on t.team_id = b.team_win_ID 
+{
+    key b.user_ID as userId: String,
+    b.team_win_ID as teamWinId: String,
+    b.modifiedAt as modifiedAt: String,
+    t.team_name as teamNameWin: String,
+    m.match_id as matchId: String,
+    m.match_name as matchName: String,
+    m.match_time as matchTime: String
+}
