@@ -72,10 +72,12 @@ sap.ui.define([
                 let matchContext = await matchContextBinding.requestObject();
                 //Set visible result
                 const oResultBox = this.getView().byId("vbResult");
+                const oVbResultBox = this.getView().byId("vbPlayerResult");
                 if (oResultBox) {
                     UICommon.devLog(`Visible Result by Status: ${matchContext.status}`);
                     const { MATCH_STATUS } = AppGlobalConstant;
                     oResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
+                    oVbResultBox.setVisible(matchContext.status == MATCH_STATUS.DONE);
                     oModel.setProperty("/matchStatus", matchContext.status);//using for formatter
                 }
                 let predicts = matchContext.predicts;
