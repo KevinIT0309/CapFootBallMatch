@@ -36,5 +36,12 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 ## Undeploy mta
 cf undeploy capfootballmatch --delete-services --delete-service-keys --delete-service-brokers
 
-## Config Test Local
+## Config Test Local for Odata Backend
 ![re-config](./assets/images/image.png)
+
+
+## Config Test Local for UI
+- Step 1: add file default-env.json into /app/soccer/dev or /app/football/dev
+- Step 2: cd to /app/soccer/ or /app/football
+- Step 3: run command: npm run map-cred
+- Step 4: run command: npm run dev 

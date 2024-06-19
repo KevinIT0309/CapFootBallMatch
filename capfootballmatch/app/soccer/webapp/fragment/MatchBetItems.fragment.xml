@@ -22,31 +22,31 @@
             </m:OverflowToolbar>
         </m:headerToolbar>
         <m:columns>
-            <m:Column
-                minScreenWidth="Tablet"
-                demandPopin="true"
-            >
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true" >
                 <m:Text text="Player Name" />
             </m:Column>
-            <m:Column
-                minScreenWidth="Tablet"
-                demandPopin="true"
-            >
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true" >
                 <m:Text text="Bet time" />
             </m:Column>
-            <m:Column
-                minScreenWidth="Tablet"
-                demandPopin="true"
-            >
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true">
                 <m:Text text="Predict Match" />
             </m:Column>
-            <m:Column
-                minScreenWidth="Tablet"
-                demandPopin="true"
-                width="30rem"
-            >
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true" width="30rem">
                 <m:Text text="Predict Goal" />
             </m:Column>
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true">
+                <m:Text text="Modified At" />
+            </m:Column>
+
+            <m:Column minScreenWidth="Tablet" demandPopin="true">
+                <m:Text text="Modified By" />
+            </m:Column>
+
         </m:columns>
 
         <m:items>
@@ -65,19 +65,19 @@
                     <m:Text text="{viewModel>user/fullName}" />
                     <m:ObjectIdentifier
                         title="{
-                                                    path: 'viewModel>bet_time',
-                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                                    formatOptions: {
-                                                        pattern: 'dd/MM/yyyy'
-                                                    }
-                                                }"
+                                    path: 'viewModel>bet_time',
+                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                    formatOptions: {
+                                        pattern: 'dd/MM/yyyy'
+                                    }
+                                }"
                         text="{
-                                                    path: 'viewModel>bet_time',  
-                                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                                    formatOptions: {  
-                                                        pattern : 'HH:mm'
-                                                    }
-                                                }"
+                                path: 'viewModel>bet_time',  
+                                type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                formatOptions: {  
+                                    pattern : 'HH:mm'
+                                }
+                            }"
                     />
                     <m:VBox>
                         <m:Text text="Draw" visible="{= ${viewModel>isDraw} }" />
@@ -100,6 +100,27 @@
                             </m:VBox>
                         </m:VBox>
                     </m:VBox>
+
+                    
+                    <m:ObjectIdentifier
+                        title="{
+                                    path: 'viewModel>modifiedAt',
+                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                    formatOptions: {
+                                        pattern: 'dd/MM/yyyy'
+                                    }
+                                }"
+                        text="{
+                                path: 'viewModel>modifiedAt',
+                                type: 'sap.ui.model.odata.type.DateTimeOffset',
+                                formatOptions: {  
+                                    pattern : 'HH:mm'
+                                }
+                            }"
+                    />
+                    <m:Text text="{viewModel>modifiedBy}"/>
+
+
                     <!-- <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.MatchBetItemPredict" type="XML" /> -->
                 </m:cells>
             </m:ColumnListItem>
