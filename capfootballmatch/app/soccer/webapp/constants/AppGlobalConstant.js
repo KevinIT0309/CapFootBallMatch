@@ -19,9 +19,16 @@ sap.ui.define([
         2: { text: "On Going", state: "Error" },
         3: { text: "Finished", state: "Success" }
     };
-
+    const DATE_CONFIG = {
+        UTC_TIMEZONE_OFFSET: -120, //Offset in minutes (negative because it's UTC+2)
+        DATE_FORMAT_PATTERN: "yyyy/MM/dd",
+        DATE_FORMAT_TIME_PATTERN:"yyyy/MM/dd HH:mm:ss",
+        DATE_FORMAT_DB_PATTERN: "yyyy/MM/dd",//TBD later
+        DATE_FORMAT_DB_TIME_PATTERN: "yyyy/MM/dd HH:mm:ss",//TBD later
+    };
     return {
         MATCH_STATUS: MATCH_STATUS,
-        MATCH_STATUS_CONF: MATCH_STATUS_CONF
+        MATCH_STATUS_CONF: MATCH_STATUS_CONF,
+        DATE_CONFIG: DATE_CONFIG
     };
 });

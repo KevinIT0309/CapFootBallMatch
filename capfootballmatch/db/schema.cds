@@ -26,7 +26,7 @@ using { cuid, managed } from '@sap/cds/common';
         team_win_ID       : Integer;
         stage             : String(50);//[ group, knockout ]
 
-        predicts          : Integer;// number of predicts allowed in this match
+        predicts          : Integer default 0;// number of predicts allowed in this match
 
         team1             : Association to one Teams on team1.team_id = $self.team1_ID; // Referential Constraint
         team2             : Association to one Teams on team2.team_id = $self.team2_ID; // Referential Constraint

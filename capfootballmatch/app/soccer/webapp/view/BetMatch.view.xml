@@ -208,8 +208,10 @@
                         </form:SimpleForm>
                     </ObjectPageSubSection>
 
-                    <ObjectPageSubSection title="Predicts Goal" titleUppercase="false">
+                    <ObjectPageSubSection title="Predicts Goal" titleUppercase="false" >
+                        <m:Text text="No Predicts Goal for this Match" visible="{= ${viewModel>/matchPredicts} === 0 }" />
                         <m:FlexBox
+                           
                             direction="Column"
                             alignItems="Start"
                         >
