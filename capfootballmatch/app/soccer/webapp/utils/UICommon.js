@@ -10,7 +10,7 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
     "cap/euro/bettor/soccer/constants/AppGlobalConstant",
-], function (DateFormat, JSONModel, MessageBox,AppGlobalConstant) {
+], function (DateFormat, JSONModel, MessageBox, AppGlobalConstant) {
     "use strict";
     return {
         DEFAULT_CONVERSION_ROUTINE: 0,
@@ -606,6 +606,13 @@ sap.ui.define([
                 console.log(`fnIsValidPredicGoal - Error:${error}`);
                 return false;
             }
+        },
+        fnGetIsoDateStringWithoutMilliseconds: function (currDateString) {
+            let date = new Date(currDateString);
+            // Convert the Date object back to ISO string without milliseconds
+            const isoStringWithoutMilliseconds = date.toISOString().split('.')[0] + 'Z';
+
+            return isoStringWithoutMilliseconds;
         }
         //EOF
     };

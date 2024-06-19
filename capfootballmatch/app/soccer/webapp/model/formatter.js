@@ -175,7 +175,7 @@ sap.ui.define([
 
         },
         fnGetBetStatusTextByTeamWin: function (betTeamWin, matchTeamWin) {
-            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            UICommon.devLog(`fnGetBetStatusTextByTeamWin BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
             if (UICommon.fnIsEmpty(matchTeamWin)) {
                 return "N/A"
             }
@@ -185,7 +185,7 @@ sap.ui.define([
             return "Lose";
         },
         fnGetBetStatusStateByTeamWin: function (betTeamWin, matchTeamWin) {
-            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            UICommon.devLog(`fnGetBetStatusStateByTeamWin BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
             if (UICommon.fnIsEmpty(matchTeamWin)) {
                 return 7;
             }
@@ -195,7 +195,7 @@ sap.ui.define([
             return 6;
         },
         fnGetLoggedUserBetResultText: function (betTeamWin, matchTeamWin) {
-            UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            UICommon.devLog(`fnGetLoggedUserBetResultText BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
             if (UICommon.fnIsEmpty(matchTeamWin)) {
                 return "N/A";
             }
