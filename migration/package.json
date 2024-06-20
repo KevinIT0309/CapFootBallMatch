@@ -1,0 +1,21 @@
+{
+  "name": "aisc.migration",
+  "version": "1.0.0",
+  "description": "Migrate Excel Data to App",
+  "main": "leo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "leo": "rm -rf migratedata.json && node leo.js",
+    "start": "rm -rf migratedata.json && node migration.js"
+  },
+  "keywords": [
+    "migration"
+  ],
+  "author": "leo",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1",
+    "xlsx": "^0.18.5"
+  }
+}

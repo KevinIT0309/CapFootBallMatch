@@ -1,3 +1,4 @@
 .vscode/
 .history
 .ssh
+migration/node_modules

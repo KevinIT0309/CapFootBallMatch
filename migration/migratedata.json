@@ -1,0 +1,1704 @@
+[
+  {
+    "matchId": 1,
+    "matchTime": "2024-06-15T02:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 1,
+    "team2Id": 2,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 1,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 1,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 1,
+        "teamWinId": 1,
+        "isDraw": false,
+        "betTime": "2024-06-14T23:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 2,
+    "matchTime": "2024-06-15T20:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 3,
+    "team2Id": 4,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 2,
+        "teamWinId": 3,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 2,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 2,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T17:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 3,
+    "matchTime": "2024-06-15T23:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 4,
+    "team2Id": 5,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 3,
+        "teamWinId": 5,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 3,
+        "teamWinId": 5,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U28",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 3,
+        "teamWinId": 4,
+        "isDraw": false,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 3,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T20:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 4,
+    "matchTime": "2024-06-16T02:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 7,
+    "team2Id": 8,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 4,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 4,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U28",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 4,
+        "teamWinId": 7,
+        "isDraw": false,
+        "betTime": "2024-06-15T23:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 5,
+    "matchTime": "2024-06-16T20:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 11,
+    "team2Id": 12,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 5,
+        "teamWinId": 11,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 5,
+        "teamWinId": 11,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 5,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U28",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 5,
+        "teamWinId": 12,
+        "isDraw": false,
+        "betTime": "2024-06-16T17:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 6,
+    "matchTime": "2024-06-16T23:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 13,
+    "team2Id": 14,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U15",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 6,
+        "teamWinId": 13,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 6,
+        "teamWinId": null,
+        "isDraw": true,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U28",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 6,
+        "teamWinId": 14,
+        "isDraw": false,
+        "betTime": "2024-06-16T20:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  },
+  {
+    "matchId": 7,
+    "matchTime": "2024-06-17T02:00:00.000Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 15,
+    "team2Id": 16,
+    "bets": [
+      {
+        "userId": "U1",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U2",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U3",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U4",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U5",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U6",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U7",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U8",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U9",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U10",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U11",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U12",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U13",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U14",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U16",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U17",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U18",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U19",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U20",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U21",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U22",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U23",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U24",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U25",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U26",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U27",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U28",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U29",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      },
+      {
+        "userId": "U30",
+        "matchId": 7,
+        "teamWinId": 16,
+        "isDraw": false,
+        "betTime": "2024-06-16T23:00:00.000Z",
+        "predictGoals": []
+      }
+    ]
+  }
+]
