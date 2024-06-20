@@ -7,10 +7,10 @@ const stageMultipliers = {
 
 const calculatePoints = (bet, reqData, match) => {
     if (bet.isDraw) {
-        return reqData.team1_score == reqData.team2_score ? (stageMultipliers[match.stage] || 2) : 0;
+        return reqData.team1_score == reqData.team2_score ? (stageMultipliers[match.stage] || 1) : 0;
     }
-    const team_win_ID = reqData.team1_score > reqData.team2_score ? match.team1_ID : match.team2_ID;
-
+    const team_win_ID = reqData.team1_score > reqData.team2_score ? match.team1_ID : reqData.team1_score < reqData.team2_score ? match.team2_ID : null;
+    
     return bet.team_win_ID == team_win_ID ? (stageMultipliers[match.stage] || 1) : 0;
 }
 
