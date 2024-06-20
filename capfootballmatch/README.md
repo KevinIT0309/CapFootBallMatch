@@ -29,6 +29,7 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 - Kill a port running
     + step 1: lsof -i :<port running>
     + step 2: kill <PID>
+or : kill -9 $(lsof -t -i:4004)
 
 ## Rule Testing at local
 - move folder /data/ from asset directory to folder db for test, when done remove from db.
