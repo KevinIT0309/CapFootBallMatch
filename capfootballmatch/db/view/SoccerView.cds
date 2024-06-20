@@ -49,10 +49,12 @@ view UserPoints as
                 sum(
                     s.points
                 ), 0
-            )          as currentPoints : String,
+            )          as currentPoints : String
     }
     group by
-        s.user_ID;
+        u.user_id,
+        u.fullName,
+        u.email;
 
 view BetHistory as
     select from UserPoints as tp
