@@ -89,7 +89,7 @@
                     </m:HBox>
                     <m:VBox>
                         <m:Title text="Draw" visible="{= ${viewModel>isDraw} }" />
-                        <m:Title text="{viewModel>userName}"  visible="{= !${viewModel>isDraw} }" />
+                        <m:Title text="{viewModel>teamWinName}"  visible="{= !${viewModel>isDraw} }" />
                     </m:VBox>
                     <m:ObjectStatus
                             text="{viewModel>currentPoints} Point"
