@@ -2,6 +2,7 @@ const cds = require('@sap/cds');
 const { calculatePoints } = require('./utils.js');
 class FMService extends cds.ApplicationService {
   init() {
+    const { Bets, Goals, Users, Scores, Teams } = this.entities;
 
     /// Bets events
     this.before('CREATE', 'Bets', async req => {
@@ -48,10 +49,45 @@ class FMService extends cds.ApplicationService {
       return user;
     });
 
+    this.on('getMatchBetResults', async req => {
+      console.log("EVENTS: getMatchBetResults getMatchBetResults getMatchBetResults getMatchBetResults");
+      const { userID } = req.data;
+      const db = this.transaction(req);
+
+      const matches = await cds.tx(req).run(SELECT.from('football.match.Matches'));
+
+      const teams = await cds.tx(req).run(SELECT.from('football.match.Teams'));
+
+      const bets = await cds.tx(req).run(SELECT.from('football.match.Bets').where({ user_ID: userID }));
+
+      const betMap = bets.reduce((map, bet) => {
+        map[bet.match_ID] = bet;
+        return map;
+      }, {});
+
+      const teamMap = teams.reduce((map, team) => {
+        map[team.team_id] = team;
+        return map;
+      }, {});
+
+      const results = matches.map(match => {
+        const bet = betMap[match.match_id] || {};
+        const team = teamMap[match.team_win_ID] || {};
+        return {
+          ...match,
+          team_win_ID_bet: bet.team_win_ID,
+          team_win_Name: team.team_name,
+          isDraw: bet.isDraw
+        };
+      });
+
+      return results;
+    });
+
     /// Matches events
     this.before('CREATE', 'Matches', async req => {
       await hasMatchByUnique(req);
-      
+
       req.data.match_id = req.data.match_id || await getNextId(req)
     })
 
@@ -61,15 +97,16 @@ class FMService extends cds.ApplicationService {
       await updateScore(req); // make score for all bets
     });
 
-    this.after('READ','LeaderBoards', async req => {
+    this.after('READ', 'LeaderBoards', async req => {
       console.log("EVENTS: before READS LeaderBoards");
-      
+
     });
 
     this.after('READ', 'BetStatistics', async req => {
       console.log("EVENTS: before READS BetStatistics");
 
     });
+    
     return super.init();
 
 

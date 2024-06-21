@@ -55,6 +55,24 @@ service FM_SRV {
     @readonly entity BetStatistics as select from fmsv.BetStatistics;
     
     @readonly entity BetHistory as select from fmsv.BetHistory;
+
+    @readonly entity MatchBetResults {
+        match_id    : String;
+        match_name  : String;
+        team_win_Name : String;
+        match_time  : String;
+        team1_ID    : Integer;
+        team2_ID    : Integer;
+        isOver      : Boolean;
+        team1_score : Integer;
+        team2_score : Integer;
+        team_win_ID : Integer;
+        team_win_ID_bet : Integer;
+        isDraw      : Boolean;
+    }
+
+    function getMatchBetResults(userID : String) returns many MatchBetResults;
+
 }
 
 annotate FM_SRV with @(requires: 'authenticated-user');

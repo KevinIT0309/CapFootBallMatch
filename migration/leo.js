@@ -2,7 +2,7 @@ const xlsx = require('xlsx');
 const fs = require('fs');
 const moment = require('moment');
 
-const sourceDataPath = 'AISC.xlsx';
+const sourceDataPath = 'AISC2.xlsx';
 
 function fnCheckFileExists(filePath) {
     return fs.existsSync(filePath);
@@ -79,17 +79,19 @@ function fnGetCellValue(row, column) {
     }
 }
 
-function fnGetDBDateString(sourceDateString){
-    
-    // const dbDateFormat = 'YYYY-MM-DDTHH:mm:ss.000Z';
-    const dbDate = new Date(sourceDateString);
-    return dbDate.toISOString().slice(0, -1) + "Z";
+function fnGetDBDateString(sourceDateString) {
+
+    const timeInPlus7 = new Date(`${sourceDateString}+07:00`);
+
+    // Chuyển đổi về UTC
+    const dbDate = new Date(timeInPlus7.toISOString());
+    return dbDate.toISOString().slice(0, -5) + "Z";
 }
 // Craete match Object
 function fnBuildMatchObject(column) {
     const matchId = parseInt(fnGetCellValue(0, column));
     const teams = fnGetCellValue(1, column).split('-');
-    const matchName = fnGetCellValue(2, column).v;
+    const matchName = fnGetCellValue(2, column);
     const matchDateRaw = fnGetCellValue(3, column);
     const matchTimeRaw = fnGetCellValue(4, column);
     const matchTime = fnConvertTime(matchTimeRaw);
@@ -113,9 +115,11 @@ function fnBuildMatchObject(column) {
         status: 1,
         isOver: false,
         team1Id: team1Id,
-        team2Id: team2Id
+        team2Id: team2Id,
+        stage: 'group'
     };
 }
+
 
 // build Bet Object for create Bet
 function fnBuildMatchBets(column, matchId, team1Id, team2Id, matchTime, betTimeBeforeHours) {
@@ -123,7 +127,12 @@ function fnBuildMatchBets(column, matchId, team1Id, team2Id, matchTime, betTimeB
     let row = 10;
     while (true) {
         const userIdCell = sheet[xlsx.utils.encode_cell({ r: row, c: 0 })];
-        if (!userIdCell) break;  //End user list stop
+        const userNameCell = sheet[xlsx.utils.encode_cell({ r: row, c: 2 })];
+        if (!userIdCell) {
+            if (!userNameCell) break;
+            row++;
+            continue;
+        }
 
         const userId = userIdCell.v;
         const betCell = sheet[xlsx.utils.encode_cell({ r: row, c: column })];
@@ -149,14 +158,12 @@ function fnBuildMatchBets(column, matchId, team1Id, team2Id, matchTime, betTimeB
         betTime = fnGetDBDateString(betTime);
 
         const bet = {
-            userId: userId,
-            matchId: matchId,
-            teamWinId: teamWinId,
+            user_ID: userId,
+            match_ID: matchId,
+            team_win_ID: teamWinId,
             isDraw: isDraw,
-            betTime: betTime,
-            predictGoals: []
+            bet_time: betTime
         };
-
         playerBets.push(bet);
         row++;
     }
@@ -169,13 +176,13 @@ function fnBuildMigrateData(columnTo) {
     const betTimeBeforeHours = 3;//number of 
     //Call Matches Odata fms_srv/Matchs
     const aDBMatchs = [];
-     //Call Matches Odata fms_srv/Teams
-     const aTeams = [];
+    //Call Matches Odata fms_srv/Teams
+    const aTeams = [];
     //Start from col 3 Đức vs Scotland
     for (let col = 3; col <= columnTo; col++) {
         const match = fnBuildMatchObject(col);//match từ excel
         // const oMatch =  find match in aDBMatchs //match từ db (dùng cái này)
-        const bets = fnBuildMatchBets(col, match.matchId, match.team1Id, match.team2Id, match.matchTime,betTimeBeforeHours);
+        const bets = fnBuildMatchBets(col, match.matchId, match.team1Id, match.team2Id, match.matchTime, betTimeBeforeHours);
         match.bets = bets;
         processData.push(match);
     }
@@ -183,7 +190,7 @@ function fnBuildMigrateData(columnTo) {
 }
 
 
-const toMatchCol = 9;   // Column J for now Serbia vs Anh
+const toMatchCol = 38;   // Column J for now Serbia vs Anh
 const processData = fnBuildMigrateData(toMatchCol);
 console.log('------------------------------------ FINISHED COLLECT RAW DATA FOR PROCESS');
 
@@ -191,6 +198,81 @@ console.log('------------------------------------ FINISHED COLLECT RAW DATA FOR 
 fs.writeFileSync('migratedata.json', JSON.stringify(processData, null, 2));
 console.log('Migrate data have been extracted and saved to migratedata.json');
 console.log('------------------------------------ START UPSERT DATA TO CLOUD APPS');
+
+const axios = require('axios');
+
+const BASE_URL = 'https://proconarum-sandbox-system-snd-capfootballmatch-srv.cfapps.eu10-004.hana.ondemand.com/odata/v4/ces/FM_SRV';
+const TOKEN = '';
+
+// async function getBets() {
+//     const response = await axios.get(`${BASE_URL}/Bets`, {
+//         headers: {
+//           'Authorization': `Bearer ${TOKEN}`,
+//           'Content-Type': 'application/json'
+//         }
+//       });    
+//     const userMatchMap = new Map();
+//     response.data.value.forEach(bet => {
+//       const key = `${bet.user_ID}-${bet.match_ID}`;
+//       userMatchMap.set(key, bet);
+//     });  
+//     console.log(userMatchMap);
+//     return userMatchMap;
+//  }
+
+// // const betsInHana = await getBets(); 
+
+// async function test() {
+//     getBets();
+// }
+
+async function processMatchBatch(matchBatch) {
+    const userMatchMap = getBets();
+    return Promise.all(matchBatch.map(async (match) => {
+      try {
+        // const response = await axios.get(`${BASE_URL}/Matches`, {
+        //   headers: {
+        //     'Authorization': `Bearer ${TOKEN}`,
+        //     'Content-Type': 'application/json'
+        //   },
+        //   params: {
+        //     $filter: `team1_ID eq ${match.team1_ID} and team2_ID eq ${match.team2_ID}`
+        //   }
+        // });
+  
+        // if (response.data.value.length <= 0) {
+        //   await axios.post(`${BASE_URL}/Matches`, match, {
+        //     headers: {
+        //       'Authorization': `Bearer ${TOKEN}`,
+        //       'Content-Type': 'application/json'
+        //     }
+        //   });
+        // }
+        
+        await Promise.all(match.bets.map(async (bet) => {
+            await axios.post(`${BASE_URL}/Bets`, bet, {
+                headers: {
+                  'Authorization': `Bearer ${TOKEN}`,
+                  'Content-Type': 'application/json'
+                }
+             });
+        }));
+
+      } catch (error) {
+        console.error('Error:', error.response ? error.response.data : error.message);
+      }
+    }));
+}
+  
+async function processAllMatches(data) {
+    for (let i = 0; i < data.length; i += 2) {
+      const batch = data.slice(i, i + 2);
+      await processMatchBatch(batch);
+    }
+ }
+  
+// processAllMatches(processData);
+
 //TODO using parallel async & batch processing to quick process & avoid memory leak/ trigger db 
 //https://www.w 3schools.com/jsref/jsref_promise_all.asp
 //for match in matchs
