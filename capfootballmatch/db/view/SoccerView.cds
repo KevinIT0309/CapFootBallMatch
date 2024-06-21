@@ -12,11 +12,22 @@ view LeaderBoards as select from fms.Users as u
     u.email as userEmail : String,
     coalesce(sum(s.points), 0) as currentPoints : String,
     count(b.ID) as totalBet: Integer,
-    coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) as winning : Integer,//Count winning by team win id only for draw should update later
-    row_number() over (order by coalesce(sum(s.points), 0) desc, coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) desc, count(b.ID) desc) as rank: Integer
-    // dense_rank() over (order by coalesce(sum(s.points), 0) desc) as rank : Integer
-    // rank() over (order by coalesce(sum(s.points), 0) desc, coalesce(count(case when m.team_win_ID = b.team_win_ID then 1 else null end), 0) asc) as rank : Integer
+    coalesce(sum(
+        case
+            when b.isDraw = true and m.team1_score = m.team2_score then 1
+            when m.team_win_ID = b.team_win_ID then 1
+            else 0
+        end
+    ), 0) as winning : Integer,
+    row_number() over (order by coalesce(sum(s.points), 0) desc, coalesce(sum(
+        case
+            when b.isDraw = true and m.team1_score = m.team2_score then 1
+            when m.team_win_ID = b.team_win_ID then 1
+            else 0
+        end
+    ), 0) desc, count(b.ID) desc) as rank: Integer
 }
+
 group by
     u.user_id,
     u.fullName,
@@ -57,25 +68,24 @@ view UserPoints as
         u.email;
 
 view BetHistory as
-    select from UserPoints as tp
+    select from LeaderBoards as lb
     inner join fms.Bets as b
-        on b.user_ID = tp.userId
+        on b.user_ID = lb.userId
     inner join fms.Teams as t
         on t.team_id = b.team_win_ID
     {
-        tp.userFullName  as userName      : String,
-        tp.currentPoints as currentPoints : Integer,
+        lb.rank          as rank          :Integer,
+        lb.userFullName  as userName      : String,
+        lb.currentPoints as currentPoints : Integer,
         b.ID             as betID         : String,
+        b.isDraw         as isDraw        : Boolean,
         b.team_win_ID    as teamWinID     : String,
         b.match_ID       as match_ID      : Integer,
         b.bet_time       as betTime       : String,
         t.team_name      as teamWinName   : String,
         b.predictGoals,
         b.modifiedAt     as modifiedAt    : String,
-        b.modifiedBy     as modifiedBy    : String,
-        dense_rank() over(
-            order by tp.currentPoints desc, tp.userId
-        )                as rank          : Integer
+        b.modifiedBy     as modifiedBy    : String
     }
     order by
-        tp.currentPoints desc;
+        lb.rank asc;

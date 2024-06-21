@@ -33,6 +33,7 @@
                                     <SearchField
                                         value="{local>/searchFieldValue}"
                                         placeholder="Search by Player Name"
+                                        showSearchButton="false"
                                     />
                                 </fb:control>
                             </fb:FilterGroupItem>
@@ -49,99 +50,27 @@
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <Table
-                id="leaderBoard"
-                inset="false"
-                items="{path: 'mainModel>/LeaderBoards',
-                parameters: {
-                    $orderby: 'rank'
-                }}"
-                growing="true"
-                growingScrollToLoad="true"
-                growingThreshold="20"
-                updateFinished="onLeaderBoardUpdateFinished"
-            >
-                <headerToolbar>
-                    <OverflowToolbar>
-                       <Title
-                            text="Leader Board"
-                            level="H2"
-                        />
-                        <ToolbarSpacer />
-                    </OverflowToolbar>
-                </headerToolbar>
-                <columns>
-                    <Column
-                        minScreenWidth="Tablet"
-                        width="8rem"
-                        demandPopin="true"
-                    >
-                        <Text text="Rank" />
-                    </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Player Name" />
-                    </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Player Email" />
-                    </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Total Bets" />
-                    </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Winning" />
-                    </Column>
-                    <Column
-                        minScreenWidth="Tablet"
-                        demandPopin="true"
-                    >
-                        <Text text="Current Score" />
-                    </Column>
-                </columns>
-
-                <items>
-                    <ColumnListItem
-                        vAlign="Middle"
-                        type="Active"
-                        press="onViewPlayerBetHistory"
-                    >
-                        <cells>
-                            <tnt:InfoLabel
-                            text="#{mainModel>rank}"
-                            colorScheme= "{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardRankState'}" />
-                            <HBox alignItems="Center">
-                                <Avatar
-                                src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
-                                displayShape="Square"
-                                displaySize="L"
-                                class="sapUiSmallMarginTop"/>
-                                <Text text="{mainModel>userFullName}" />
-                            </HBox>
-                          
-                            <Text text="{mainModel>userEmail}" />
-                            <Text text="{mainModel>totalBet}" />
-                            <ObjectNumber
-                            number="{mainModel>winning}"
-                            unit="Match"
-                            state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
-                            <ObjectStatus
-                            text="{mainModel>currentPoints} Point"
-                            state="{path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
+            <IconTabBar
+            id="idIconTabBarMulti"
+            expanded="{device>/isNoPhone}"
+            class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+                text="List"
+                icon="sap-icon://manager-insight" 
+                key="LEADER_BOARD_TABLE">
+				 <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardList" type="XML" />
+			</IconTabFilter>
+			<IconTabFilter
+                visible="{= !${device>/system/phone}}"
+                text="Chart"
+				icon="sap-icon://bbyd-dashboard"
+				key="LEADER_BOARD_CHART">
+				<core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardChart" type="XML" />
+			</IconTabFilter>
+            </items>
+        </IconTabBar>
+           
         </f:content>
     </f:DynamicPage>
 </mvc:View>

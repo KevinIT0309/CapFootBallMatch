@@ -174,25 +174,35 @@ sap.ui.define([
         fnGetRowIndex: function () {
 
         },
-        fnGetBetStatusTextByTeamWin: function (betTeamWin, matchTeamWin) {
-            UICommon.devLog(`fnGetBetStatusTextByTeamWin BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
-            if (UICommon.fnIsEmpty(matchTeamWin)) {
-                return "N/A"
+        fnGetBetStatusText: function (betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score) {
+            if(matchStatus != 3){
+                return "Waiting Result";
+            }
+            if (betDraw) {
+                if(team1Score == team2Score){
+                    return "Win";
+                }
+                return "Lose";
             }
             if (betTeamWin == matchTeamWin) {
                 return "Win";
             }
             return "Lose";
         },
-        fnGetBetStatusStateByTeamWin: function (betTeamWin, matchTeamWin) {
-            UICommon.devLog(`fnGetBetStatusStateByTeamWin BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
-            if (UICommon.fnIsEmpty(matchTeamWin)) {
-                return 7;
+        fnGetBetStatusState: function (betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score) {
+            if(matchStatus != 3){
+                return 6;
+            }
+            if (betDraw) {
+                if(team1Score == team2Score){
+                    return 1;
+                }
+                return 3;
             }
             if (betTeamWin == matchTeamWin) {
                 return 1;
             }
-            return 6;
+            return 3;
         },
         fnGetLoggedUserBetResultText: function (betTeamWin, matchTeamWin) {
             UICommon.devLog(`fnGetLoggedUserBetResultText BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);

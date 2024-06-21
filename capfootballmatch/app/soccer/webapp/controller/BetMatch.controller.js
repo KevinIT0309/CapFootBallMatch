@@ -359,9 +359,13 @@ sap.ui.define([
         _getMatchBets: async function (filters) {
             try {
                 //use new listbinding instance
-                const matchBetsBinding = this.getModel("mainModel").bindList("/Bets", null, null, filters, {
-                    $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time)",
-                    $orderby: "bet_time desc"
+                // const matchBetsBinding = this.getModel("mainModel").bindList("/Bets", null, null, filters, {
+                //     $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time,status,team1_score,team2_score)",
+                //     $orderby: "bet_time desc"
+                // });
+                const matchBetsBinding = this.getModel("mainModel").bindList("/BetHistory", null, null, filters, {
+                    // $expand: "user($select=user_id,email,fullName),match($select=match_id,match_name,team_win_ID,match_time,status,team1_score,team2_score)",
+                    $orderby: "rank asc"
                 });
 
                 const matchBetContexts = await matchBetsBinding.requestContexts();

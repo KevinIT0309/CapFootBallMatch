@@ -10,7 +10,7 @@ sap.ui.define([
     "cap/euro/bettor/soccer/utils/UICommon",
     "cap/euro/bettor/soccer/utils/HttpRequest"
 ],
-    function (BaseController, JSONModel, MessageBox,MessageToast, Filter, FilterOperator,FioriLibrary, formatter, UICommon, HttpRequest) {
+    function (BaseController, JSONModel, MessageBox, MessageToast, Filter, FilterOperator, FioriLibrary, formatter, UICommon, HttpRequest) {
         "use strict";
 
         return BaseController.extend("cap.euro.bettor.soccer.controller.LeaderBoard", {
@@ -40,16 +40,22 @@ sap.ui.define([
 
                 const oBinding = oTable.getBinding("items");
                 oBinding.filter(aFilters);
+                //For chart
+                const oVizFrame = this.getView().byId("idVizFrame");
+                if (oVizFrame) {
+                    const oVizFrameBinding = oVizFrame.getDataset().getBinding("data");
+                    oVizFrameBinding.filter(aFilters);
+                }
             },
             onLeaderBoardUpdateFinished: function (oEvent) {
                 this.hideBusy();
             },
             onViewPlayerBetHistory: function (oEvent) {
                 try {
-                    
+
                     let oItem = oEvent.getSource();
                     let userId = oItem.getBindingContext("mainModel").getObject("userId");
-                    if(UICommon.fnIsEmpty(userId)){
+                    if (UICommon.fnIsEmpty(userId)) {
                         this.hideBusy();
                         console.log(`onViewPlayerBetHistory - Can not get Usr`);
                         MessageToast.show("Click too fast. Please try again");
@@ -62,6 +68,18 @@ sap.ui.define([
                     MessageBox.error(this.getGeneralTechnicalIssueMsg());
                     return;
                 }
+            },
+            onAfterRendering: function () {
+                var oVizFrame = this.byId("idVizFrame");
+                oVizFrame.setVizProperties({
+                    title: {
+                        text: "Realtime Player Ranking"
+                    }
+                });
+                // Redraw VizFrame
+                setTimeout(function () {
+                    oVizFrame.invalidate();
+                }, 0);
             },
             /**************************************************************************************************************************************************
              * PRIVATE METHOD
