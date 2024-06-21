@@ -15,14 +15,16 @@
         <m:headerToolbar>
             <m:OverflowToolbar>
                 <m:Title
-                    text="Latest Bets"
+                    text="Bets"
                     level="H2"
                 />
                 <!-- <m:ToolbarSpacer /> -->
             </m:OverflowToolbar>
         </m:headerToolbar>
         <m:columns>
-
+            <m:Column minScreenWidth="Tablet" demandPopin="true" >
+                <m:Text text="Player Rank" />
+            </m:Column>
             <m:Column minScreenWidth="Tablet" demandPopin="true" >
                 <m:Text text="Player Name" />
             </m:Column>
@@ -62,17 +64,20 @@
                     />
                 </m:customData>
                 <m:cells>
-                    <m:Text text="{viewModel>user/fullName}" />
+                    <tnt:InfoLabel
+                            text="#{viewModel>rank}"
+                            colorScheme= "{ path: 'viewModel>rank',formatter: 'formatter.fnGetLeaderBoardRankState'}" />
+                    <m:Text text="{viewModel>userName}" />
                     <m:ObjectIdentifier
                         title="{
-                                    path: 'viewModel>bet_time',
+                                    path: 'viewModel>betTime',
                                     type: 'sap.ui.model.odata.type.DateTimeOffset',
                                     formatOptions: {
                                         pattern: 'dd/MM/yyyy'
                                     }
                                 }"
                         text="{
-                                path: 'viewModel>bet_time',  
+                                path: 'viewModel>betTime',  
                                 type: 'sap.ui.model.odata.type.DateTimeOffset',
                                 formatOptions: {  
                                     pattern : 'HH:mm'

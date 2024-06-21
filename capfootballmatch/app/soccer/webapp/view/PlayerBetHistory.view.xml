@@ -171,8 +171,8 @@
                                                 }"/>
                                         
                                         <tnt:InfoLabel
-                                        text="{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusTextByTeamWin'}"
-                                        colorScheme= "{ parts:['local>team_win_ID','local>match/team_win_ID'],formatter: 'formatter.fnGetBetStatusStateByTeamWin'}" />
+                                        text="{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusText'}"
+                                        colorScheme= "{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusState'}" />
                                     </m:cells>
                                 </m:ColumnListItem>
                             </m:items>
