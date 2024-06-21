@@ -1,1703 +1,6418 @@
 [
   {
     "matchId": 1,
-    "matchTime": "2024-06-15T02:00:00.000Z",
+    "matchName": "Germany-Scotland",
+    "matchTime": "2024-06-14T19:00:00Z",
     "status": 1,
     "isOver": false,
     "team1Id": 1,
     "team2Id": 2,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U29",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U01",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U02",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U03",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U04",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U05",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U06",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U07",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U08",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U09",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 1,
-        "teamWinId": null,
+        "user_ID": "U11",
+        "match_ID": 1,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U12",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U13",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 1,
-        "teamWinId": 1,
-        "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U15",
-        "matchId": 1,
-        "teamWinId": 1,
-        "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U16",
-        "matchId": 1,
-        "teamWinId": null,
+        "user_ID": "U14",
+        "match_ID": 1,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U17",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U15",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U16",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U17",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U19",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U21",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U20",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U21",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U23",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U22",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U24",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U23",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U25",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U24",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U25",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U27",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U26",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U29",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U27",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 1,
-        "teamWinId": 1,
+        "user_ID": "U28",
+        "match_ID": 1,
+        "team_win_ID": 1,
         "isDraw": false,
-        "betTime": "2024-06-14T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-14T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 1,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-14T09:00:00Z"
       }
     ]
   },
   {
     "matchId": 2,
-    "matchTime": "2024-06-15T20:00:00.000Z",
+    "matchName": "Hungary-Switzerland",
+    "matchTime": "2024-06-15T13:00:00Z",
     "status": 1,
     "isOver": false,
     "team1Id": 3,
     "team2Id": 4,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 2,
-        "teamWinId": 3,
+        "user_ID": "U29",
+        "match_ID": 2,
+        "team_win_ID": 3,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U01",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U02",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U03",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 2,
-        "teamWinId": 3,
+        "user_ID": "U04",
+        "match_ID": 2,
+        "team_win_ID": 3,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U05",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U06",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U07",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U08",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U09",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U11",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 2,
-        "teamWinId": 3,
+        "user_ID": "U12",
+        "match_ID": 2,
+        "team_win_ID": 3,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U13",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U14",
+        "match_ID": 2,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 2,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U15",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U17",
+        "match_ID": 2,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 2,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 2,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 2,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-15T03:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U16",
-        "matchId": 2,
-        "teamWinId": 3,
-        "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U17",
-        "matchId": 2,
-        "teamWinId": 3,
-        "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U18",
-        "matchId": 2,
-        "teamWinId": null,
+        "user_ID": "U23",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U24",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U26",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U21",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "U27",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 2,
-        "teamWinId": 3,
+        "user_ID": "U28",
+        "match_ID": 2,
+        "team_win_ID": 4,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       },
       {
-        "userId": "U23",
-        "matchId": 2,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U24",
-        "matchId": 2,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U25",
-        "matchId": 2,
-        "teamWinId": 4,
+        "user_ID": "end",
+        "match_ID": 2,
+        "team_win_ID": null,
         "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U27",
-        "matchId": 2,
-        "teamWinId": 4,
-        "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U29",
-        "matchId": 2,
-        "teamWinId": 4,
-        "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U30",
-        "matchId": 2,
-        "teamWinId": 4,
-        "isDraw": false,
-        "betTime": "2024-06-15T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T03:00:00Z"
       }
     ]
   },
   {
     "matchId": 3,
-    "matchTime": "2024-06-15T23:00:00.000Z",
+    "matchName": "Spain-Croatia",
+    "matchTime": "2024-06-15T16:00:00Z",
     "status": 1,
     "isOver": false,
-    "team1Id": 4,
-    "team2Id": 5,
+    "team1Id": 5,
+    "team2Id": 6,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U29",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U01",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U02",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U03",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U04",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 3,
-        "teamWinId": 5,
+        "user_ID": "U05",
+        "match_ID": 3,
+        "team_win_ID": 6,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U06",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U07",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U08",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U09",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U11",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U12",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U13",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U14",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U15",
-        "matchId": 3,
-        "teamWinId": 4,
-        "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U16",
-        "matchId": 3,
-        "teamWinId": 4,
-        "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U17",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U15",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U16",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U17",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U19",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U21",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U20",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 3,
-        "teamWinId": 5,
+        "user_ID": "U21",
+        "match_ID": 3,
+        "team_win_ID": 6,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U23",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U22",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U24",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U23",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U25",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U24",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U25",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U27",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U26",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U28",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U30",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U29",
-        "matchId": 3,
-        "teamWinId": 4,
+        "user_ID": "U27",
+        "match_ID": 3,
+        "team_win_ID": 5,
         "isDraw": false,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 3,
-        "teamWinId": null,
+        "user_ID": "U28",
+        "match_ID": 3,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-15T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 3,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-15T06:00:00Z"
       }
     ]
   },
   {
     "matchId": 4,
-    "matchTime": "2024-06-16T02:00:00.000Z",
+    "matchName": "Italy-Albania",
+    "matchTime": "2024-06-15T19:00:00Z",
     "status": 1,
     "isOver": false,
     "team1Id": 7,
     "team2Id": 8,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U29",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U01",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U02",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U03",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U04",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U05",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U06",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U07",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U08",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U09",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U11",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U12",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U13",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 4,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U15",
-        "matchId": 4,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U16",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U14",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U17",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U15",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U16",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U17",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U19",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U21",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U23",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U22",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U24",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U23",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U25",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U24",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U25",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U27",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U26",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U28",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U30",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 4,
-        "teamWinId": 7,
+        "user_ID": "U28",
+        "match_ID": 4,
+        "team_win_ID": 7,
         "isDraw": false,
-        "betTime": "2024-06-15T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-15T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 4,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-15T09:00:00Z"
       }
     ]
   },
   {
     "matchId": 5,
-    "matchTime": "2024-06-16T20:00:00.000Z",
+    "matchName": "Poland-Holland",
+    "matchTime": "2024-06-16T13:00:00Z",
     "status": 1,
     "isOver": false,
-    "team1Id": 11,
-    "team2Id": 12,
+    "team1Id": 13,
+    "team2Id": 14,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U29",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U01",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U02",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U03",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U04",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U05",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U06",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U07",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U08",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U09",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U11",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U12",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U13",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U14",
+        "match_ID": 5,
+        "team_win_ID": 13,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U15",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U15",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U16",
-        "matchId": 5,
-        "teamWinId": 11,
+        "user_ID": "U16",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U17",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U17",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U19",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U20",
+        "match_ID": 5,
+        "team_win_ID": 13,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U21",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U21",
-        "matchId": 5,
-        "teamWinId": 11,
+        "user_ID": "U22",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 5,
-        "teamWinId": 12,
-        "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U23",
-        "matchId": 5,
-        "teamWinId": 12,
-        "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U24",
-        "matchId": 5,
-        "teamWinId": null,
+        "user_ID": "U23",
+        "match_ID": 5,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U25",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U24",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U25",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U27",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U26",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U28",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U30",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U29",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U27",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 5,
-        "teamWinId": 12,
+        "user_ID": "U28",
+        "match_ID": 5,
+        "team_win_ID": 14,
         "isDraw": false,
-        "betTime": "2024-06-16T17:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 5,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-16T03:00:00Z"
       }
     ]
   },
   {
     "matchId": 6,
-    "matchTime": "2024-06-16T23:00:00.000Z",
+    "matchName": "Slovenia-Denmak",
+    "matchTime": "2024-06-16T16:00:00Z",
     "status": 1,
     "isOver": false,
-    "team1Id": 13,
-    "team2Id": 14,
+    "team1Id": 9,
+    "team2Id": 10,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U29",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U01",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U02",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U03",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U04",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U05",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U06",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U07",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U08",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U09",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U11",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U12",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U13",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U14",
+        "match_ID": 6,
+        "team_win_ID": 9,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U15",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U16",
+        "match_ID": 6,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 6,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 6,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 6,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 6,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U16",
-        "matchId": 6,
-        "teamWinId": 13,
+        "user_ID": "U23",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U17",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U24",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U19",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U20",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U21",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U22",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U23",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U25",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U24",
-        "matchId": 6,
-        "teamWinId": 14,
-        "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U25",
-        "matchId": 6,
-        "teamWinId": null,
+        "user_ID": "U26",
+        "match_ID": 6,
+        "team_win_ID": null,
         "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 6,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U27",
-        "matchId": 6,
-        "teamWinId": null,
-        "isDraw": true,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
-      },
-      {
-        "userId": "U28",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U30",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U29",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U27",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 6,
-        "teamWinId": 14,
+        "user_ID": "U28",
+        "match_ID": 6,
+        "team_win_ID": 10,
         "isDraw": false,
-        "betTime": "2024-06-16T20:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-16T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 6,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-16T06:00:00Z"
       }
     ]
   },
   {
     "matchId": 7,
-    "matchTime": "2024-06-17T02:00:00.000Z",
+    "matchName": "Serbia-England",
+    "matchTime": "2024-06-16T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 11,
+    "team2Id": 12,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 7,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 7,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-16T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 8,
+    "matchName": "Romania-Ukraine",
+    "matchTime": "2024-06-17T13:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 19,
+    "team2Id": 20,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 8,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 8,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 8,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-17T03:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 9,
+    "matchName": "Belgium-Slovakia",
+    "matchTime": "2024-06-17T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 17,
+    "team2Id": 18,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 9,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 9,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-17T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 10,
+    "matchName": "Austria-France",
+    "matchTime": "2024-06-17T19:00:00Z",
     "status": 1,
     "isOver": false,
     "team1Id": 15,
     "team2Id": 16,
+    "stage": "group",
     "bets": [
       {
-        "userId": "U1",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U29",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U2",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U01",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U3",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U02",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U4",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U03",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U5",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U04",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U6",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U05",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U7",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U06",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U8",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U07",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U9",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U08",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U10",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U09",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U11",
-        "matchId": 7,
-        "teamWinId": 16,
-        "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "user_ID": "U11",
+        "match_ID": 10,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U12",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U12",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U13",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U13",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U14",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U14",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U16",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U15",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U17",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U16",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U18",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U17",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U19",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U19",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U20",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U20",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U21",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U21",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U22",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U22",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U23",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U23",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U24",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U24",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U25",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U25",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U26",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U26",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U27",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U30",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U28",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U27",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U29",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "U28",
+        "match_ID": 10,
+        "team_win_ID": 16,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
       },
       {
-        "userId": "U30",
-        "matchId": 7,
-        "teamWinId": 16,
+        "user_ID": "end",
+        "match_ID": 10,
+        "team_win_ID": null,
         "isDraw": false,
-        "betTime": "2024-06-16T23:00:00.000Z",
-        "predictGoals": []
+        "bet_time": "2024-06-17T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 11,
+    "matchName": " Turkey-Georgia",
+    "matchTime": "2024-06-18T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 21,
+    "team2Id": 22,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 11,
+        "team_win_ID": 22,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 11,
+        "team_win_ID": 22,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 11,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 11,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-18T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 12,
+    "matchName": "Portugal-Czechia",
+    "matchTime": "2024-06-18T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 23,
+    "team2Id": 24,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 12,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 12,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 12,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-18T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 13,
+    "matchName": "Croatia vs Albania",
+    "matchTime": "2024-06-19T13:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 6,
+    "team2Id": 8,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 13,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 13,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-19T03:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 14,
+    "matchName": "Germany-Hungary",
+    "matchTime": "2024-06-19T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 1,
+    "team2Id": 3,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 14,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 14,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 14,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 14,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-19T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 15,
+    "matchName": "Scotland-Switzerland",
+    "matchTime": "2024-06-19T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 2,
+    "team2Id": 4,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 15,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 15,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 15,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 15,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 15,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 15,
+        "team_win_ID": 4,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 15,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-19T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 16,
+    "matchName": "Slovenia-Serbia",
+    "matchTime": "2024-06-20T13:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 18,
+    "team2Id": 11,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 16,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 16,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 16,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-20T03:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 17,
+    "matchName": "Denmark-England",
+    "matchTime": "2024-06-20T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 10,
+    "team2Id": 12,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 17,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 17,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 17,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 17,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 17,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 17,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 17,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-20T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 18,
+    "matchName": "Spain-Italy",
+    "matchTime": "2024-06-20T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 5,
+    "team2Id": 7,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 18,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U03",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 18,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U11",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U16",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U25",
+        "match_ID": 18,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U28",
+        "match_ID": 18,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 18,
+        "team_win_ID": 5,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 18,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-20T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 19,
+    "matchName": "Slovakia-Ukraine",
+    "matchTime": "2024-06-21T13:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 18,
+    "team2Id": 20,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U09",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U22",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 19,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 19,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 19,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-21T03:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 20,
+    "matchName": "Poland-Austria",
+    "matchTime": "2024-06-21T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 13,
+    "team2Id": 15,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 20,
+        "team_win_ID": 15,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 20,
+        "team_win_ID": 15,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U08",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 20,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 20,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 20,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 20,
+        "team_win_ID": 13,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 20,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 20,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-21T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 21,
+    "matchName": "Holland-France",
+    "matchTime": "2024-06-21T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 14,
+    "team2Id": 16,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 21,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U02",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 21,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 21,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 21,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 21,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 21,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 21,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-21T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 22,
+    "matchName": "Georgia-Czechia",
+    "matchTime": "2024-06-22T13:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 22,
+    "team2Id": 24,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 22,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 22,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 22,
+        "team_win_ID": 22,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 22,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 22,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-22T03:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 23,
+    "matchName": "Turkey-Portugal",
+    "matchTime": "2024-06-22T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 21,
+    "team2Id": 23,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 23,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 23,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 23,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 23,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-22T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 24,
+    "matchName": "Belgium-Romania",
+    "matchTime": "2024-06-22T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 17,
+    "team2Id": 19,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U06",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 24,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 24,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 24,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 24,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-22T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 25,
+    "matchName": "Switzerland-Germany",
+    "matchTime": "2024-06-23T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 4,
+    "team2Id": 1,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 25,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 25,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 25,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 25,
+        "team_win_ID": 1,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 25,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 25,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 26,
+    "matchName": "Scotland-Hungary",
+    "matchTime": "2024-06-23T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 2,
+    "team2Id": 3,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U01",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 26,
+        "team_win_ID": 3,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 26,
+        "team_win_ID": 2,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 26,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-23T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 27,
+    "matchName": "Croatia-Italy",
+    "matchTime": "2024-06-24T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 6,
+    "team2Id": 7,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 27,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 27,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 27,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 27,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 27,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 27,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U21",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 27,
+        "team_win_ID": 6,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U24",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U27",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 27,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 27,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 28,
+    "matchName": "Albania-Spain",
+    "matchTime": "2024-06-24T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 8,
+    "team2Id": 7,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 28,
+        "team_win_ID": 7,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 28,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-24T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 29,
+    "matchName": "Holland-Austria",
+    "matchTime": "2024-06-25T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 14,
+    "team2Id": 15,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 29,
+        "team_win_ID": 15,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 29,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 29,
+        "team_win_ID": 14,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 29,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 29,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 30,
+    "matchName": "France-Poland",
+    "matchTime": "2024-06-25T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 16,
+    "team2Id": 13,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 30,
+        "team_win_ID": 16,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 30,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-25T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 31,
+    "matchName": "England-Slovenia",
+    "matchTime": "2024-06-25T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 12,
+    "team2Id": 9,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 31,
+        "team_win_ID": 12,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 31,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 32,
+    "matchName": "Denmak-Serbia",
+    "matchTime": "2024-06-25T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 10,
+    "team2Id": 11,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U04",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 32,
+        "team_win_ID": 11,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 32,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 32,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 32,
+        "team_win_ID": 10,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 32,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-25T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 33,
+    "matchName": "Slovakia-Romania",
+    "matchTime": "2024-06-26T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 18,
+    "team2Id": 19,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 33,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 33,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 33,
+        "team_win_ID": 18,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 33,
+        "team_win_ID": 19,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 33,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 34,
+    "matchName": "Ukraine-Belgium",
+    "matchTime": "2024-06-26T16:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 20,
+    "team2Id": 17,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 34,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 34,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 34,
+        "team_win_ID": 20,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 34,
+        "team_win_ID": 17,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 34,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-26T06:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 35,
+    "matchName": "Czechia-Turkey",
+    "matchTime": "2024-06-26T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 24,
+    "team2Id": 21,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 35,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 35,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 35,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 35,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 35,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 35,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 35,
+        "team_win_ID": null,
+        "isDraw": true,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 35,
+        "team_win_ID": 21,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 35,
+        "team_win_ID": 24,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 35,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "matchId": 36,
+    "matchName": "Georgia-Portugal",
+    "matchTime": "2024-06-26T19:00:00Z",
+    "status": 1,
+    "isOver": false,
+    "team1Id": 22,
+    "team2Id": 23,
+    "stage": "group",
+    "bets": [
+      {
+        "user_ID": "U29",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U05",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U07",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U12",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U13",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U14",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U15",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U17",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U19",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U20",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U23",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U26",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U30",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "U18",
+        "match_ID": 36,
+        "team_win_ID": 23,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
+      },
+      {
+        "user_ID": "end",
+        "match_ID": 36,
+        "team_win_ID": null,
+        "isDraw": false,
+        "bet_time": "2024-06-26T09:00:00Z"
       }
     ]
   }
