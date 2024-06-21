@@ -22,13 +22,22 @@ sap.ui.define([
     const DATE_CONFIG = {
         UTC_TIMEZONE_OFFSET: -120, //Offset in minutes (negative because it's UTC+2)
         DATE_FORMAT_PATTERN: "yyyy/MM/dd",
-        DATE_FORMAT_TIME_PATTERN:"yyyy/MM/dd HH:mm:ss",
+        DATE_FORMAT_TIME_PATTERN: "yyyy/MM/dd HH:mm:ss",
         DATE_FORMAT_DB_PATTERN: "yyyy/MM/dd",//TBD later
         DATE_FORMAT_DB_TIME_PATTERN: "yyyy/MM/dd HH:mm:ss",//TBD later
     };
+
+    const MATCH_STAGE_MULTIPLIER = {
+        "1": 1,
+        "2": 2,
+        "3": 4,
+        "4": 6.5
+    };
+
     return {
         MATCH_STATUS: MATCH_STATUS,
         MATCH_STATUS_CONF: MATCH_STATUS_CONF,
-        DATE_CONFIG: DATE_CONFIG
+        DATE_CONFIG: DATE_CONFIG,
+        MATCH_STAGE_MULTIPLIER: MATCH_STAGE_MULTIPLIER
     };
 });

@@ -81,13 +81,13 @@
                                 <Avatar
                                 src="{ path: 'mainModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
                                 displayShape="Square"
-                                displaySize="L"
+                                displaySize="S"
                                 class="sapUiSmallMarginTop"/>
-                                <Text text="{mainModel>userFullName}" />
+                                <Title text="{mainModel>userFullName}"  />
                             </HBox>
                           
                             <Text text="{mainModel>userEmail}" />
-                            <Text text="{mainModel>totalBet}" />
+                            <Title text="{mainModel>totalBet} Match" />
                             <ObjectNumber
                             visible = "false"
                             number="{mainModel>winning}"

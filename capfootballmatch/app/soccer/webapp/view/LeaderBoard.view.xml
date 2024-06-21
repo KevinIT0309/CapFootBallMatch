@@ -54,20 +54,20 @@
             id="idIconTabBarMulti"
             expanded="{device>/isNoPhone}"
             class="sapUiResponsiveContentPadding">
-		<items>
-			<IconTabFilter
-                text="List"
-                icon="sap-icon://manager-insight" 
-                key="LEADER_BOARD_TABLE">
-				 <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardList" type="XML" />
-			</IconTabFilter>
-			<IconTabFilter
-                visible="{= !${device>/system/phone}}"
-                text="Chart"
-				icon="sap-icon://bbyd-dashboard"
-				key="LEADER_BOARD_CHART">
-				<core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardChart" type="XML" />
-			</IconTabFilter>
+		    <items>
+                <IconTabFilter
+                    text="List"
+                    icon="sap-icon://manager-insight" 
+                    key="LEADER_BOARD_TABLE">
+                    <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardList" type="XML" />
+                </IconTabFilter>
+                <!--To hide on phone in need visible="{= !${device>/system/phone}}" -->
+                <IconTabFilter
+                    text="Chart"
+                    icon="sap-icon://bbyd-dashboard"
+                    key="LEADER_BOARD_CHART">
+                    <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.LeaderBoardChart" type="XML" />
+                </IconTabFilter>
             </items>
         </IconTabBar>
            
