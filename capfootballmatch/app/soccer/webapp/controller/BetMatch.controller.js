@@ -38,7 +38,7 @@ sap.ui.define([
                     "betMatchID": "",
                     "matchStatus": 1,
                     "matchPredicts": 0,
-                    "matchBetItems":[]
+                    "matchBetItems": []
                 };
 
                 // set explored app's demo model on this sample
@@ -82,8 +82,8 @@ sap.ui.define([
                     oModel.setProperty("/matchStatus", matchContext.status);//using for formatter
                 }
                 let matchPredicts = matchContext.predicts;
-                oModel.setProperty("/matchPredicts",matchPredicts);
-                
+                oModel.setProperty("/matchPredicts", matchPredicts);
+
                 let predictGoals = [];
                 for (let i = 0; i < matchPredicts; i++) {
                     predictGoals.push({
@@ -94,7 +94,7 @@ sap.ui.define([
 
                 }
                 oModel.setProperty("/predictGoals", predictGoals);
-                const aPredictOptions =  [
+                const aPredictOptions = [
                     {
                         "team_name": matchContext.team1.team_name,
                         "team_id": parseInt(matchContext.team1_ID)
@@ -104,7 +104,7 @@ sap.ui.define([
                         "team_id": parseInt(matchContext.team2_ID)
                     }
                 ];
-                oModel.setProperty("/predictOptions",aPredictOptions);
+                oModel.setProperty("/predictOptions", aPredictOptions);
 
                 const matchTime = matchContext.match_time;
                 const matchDateTime = new Date(matchTime);
@@ -129,54 +129,53 @@ sap.ui.define([
                 }
 
                 oModel.setProperty("/userId", userId);
-
+                //get User Bets
+                const oUserBetFilters = this._buildFilterBetMatch(userId, this._matchId);
+                let aUserBetItems = await this._getUserBetMatches(oUserBetFilters);
+                if (aUserBetItems && aUserBetItems.length > 0) {
+                    //Get Match for upsert by userId, matchId
+                    const betMatch = aUserBetItems[0];
+                    UICommon.devLog(`Found exist betMatch User: ${userId} - MatchId: ${this._matchId}`);
+                    oModel.setProperty("/team_win_ID", betMatch.team_win_ID);
+                    oModel.setProperty("/isDraw", betMatch.isDraw);
+                    //Handle load predict base on mathPredicts
+                    const aBetMatchPredictGoals = betMatch.predictGoals;
+                    let aUserBetPredictGoals = [];
+                    UICommon.devLog(`matchPredicts: ${matchPredicts}`);
+                    if (matchPredicts != 0) {
+                        for (let i = 0; i < matchPredicts; i++) {
+                            const oPredictGoal = aBetMatchPredictGoals[i];//if got bet match predicts set it to UI if NOT do nothing
+                            if (oPredictGoal) {
+                                aUserBetPredictGoals.push({
+                                    "predict": i + 1,
+                                    "team1_numOfGoals": oPredictGoal.team1_numOfGoals,
+                                    "team2_numOfGoals": oPredictGoal.team2_numOfGoals,
+                                });
+                            } else {
+                                aUserBetPredictGoals.push({
+                                    "predict": i + 1,
+                                    "team1_numOfGoals": null,
+                                    "team2_numOfGoals": null,
+                                });
+                            }
+                        }
+                    }
+                    oModel.setProperty("/predictGoals", aUserBetPredictGoals);
+                    oModel.setProperty("/betMatchID", betMatch.ID);
+                }
                 //Get match bets
                 const oMatchBetFilters = this._buildMatchBetFilter(this._matchId);
                 let aMatchBetItems = await this._getMatchBets(oMatchBetFilters);
-                if (aMatchBetItems && aMatchBetItems.length > 0) {
-                    //Get Match for upsert by userId, matchId
-                    const betMatch = UICommon.fnFindObjectInArray(aMatchBetItems, "user_ID", userId);
-                    if(betMatch && betMatch!=null){
-                        UICommon.devLog(`Found exist betMatch User: ${userId} - MatchId: ${this._matchId}`);
-                        oModel.setProperty("/team_win_ID", betMatch.team_win_ID);
-                        oModel.setProperty("/isDraw", betMatch.isDraw);
-                        //Handle load predict base on mathPredicts
-                        const aBetMatchPredictGoals = betMatch.predictGoals;
-                        let aUserBetPredictGoals = [];
-                        UICommon.devLog(`matchPredicts: ${matchPredicts}`);
-                        if(matchPredicts != 0){
-                            for (let i = 0; i < matchPredicts; i++) {
-                                const oPredictGoal = aBetMatchPredictGoals[i];//if got bet match predicts set it to UI if NOT do nothing
-                                if(oPredictGoal){
-                                    aUserBetPredictGoals.push({
-                                        "predict": i + 1,
-                                        "team1_numOfGoals": oPredictGoal.team1_numOfGoals,
-                                        "team2_numOfGoals": oPredictGoal.team2_numOfGoals,
-                                    });
-                                }else{
-                                    aUserBetPredictGoals.push({
-                                        "predict": i + 1,
-                                        "team1_numOfGoals": null,
-                                        "team2_numOfGoals": null,
-                                    });
-                                }      
-                            }
-                        }
-                        oModel.setProperty("/predictGoals",aUserBetPredictGoals);
-                        oModel.setProperty("/betMatchID", betMatch.ID);
-                    }
-                    
-                }
                 //Bind match bets
-                aMatchBetItems.forEach((bet)=>{
-                    if(bet.isDraw){
+                aMatchBetItems.forEach((bet) => {
+                    if (bet.isDraw) {
                         return;//skip bet draw
                     }
                     const oTeam = UICommon.fnFindObjectInArray(aPredictOptions, "team_id", bet.team_win_ID);
-                    if(oTeam){
-                        bet.teamWinName  = oTeam.team_name;
+                    if (oTeam) {
+                        bet.teamWinName = oTeam.team_name;
                     }
-                    if(bet.modifiedAt){
+                    if (bet.modifiedAt) {
                         bet.modifiedAt = UICommon.fnGetIsoDateStringWithoutMilliseconds(bet.modifiedAt);
                     }
                 });
@@ -327,7 +326,7 @@ sap.ui.define([
             })
         },
 
-        _filterBetMatches: async function (filters) {
+        _getUserBetMatches: async function (filters) {
             const betMatchesBinding = this.getModel("mainModel").bindList("/Bets").filter(filters);//use new listbinding instance - otherwise not all books will be in the list
             const betMatchesContext = await betMatchesBinding.requestContexts();
 
@@ -355,7 +354,6 @@ sap.ui.define([
                 "and": true
             })
         },
-
         _getMatchBets: async function (filters) {
             try {
                 //use new listbinding instance

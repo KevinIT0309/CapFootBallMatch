@@ -2,51 +2,96 @@ namespace football.match.view;
 
 using football.match as fms from '../schema';
 
-view LeaderBoards as select from fms.Users as u
-    inner join fms.Bets as b on b.user_ID = u.user_id
-    inner join fms.Matches as m on m.match_id = b.match_ID
-    left outer join fms.Scores as s on s.user_ID = u.user_id and s.match_ID = b.match_ID
-{
-    key u.user_id as userId : String,
-    u.fullName as userFullName : String,
-    u.email as userEmail : String,
-    coalesce(sum(s.points), 0) as currentPoints : String,
-    count(b.ID) as totalBet: Integer,
-    coalesce(sum(
-        case
-            when b.isDraw = true and m.team1_score = m.team2_score then 1
-            when m.team_win_ID = b.team_win_ID then 1
-            else 0
-        end
-    ), 0) as winning : Integer,
-    row_number() over (order by coalesce(sum(s.points), 0) desc, coalesce(sum(
-        case
-            when b.isDraw = true and m.team1_score = m.team2_score then 1
-            when m.team_win_ID = b.team_win_ID then 1
-            else 0
-        end
-    ), 0) desc, count(b.ID) desc) as rank: Integer
-}
+view LeaderBoards as
+    select from fms.Users as u
+    inner join fms.Bets as b
+        on b.user_ID = u.user_id
+    inner join fms.Matches as m
+        on m.match_id = b.match_ID
+    left outer join fms.Scores as s
+        on  s.user_ID  = u.user_id
+        and s.match_ID = b.match_ID
+    {
+        key u.user_id  as userId        : String,
+            u.fullName as userFullName  : String,
+            u.email    as userEmail     : String,
+            coalesce(
+                sum(
+                    s.points
+                ), 0
+            )          as currentPoints : String,
+            count(
+                b.ID
+            )          as totalBet      : Integer,
+            coalesce(
+                sum(
+                    case
+                        when
+                            b.isDraw          = true
+                            and m.team1_score = m.team2_score
+                        then
+                            1
+                        when
+                            m.team_win_ID = b.team_win_ID
+                        then
+                            1
+                        else
+                            0
+                    end
+                ), 0
+            )          as winning       : Integer,
+            row_number() over(
+                order by coalesce(
+                    sum(
+                        s.points
+                    ), 0
+                ) desc, coalesce(
+                    sum(
+                        case
+                            when
+                                b.isDraw          = true
+                                and m.team1_score = m.team2_score
+                            then
+                                1
+                            when
+                                m.team_win_ID = b.team_win_ID
+                            then
+                                1
+                            else
+                                0
+                        end
+                    ), 0
+                ) desc, count(
+                    b.ID
+                ) desc
+            )          as rank          : Integer
+    }
 
-group by
-    u.user_id,
-    u.fullName,
-    u.email
-order by currentPoints desc, winning desc, totalBet desc;
+    group by
+        u.user_id,
+        u.fullName,
+        u.email
+    order by
+        currentPoints desc,
+        winning       desc,
+        totalBet      desc;
 
 
-view BetStatistics as select from fms.Bets as b 
-    inner join fms.Matches as m on m.match_id = b.match_ID
-    inner join fms.Teams as t on t.team_id = b.team_win_ID 
-{
-    key b.user_ID as userId: String,
-    b.team_win_ID as teamWinId: String,
-    b.modifiedAt as modifiedAt: String,
-    t.team_name as teamNameWin: String,
-    m.match_id as matchId: String,
-    m.match_name as matchName: String,
-    m.match_time as matchTime: String
-}
+view BetStatistics as
+    select from fms.Bets as b
+    inner join fms.Matches as m
+        on m.match_id = b.match_ID
+    inner join fms.Teams as t
+        on t.team_id = b.team_win_ID
+    {
+        key b.user_ID     as userId      : String,
+            b.team_win_ID as teamWinId   : String,
+            b.modifiedAt  as modifiedAt  : String,
+            t.team_name   as teamNameWin : String,
+            m.match_id    as matchId     : String,
+            m.match_name  as matchName   : String,
+            m.match_time  as matchTime   : String
+    }
 
 view UserPoints as
     select from fms.Users as u
@@ -74,7 +119,8 @@ view BetHistory as
     inner join fms.Teams as t
         on t.team_id = b.team_win_ID
     {
-        lb.rank          as rank          :Integer,
+        lb.rank          as rank          : Integer,
+        lb.userId        as userId        : String,
         lb.userFullName  as userName      : String,
         lb.currentPoints as currentPoints : Integer,
         b.ID             as betID         : String,
