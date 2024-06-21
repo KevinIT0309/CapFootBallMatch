@@ -223,6 +223,18 @@ sap.ui.define([
                 return "Success";
             }
             return "Error";
+        },
+        fnGetBetPointByMatchStage:function(stage){
+            try {
+                const { MATCH_STAGE_MULTIPLIER } = AppGlobalConstant;
+                if(MATCH_STAGE_MULTIPLIER[stage]){
+                    return MATCH_STAGE_MULTIPLIER[stage];
+                }
+                return 0;
+            } catch (error) {
+                console.error('Error in fnGetBetPointByMatchStage:', error);
+                return 0;
+            }
         }
         //EOF
     };

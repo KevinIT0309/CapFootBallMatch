@@ -22,7 +22,7 @@
             </m:OverflowToolbar>
         </m:headerToolbar>
         <m:columns>
-            <m:Column minScreenWidth="Tablet" demandPopin="true" >
+            <m:Column width="8rem" minScreenWidth="Tablet" demandPopin="true" >
                 <m:Text text="Player Rank" />
             </m:Column>
             <m:Column minScreenWidth="Tablet" demandPopin="true" >
@@ -36,18 +36,14 @@
             <m:Column minScreenWidth="Tablet" demandPopin="true">
                 <m:Text text="Predict Match" />
             </m:Column>
-
-            <m:Column minScreenWidth="Tablet" demandPopin="true" width="30rem">
+             <m:Column minScreenWidth="Tablet" demandPopin="true">
+                <m:Text text="Current Score" />
+            </m:Column>
+            <!-- Temp hide -->
+            <m:Column visible="false" minScreenWidth="Tablet" demandPopin="true" width="30rem">
                 <m:Text text="Predict Goal" />
             </m:Column>
 
-            <m:Column minScreenWidth="Tablet" demandPopin="true">
-                <m:Text text="Modified At" />
-            </m:Column>
-
-            <m:Column minScreenWidth="Tablet" demandPopin="true">
-                <m:Text text="Modified By" />
-            </m:Column>
 
         </m:columns>
 
@@ -67,32 +63,39 @@
                     <tnt:InfoLabel
                             text="#{viewModel>rank}"
                             colorScheme= "{ path: 'viewModel>rank',formatter: 'formatter.fnGetLeaderBoardRankState'}" />
-                    <m:Text text="{viewModel>userName}" />
-                    <m:ObjectIdentifier
-                        title="{
+                    <m:HBox alignItems="Center">
+                                <m:Avatar
+                                src="{ path: 'viewModel>rank',formatter: 'formatter.fnGetLeaderBoardBadge'}"
+                                displayShape="Square"
+                                displaySize="S"
+                                class="sapUiSmallMarginTop"/>
+                                <m:Title text="{viewModel>userName}"  />
+                            </m:HBox>
+                    <m:HBox>
+                        <m:Text text="{
                                     path: 'viewModel>betTime',
                                     type: 'sap.ui.model.odata.type.DateTimeOffset',
                                     formatOptions: {
                                         pattern: 'dd/MM/yyyy'
                                     }
-                                }"
-                        text="{
+                                }" />
+                        <m:Text class="sapUiSmallMarginBegin" text="{
                                 path: 'viewModel>betTime',  
                                 type: 'sap.ui.model.odata.type.DateTimeOffset',
                                 formatOptions: {  
                                     pattern : 'HH:mm'
                                 }
-                            }"
-                    />
+                            }" />
+                    </m:HBox>
                     <m:VBox>
-                        <m:Text text="Draw" visible="{= ${viewModel>isDraw} }" />
-                        <m:ObjectIdentifier
-                        visible="{= !${viewModel>isDraw} }"
-                        title="Team Win"
-                        text= "{viewModel>teamWinName}"
-                        />
+                        <m:Title text="Draw" visible="{= ${viewModel>isDraw} }" />
+                        <m:Title text="{viewModel>userName}"  visible="{= !${viewModel>isDraw} }" />
                     </m:VBox>
-                    <m:VBox>
+                    <m:ObjectStatus
+                            text="{viewModel>currentPoints} Point"
+                            state="{path: 'viewModel>rank',formatter: 'formatter.fnGetLeaderBoardObjectState' }" />
+                    <!-- temp hide -->
+                    <m:VBox visible="false">
                         <m:Text text="No Predicts Goal" visible="{= ${viewModel>/matchPredicts} === 0 }" />
                         <m:VBox visible="{= ${viewModel>/matchPredicts} !== 0 }">
                             <m:HBox alignItems="Start">
@@ -109,27 +112,6 @@
                             </m:VBox>
                         </m:VBox>
                     </m:VBox>
-
-                    <m:ObjectIdentifier
-                        title="{
-                                    path: 'viewModel>modifiedAt',
-                                    type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                    formatOptions: {
-                                        pattern: 'dd/MM/yyyy'
-                                    }
-                                }"
-                        text="{
-                                path: 'viewModel>modifiedAt',
-                                type: 'sap.ui.model.odata.type.DateTimeOffset',
-                                formatOptions: {  
-                                    pattern : 'HH:mm'
-                                }
-                            }"
-                    />
-                    <m:Text text="{viewModel>modifiedBy}"/>
-
-
-                    <!-- <core:Fragment fragmentName="cap.euro.bettor.soccer.fragment.MatchBetItemPredict" type="XML" /> -->
                 </m:cells>
             </m:ColumnListItem>
         </m:items>

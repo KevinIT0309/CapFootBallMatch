@@ -123,6 +123,12 @@
                                 >
                                     <m:Text text="Bet Status" />
                                 </m:Column>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Match Score" />
+                                </m:Column>
                             </m:columns>
 
                             <m:items>
@@ -173,6 +179,9 @@
                                         <tnt:InfoLabel
                                         text="{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusText'}"
                                         colorScheme= "{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusState'}" />
+                                        <m:ObjectStatus
+                                            text="{path: 'local>match/stage',formatter: 'formatter.fnGetBetPointByMatchStage' } Point"
+                                            state="Warning" />
                                     </m:cells>
                                 </m:ColumnListItem>
                             </m:items>
