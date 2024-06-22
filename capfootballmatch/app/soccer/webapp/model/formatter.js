@@ -31,9 +31,12 @@ sap.ui.define([
             }
         },
 
-        formatResultText: function (team1_score, team2_score, status) {
-            if (parseInt(status) !== 3) {
-                return "N/A";
+        fnGetMatchResultText: function (team1_score, team2_score, status) {
+            if (parseInt(status) === 1) {
+                return "Waiting Start";
+            }
+            if (parseInt(status) === 2) {
+                return "Waiting Result";
             }
 
             if (!isNaN(parseInt(team1_score)) && !isNaN(parseInt(team2_score))) {

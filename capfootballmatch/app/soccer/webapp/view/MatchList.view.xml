@@ -120,6 +120,12 @@
                     >
                         <Text text="Match Status" />
                     </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Match Result" />
+                    </Column>
                 </columns>
 
                 <items>
@@ -163,6 +169,16 @@
                         state="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
                         class="sapMObjectStatusLarge"
                         />
+                        <Text
+                        text="{
+                           parts: [
+                                'mainModel>team1_score',
+                                'mainModel>team2_score',
+                                'mainModel>status'
+						    ],
+                            formatter: 'formatter.fnGetMatchResultText'
+                        }"
+                    />
                         </cells>
                     </ColumnListItem>
                 </items>

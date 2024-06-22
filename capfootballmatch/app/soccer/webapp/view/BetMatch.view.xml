@@ -139,7 +139,7 @@
                                 'mainModel>team2_score',
                                 'mainModel>status'
 						    ],
-                            formatter: 'formatter.formatResultText'
+                            formatter: 'formatter.fnGetMatchResultText'
                         }"
                     />
                 </m:VBox>
@@ -147,11 +147,9 @@
                 <m:VBox id="vbPlayerResult">
                         <m:ObjectStatus
                         text="{
-                           parts: [
-                                'viewModel>/team_win_ID',
-                                'mainModel>team_win_ID'
+                           parts: [ 'viewModel>/isDraw','viewModel>/team_win_ID','mainModel>status','mainModel>team_win_ID','mainModel>team1_score','mainModel>team2_score'
 						    ],
-                            formatter: 'formatter.fnGetLoggedUserBetResultText'
+                            formatter: 'formatter.fnGetBetStatusText'
                         }"
                         state="{
                            parts: [
@@ -162,6 +160,7 @@
                         }"
                         class="sapMObjectStatusLarge"
                     />
+
                 </m:VBox>
 
             </m:FlexBox>

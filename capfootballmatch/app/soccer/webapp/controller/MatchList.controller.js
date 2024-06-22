@@ -13,7 +13,8 @@ sap.ui.define([
                 let oData = {
                     "searchFieldValue": "",
                     "matchStatusKey": "",
-                    "matchDayValue": null
+                    "matchDayValue": null,
+                    "userBets":[]
                 };
 
                 // set explored app's demo model on this sample
@@ -25,6 +26,7 @@ sap.ui.define([
 
             onRouteMatched: function (oEvent) {
                 this.getModel("layoutMod").setProperty("/layout", fioriLibrary.LayoutType.OneColumn);
+
                 this.byId("table").getBinding("items").refresh("$auto");
             },
 
