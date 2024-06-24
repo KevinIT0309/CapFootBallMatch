@@ -5,7 +5,7 @@ const { updateMatchResults } = require('./update_matches.js')
 // Bootstrap middleware
 cds.on('bootstrap', (app) => {
   console.log('Bootstrap middleware...');
-  updateMatchResults();
+  // updateMatchResults();
 });
 
 module.exports = cds.server;
