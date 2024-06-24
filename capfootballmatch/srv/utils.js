@@ -6,6 +6,10 @@ const stageMultipliers = {
 };
 
 const calculatePoints = (bet, reqData, match) => {
+    if (bet.isDraw === null && bet.team_win_ID === null) {
+        return 0;
+    }
+
     if (bet.isDraw) {
         return reqData.team1_score == reqData.team2_score ? (stageMultipliers[match.stage] || 1) : 0;
     }

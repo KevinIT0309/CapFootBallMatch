@@ -17,7 +17,7 @@ class FMService extends cds.ApplicationService {
 
     this.before('UPDATE', 'Bets', async req => {
       // only allow to create when the match in this bet not yet take place
-      console.log("EVENTS: before UPDATE Bets ");
+      console.log("EVENTS: before UPDATE Bets " + JSON.stringify(req.data));
       const bet_ID = req.params[0];
       const bet = await cds.tx(req).run(SELECT.one.from('football.match.Bets').where({ ID: bet_ID }));
 
@@ -93,8 +93,12 @@ class FMService extends cds.ApplicationService {
 
 
     this.before('UPDATE', 'Matches', async req => {
-      console.log("EVENTS: before UPDATE Matchs - update scores");
-      await updateScore(req); // make score for all bets
+      console.log("EVENTS: before UPDATE Matchs: " + JSON.stringify(req.data));
+      if(req.data.status == 3) {
+        console.log("Match done" );
+        await updateScore(req); // make score for all bets
+      }
+      
     });
 
     this.after('READ', 'LeaderBoards', async req => {
