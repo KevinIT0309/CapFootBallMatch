@@ -227,8 +227,11 @@ sap.ui.define([
             }
             return "Error";
         },
-        fnGetBetPointByMatchStage:function(stage){
+        calculatePoints:function(stage, betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score){
+        
             try {
+                const rs = this.fnGetBetStatusText(betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score);
+                if(rs !== "Win") return 0;
                 const { MATCH_STAGE_MULTIPLIER } = AppGlobalConstant;
                 if(MATCH_STAGE_MULTIPLIER[stage]){
                     return MATCH_STAGE_MULTIPLIER[stage];
@@ -238,6 +241,10 @@ sap.ui.define([
                 console.error('Error in fnGetBetPointByMatchStage:', error);
                 return 0;
             }
+        },
+        fnGetBetPointByMatchStage:function(stage, betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score){
+            const points  = this.calculatePoints(stage, betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score);
+            return points + " " + (points === 1 ? "Point" : "Points");
         }
         //EOF
     };

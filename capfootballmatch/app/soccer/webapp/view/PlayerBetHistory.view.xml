@@ -180,7 +180,16 @@
                                         text="{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusText'}"
                                         colorScheme= "{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusState'}" />
                                         <m:ObjectStatus
-                                            text="{path: 'local>match/stage',formatter: 'formatter.fnGetBetPointByMatchStage' } Point"
+                                            text="{ parts: [
+                                                            {path: 'local>match/stage'},
+                                                            {path: 'local>isDraw'},
+                                                            {path: 'local>team_win_ID'},
+                                                            {path: 'local>match/status'},
+                                                            {path: 'local>match/team_win_ID'},
+                                                            {path: 'local>match/team1_score'},
+                                                            {path: 'local>match/team2_score'}
+                                                        ], 
+                                                        formatter: 'formatter.fnGetBetPointByMatchStage'}"
                                             state="Warning" />
                                     </m:cells>
                                 </m:ColumnListItem>
