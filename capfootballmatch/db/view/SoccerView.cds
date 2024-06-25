@@ -139,6 +139,8 @@ view BetHistory as
 
 view MatchesBets as
     select from fms.Matches as m
+        inner join fms.Teams as t1 on t1.team_id = m.team1_ID
+        inner join fms.Teams as t2 on t2.team_id = m.team2_ID
         left outer join fms.Bets as b
             on b.match_ID = m.match_id
         {
@@ -148,7 +150,9 @@ view MatchesBets as
                 m.status as status : Integer,
                 m.isOver as isOver : Boolean,
                 m.team1_ID as team1_ID : Integer,
+                t1.team_name as team1_Name: String,
                 m.team2_ID as team2_ID : Integer,
+                t2.team_name as team2_Name: String,
                 m.team1_score as team1_score : Integer,
                 m.team2_score as team2_score : Integer,
                 m.team_win_ID as team_win_ID : Integer,

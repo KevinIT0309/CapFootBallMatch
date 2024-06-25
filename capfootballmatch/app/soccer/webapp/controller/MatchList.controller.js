@@ -3,9 +3,11 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/f/library",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
+    "sap/ui/model/FilterOperator",
+    "cap/euro/bettor/soccer/utils/UICommon",
+    "cap/euro/bettor/soccer/utils/HttpRequest"
 ],
-    function (BaseController, JSONModel, fioriLibrary, Filter, FilterOperator) {
+    function (BaseController, JSONModel, fioriLibrary, Filter, FilterOperator, UICommon, HttpRequest) {
         "use strict";
 
         return BaseController.extend("cap.euro.bettor.soccer.controller.MatchList", {
@@ -14,7 +16,9 @@ sap.ui.define([
                     "searchFieldValue": "",
                     "matchStatusKey": "",
                     "matchDayValue": null,
-                    "userBets":[]
+                    "userId": "",
+                    "userBets": [],
+                    "matchesBets": []
                 };
 
                 // set explored app's demo model on this sample
@@ -24,16 +28,40 @@ sap.ui.define([
                 this.getRouter().attachRouteMatched(this.onRouteMatched, this);
             },
 
-            onRouteMatched: function (oEvent) {
+            onRouteMatched: async function (oEvent) {
                 this.getModel("layoutMod").setProperty("/layout", fioriLibrary.LayoutType.OneColumn);
+                let oViewModel = this.getModel("viewModel");
+                this._oMatchTable = this.byId("table");
 
-                this.byId("table").getBinding("items").refresh("$auto");
+                //Get logged user
+                let getUserInfoContextBinding = this.getModel("mainModel").bindContext("/GetUserInfo(...)");
+                await getUserInfoContextBinding.invoke();
+                let email = getUserInfoContextBinding.getBoundContext().getObject().id;
+
+                const userFilters = new Filter("email", "EQ", email);
+                const usersFiltered = await this.filterUsers(userFilters);
+                const userId = usersFiltered?.[0]?.user_id;
+                if (UICommon.fnIsEmpty(userId)) {
+                    this.hideBusy();
+                    MessageBox.error(this.getGeneralTechnicalIssueMsg());
+                    return;
+                }
+
+                oViewModel.setProperty("/userId", userId);
+
+                let aMatches = await this._fnGetMatchBetResults(userId);
+                oViewModel.setProperty("/matchesBets", aMatches);
+
+                if (this._oMatchTable) {
+                    this._oMatchTable.getBinding("items").refresh("$auto");
+                }
+
             },
 
             onItemPress: function (oEvent) {
-               
+
                 let oItem = oEvent.getSource();
-                let matchId = oItem.getBindingContext("mainModel").getObject("match_id");
+                let matchId = oItem.getBindingContext("viewModel").getObject("match_id");
                 this.getRouter().navTo("betMatch", { "layout": fioriLibrary.LayoutType.TwoColumnsMidExpanded, "matchId": matchId });
             },
 
@@ -72,6 +100,32 @@ sap.ui.define([
                 } else {
                     this.byId("table").getBinding("items").filter([]);
                 }
+            },
+            _fnGetMatchBetResults: function (userId) {
+                let sRequestEndpoint = `${this.getFMSrvPath()}/getMatchBetResults(userID='${userId}')`;
+                console.log(`Request getMatchBetResults Endpoint: ${sRequestEndpoint}`);
+                const oSettings = {
+                    headers: {
+                        "Accept-Language": 'en'
+                    }
+                };
+                this.showBusy();
+                return new Promise((resolve, reject) => {
+                    HttpRequest.getData(sRequestEndpoint, (oData) => {
+                        this.hideBusy();
+                        if (oData.value && oData.value.length > 0) {
+                            resolve(oData.value);
+                        } else {
+                            resolve([]);
+                        }
+                    }, (oError) => {
+                        console.log("getMatchBetResults - Error: ", oError);
+                        resolve([]);
+                        this.hideBusy();
+                    }, oSettings);
+                });
+
             }
+            //EOF
         });
     });

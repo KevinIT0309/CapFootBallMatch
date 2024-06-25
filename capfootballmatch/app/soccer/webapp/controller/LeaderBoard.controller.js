@@ -101,7 +101,7 @@ sap.ui.define([
                 console.log(`Request Leaderboard Endpoint: ${sRequestEndpoint}`);
                 const oSettings = {
                     headers: {
-                        "Accept-Language": this._sLangId
+                        "Accept-Language": 'en'
                     }
                 };
                 this.showBusy();

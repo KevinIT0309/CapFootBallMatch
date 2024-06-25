@@ -121,6 +121,18 @@
                                     minScreenWidth="Tablet"
                                     demandPopin="true"
                                 >
+                                    <m:Text text="Your Predict" />
+                                </m:Column>
+                                  <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
+                                    <m:Text text="Match Result" />
+                                </m:Column>
+                                <m:Column
+                                    minScreenWidth="Tablet"
+                                    demandPopin="true"
+                                >
                                     <m:Text text="Bet Status" />
                                 </m:Column>
                                 <m:Column
@@ -175,7 +187,24 @@
                                                         pattern : 'HH:mm'
                                                     }
                                                 }"/>
-                                        
+                                        <m:VBox>
+                                            <tnt:InfoLabel
+                                                text="Draw"
+                                                colorScheme="7"  visible="{= ${local>isDraw} }"/>
+                                            <tnt:InfoLabel
+                                                text="{local>teamWinName}"
+                                                colorScheme="1"  visible="{= !${local>isDraw} }"/>
+                                        </m:VBox>
+                                        <m:Text
+                                            text="{
+                                            parts: [
+                                                    'local>match/team1_score',
+                                                    'local>match/team2_score',
+                                                    'local>match/status'
+                                                ],
+                                                formatter: 'formatter.fnGetMatchResultText'
+                                            }"
+                                        />
                                         <tnt:InfoLabel
                                         text="{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusText'}"
                                         colorScheme= "{ parts:['local>isDraw','local>team_win_ID','local>match/status','local>match/team_win_ID','local>match/team1_score','local>match/team2_score'],formatter: 'formatter.fnGetBetStatusState'}" />

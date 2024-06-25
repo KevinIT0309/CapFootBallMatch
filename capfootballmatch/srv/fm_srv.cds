@@ -61,15 +61,19 @@ service FM_SRV {
     @readonly entity MatchBetResults {
         match_id    : String;
         match_name  : String;
-        team_win_Name : String;
         match_time  : String;
         team1_ID    : Integer;
+        team1_Name: String;
+        team2_Name: String;
         team2_ID    : Integer;
         isOver      : Boolean;
         team1_score : Integer;
         team2_score : Integer;
         team_win_ID : Integer;
+        team_win_Name : String;
+        status: Integer;
         team_win_ID_bet : Integer;
+        team_win_Name_bet : String;
         isDraw      : Boolean;
     }
 

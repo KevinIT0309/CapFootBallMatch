@@ -46,5 +46,13 @@ sap.ui.define([
             }
             return "";
         },
+        filterUsers: async function (filters) {
+            const usersBinding = this.getModel("mainModel").bindList("/Users", {
+                "$select": "user_ID"
+            }).filter(filters);//use new listbinding instance - otherwise not all books will be in the list
+            const usersContext = await usersBinding.requestContexts();
+
+            return usersContext.map(userContext => userContext.getObject());
+        },
     });
 });

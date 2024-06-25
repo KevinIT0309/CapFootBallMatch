@@ -245,6 +245,15 @@ sap.ui.define([
         fnGetBetPointByMatchStage:function(stage, betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score){
             const points  = this.calculatePoints(stage, betDraw,betTeamWin,matchStatus, matchTeamWin,team1Score,team2Score);
             return points + " " + (points === 1 ? "Point" : "Points");
+        },
+        fnIsMatchResultDraw:function(matchTeamWin,team1Score,team2Score,matchStatus){
+            if(matchTeamWin){
+                return false;
+            }
+            if(team1Score != team2Score){
+                return false;
+            }
+            return true;
         }
         //EOF
     };

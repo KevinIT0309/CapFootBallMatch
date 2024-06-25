@@ -47,10 +47,18 @@ sap.ui.define([
                 
                 //Get bet histories
                 let betMatchesFilters = this._buildPlayerBetFilter(playerUserId);
+                const aTeams = await this._getTeams([]);
                 const aPlayerBetItems = await this._getPlayerBets(betMatchesFilters);
                 if(aPlayerBetItems && aPlayerBetItems.length > 0){
                     const oPlayerBetItem = aPlayerBetItems[0];//get first item
                     oModel.setProperty("/playerName", oPlayerBetItem.user.fullName);
+
+                    aPlayerBetItems.forEach((bet)=>{
+                        const oTeam = UICommon.fnFindObjectInArray(aTeams, "team_id", bet.team_win_ID);
+                        if (oTeam) {
+                            bet.teamWinName = oTeam.team_name;
+                        }
+                    });
                 }
                 oModel.setProperty("/betItems", aPlayerBetItems);
                 this.hideBusy();
@@ -104,7 +112,13 @@ sap.ui.define([
                 console.error(`_getPlayerBets - error: ${error.message}`);
                 throw error;
             }
-        }
+        },
+        _getTeams: async function (filters) {
+            const teamBinding = this.getModel("mainModel").bindList("/Teams").filter(filters);//use new listbinding instance - otherwise not all books will be in the list
+            const teamsContext = await teamBinding.requestContexts();
+
+            return teamsContext.map(teamContext => teamContext.getObject());
+        },
         //EOF
     });
 });
