@@ -56,6 +56,8 @@ service FM_SRV {
     
     @readonly entity BetHistory as select from fmsv.BetHistory;
 
+    @readonly entity MatchesBets as select from fmsv.MatchesBets;
+
     @readonly entity MatchBetResults {
         match_id    : String;
         match_name  : String;
