@@ -126,7 +126,7 @@
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
-                        <Text text="Match Win" />
+                        <Text text="Team Win" />
                     </Column>
                     <Column
                         minScreenWidth="Tablet"
