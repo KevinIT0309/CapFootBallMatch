@@ -6,6 +6,7 @@
     xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"
     xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
     core:require="{formatter: 'cap/euro/bettor/soccer/model/formatter'}"
 >
     <f:DynamicPage id="page">
@@ -60,12 +61,7 @@
             <Table
                 id="table"
                 inset="false"
-                items="{
-						path: 'mainModel>/Matches',
-                        parameters: {
-                            expand: 'team1,team2'
-                        }
-					}"
+                items="{viewModel>/matchesBets}"
             >
                 <headerToolbar>
                     <OverflowToolbar>
@@ -124,6 +120,18 @@
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
+                        <Text text="Your Bet" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Match Win" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
                         <Text text="Match Result" />
                     </Column>
                 </columns>
@@ -142,11 +150,11 @@
                             />
                         </customData>
                         <cells>
-                            <Text text="{mainModel>match_id}" />
-                            <Text text="{mainModel>match_name}" />
+                            <Text text="{viewModel>match_id}" />
+                            <Text text="{viewModel>match_name}" />
                             <Text
                                 text="{
-				        path: 'mainModel>match_time',
+				        path: 'viewModel>match_time',
 				        type: 'sap.ui.model.odata.type.DateTimeOffset',
 				        formatOptions: {
 				          pattern: 'dd/MM/yyyy'
@@ -155,30 +163,59 @@
                             />
                             <Text
                                 text="{
-				        path:'mainModel>match_time',  
+				        path:'viewModel>match_time',  
                         type: 'sap.ui.model.odata.type.DateTimeOffset',
                         formatOptions: {  
                             pattern : 'HH:mm'
                         }
 				      }"
                             />
-                            <Text text="{mainModel>team1/team_name}" />
-                            <Text text="{mainModel>team2/team_name}" />
+                            <Text text="{viewModel>team1_Name}" />
+                            <Text text="{viewModel>team2_Name}" />
                         <ObjectStatus
-                        text="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusText'}"
-                        state="{ path: 'mainModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
+                        text="{ path: 'viewModel>status',formatter: 'formatter.fnGetMatchStatusText'}"
+                        state="{ path: 'viewModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
                         class="sapMObjectStatusLarge"
                         />
-                        <Text
+                        <VBox>
+                            <tnt:InfoLabel text="Draw"  colorScheme="7"  visible="{= ${viewModel>isDraw} }"/>
+                            <tnt:InfoLabel text="{viewModel>team_win_Name_bet}" colorScheme="1"  visible="{= !${viewModel>isDraw} }"/>
+                        </VBox>
+                        <VBox>
+                            <tnt:InfoLabel text="Waiting result" colorScheme="6" visible="{= ${viewModel>status} !== 3 }"/>
+
+                            <tnt:InfoLabel text="Draw"  colorScheme="7"  visible="{=${viewModel>status} === 3 &amp;&amp; ${
+                           parts: [
+                                'viewModel>team_win_ID',
+                                'viewModel>team1_score',
+                                'viewModel>team2_score',
+                                'viewModel>status'
+						    ],
+                            formatter: 'formatter.fnIsMatchResultDraw'
+                        }}"/>
+                            <tnt:InfoLabel text="{viewModel>team_win_Name}" colorScheme="1"  visible="{= !${
+                           parts: [
+                                'viewModel>team_win_ID',
+                                'viewModel>team1_score',
+                                'viewModel>team2_score',
+                                'viewModel>status'
+                                
+						    ],
+                            formatter: 'formatter.fnIsMatchResultDraw'
+                        }}"/>
+                        </VBox>
+                     <ObjectStatus
                         text="{
                            parts: [
-                                'mainModel>team1_score',
-                                'mainModel>team2_score',
-                                'mainModel>status'
+                                'viewModel>team1_score',
+                                'viewModel>team2_score',
+                                'viewModel>status'
 						    ],
                             formatter: 'formatter.fnGetMatchResultText'
                         }"
-                    />
+                        state="{ path: 'viewModel>status',formatter: 'formatter.fnGetMatchStatusState'}"
+                        class="sapMObjectStatusLarge"
+                        />
                         </cells>
                     </ColumnListItem>
                 </items>
