@@ -135,3 +135,25 @@ view BetHistory as
     }
     order by
         lb.rank asc;
+
+
+view MatchesBets as
+    select from fms.Matches as m
+        left outer join fms.Bets as b
+            on b.match_ID = m.match_id
+        {
+            key m.match_id as match_id : String,
+                m.match_name as match_name : String,
+                m.match_time as match_time : String,
+                m.status as status : Integer,
+                m.isOver as isOver : Boolean,
+                m.team1_ID as team1_ID : Integer,
+                m.team2_ID as team2_ID : Integer,
+                m.team1_score as team1_score : Integer,
+                m.team2_score as team2_score : Integer,
+                m.team_win_ID as team_win_ID : Integer,
+                m.stage as stage : String,
+                b.user_ID as user_ID : String,
+                b.team_win_ID as team_win_ID_Bet : String,
+                b.isDraw as is_draw : Boolean,
+    }
