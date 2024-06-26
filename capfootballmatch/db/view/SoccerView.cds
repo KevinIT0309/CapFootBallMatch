@@ -116,7 +116,7 @@ view BetHistory as
     select from LeaderBoards as lb
     inner join fms.Bets as b
         on b.user_ID = lb.userId
-    inner join fms.Teams as t
+    left join fms.Teams as t
         on t.team_id = b.team_win_ID
     {
         lb.rank          as rank          : Integer,
