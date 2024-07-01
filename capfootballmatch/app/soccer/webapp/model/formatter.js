@@ -151,8 +151,12 @@ sap.ui.define([
         fnStringToNumber: function () {
 
         },
-        fnHandleEnabledBetButton: function (bUiEnabled, status) {
+        fnHandleEnabledBetButton: function (bUiEnabled, status, isDraw, team_win_ID) {
             try {
+                if(!isDraw && (team_win_ID == null || team_win_ID == "")) {
+                    return false;
+                }
+                
                 UICommon.devLog(`fnHandleEnabledBetButton - UiEnabled: ${bUiEnabled} - Status: ${status}`);
                 if (!status) {
                     console.warn('status is undefined or null');
