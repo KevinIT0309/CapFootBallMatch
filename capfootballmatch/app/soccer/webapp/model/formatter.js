@@ -221,8 +221,14 @@ sap.ui.define([
             }
             return "YOU LOSS";
         },
-        fnGetLoggedUserBetResultState: function (betTeamWin, matchTeamWin) {
+        fnGetLoggedUserBetResultState: function (betDraw,betTeamWin, matchTeamWin,team1Score,team2Score) {
             UICommon.devLog(`BetTeamWin:${betTeamWin} - MatchTeamWin: ${matchTeamWin}`);
+            if (betDraw) {
+                if(team1Score == team2Score){
+                    return "Success";
+                }
+                return "Error";
+            }
             if (UICommon.fnIsEmpty(matchTeamWin)) {
                 return "None";
             }
@@ -280,6 +286,21 @@ sap.ui.define([
                 return true;
             }
             return false;
+        },
+        fnGetStageName: function(stage){
+            const { MATCH_STAGE } = AppGlobalConstant;
+            const oStage = UICommon.fnFindObjectInArray(MATCH_STAGE,"stage",stage);
+            if(oStage){
+                return oStage.stageName;
+            }
+            return stage;
+        },
+        fnGetMatchWinPoint: function(stage){
+            const { MATCH_STAGE_MULTIPLIER } = AppGlobalConstant;
+            if(MATCH_STAGE_MULTIPLIER[stage]){
+                return MATCH_STAGE_MULTIPLIER[stage];
+            }
+            return 1;
         }
         //EOF
     };
