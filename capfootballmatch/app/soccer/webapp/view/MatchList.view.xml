@@ -178,8 +178,20 @@
                         class="sapMObjectStatusLarge"
                         />
                         <VBox>
-                            <tnt:InfoLabel text="Draw"  colorScheme="7"  visible="{= ${viewModel>isDraw} }"/>
-                            <tnt:InfoLabel text="{viewModel>team_win_Name_bet}" colorScheme="1"  visible="{= !${viewModel>isDraw} }"/>
+                            <tnt:InfoLabel text="Draw"  colorScheme="7"  visible="{= ${
+                           parts: [
+                                'viewModel>isDraw',
+                                'viewModel>team_win_ID_bet'
+						    ],
+                            formatter: 'formatter.fnIsVisiblePlayerBetDrawResult'
+                        }}"/>
+                            <tnt:InfoLabel text="{viewModel>team_win_Name_bet}" colorScheme="1"  visible="{= ${
+                           parts: [
+                                'viewModel>isDraw',
+                                'viewModel>team_win_ID_bet'
+						    ],
+                            formatter: 'formatter.fnIsVisiblePlayerBetTeamWinResult'
+                        }}"/>
                         </VBox>
                         <VBox>
                             <tnt:InfoLabel text="Waiting result" colorScheme="6" visible="{= ${viewModel>status} !== 3 }"/>

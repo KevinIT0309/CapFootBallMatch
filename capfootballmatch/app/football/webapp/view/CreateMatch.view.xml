@@ -60,7 +60,7 @@
                                     items="{ path: 'viewModel>/stageList' }"
                                 >
                                     <core:Item
-                                        text="{viewModel>stage}"
+                                        text="{viewModel>stageName}"
                                         key="{viewModel>stage}"
                                     />
                                 </m:ComboBox>
