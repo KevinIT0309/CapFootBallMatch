@@ -258,6 +258,28 @@ sap.ui.define([
                 return false;
             }
             return true;
+        },
+        fnIsVisiblePlayerBetDrawResult: function(isDraw, teamWinBetId){
+           
+            if(isDraw == null && teamWinBetId==null){
+                return false;
+            }
+
+            if(isDraw == true){
+                return true;
+            }
+            return false;
+
+        },
+        fnIsVisiblePlayerBetTeamWinResult: function(isDraw, teamWinBetId){
+            if(isDraw == null && teamWinBetId == null){
+                return false;
+            }
+
+            if(teamWinBetId !=null && (isDraw == false || isDraw == null)){
+                return true;
+            }
+            return false;
         }
         //EOF
     };

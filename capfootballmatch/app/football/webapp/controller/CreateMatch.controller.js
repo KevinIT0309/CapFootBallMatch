@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/f/library",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (BaseController, fioriLibrary, JSONModel, MessageToast, MessageBox) {
+    "sap/m/MessageBox",
+    "cap/euro/admin/football/constants/AppGlobalConstant",
+], function (BaseController, fioriLibrary, JSONModel, MessageToast, MessageBox, AppGlobalConstant) {
     "use strict";
 
     return BaseController.extend("cap.euro.admin.football.controller.CreateMatch", {
@@ -16,6 +17,7 @@ sap.ui.define([
             this._layout = oEvent.getParameter("arguments").layout || fioriLibrary.LayoutType.TwoColumnsMidExpanded;
             this.getModel("layoutMod").setProperty("/layout", this._layout);
 
+
             let oData = {
                 "team1_ID": "",
                 "team1_name": "",
@@ -23,15 +25,7 @@ sap.ui.define([
                 "team2_name": "",
                 "match_time": new Date(),
                 "stage": "",
-                "stageList": [{
-                    "stage": "1"
-                }, {
-                    "stage": "2"
-                }, {
-                    "stage": "3"
-                }, {
-                    "stage": "4"
-                }],
+                "stageList": AppGlobalConstant.MATCH_STAGE,
                 "predicts": null,
                 "enabledSaveBtn": false
             };
@@ -105,7 +99,7 @@ sap.ui.define([
             const predicts = oModel.getProperty("/predicts");
             const matchTime = oModel.getProperty("/match_time");
 
-            let enabledSaveBtn = stage && team1_ID && team2_ID && team1_ID !== team2_ID && matchTime  && !isNaN(parseInt(predicts)) && predicts >= 0 ? true : false;
+            let enabledSaveBtn = stage && team1_ID && team2_ID && team1_ID !== team2_ID && matchTime && !isNaN(parseInt(predicts)) && predicts >= 0 ? true : false;
             oModel.setProperty("/enabledSaveBtn", enabledSaveBtn);
         }
     });

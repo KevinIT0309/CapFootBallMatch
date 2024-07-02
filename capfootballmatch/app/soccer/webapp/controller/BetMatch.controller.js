@@ -251,6 +251,8 @@ sap.ui.define([
                         oView.setBusy(false);
                         this.hideBusy();
                         MessageToast.show("Bet Saved Successfully");
+                        // this._reloadMatchList();
+
                     }.bind(this);
 
                     let fnError = function (oError) {
@@ -272,8 +274,7 @@ sap.ui.define([
         },
 
         handleClose: function (oEvent) {
-            this.getModel("mainModel").resetChanges("UpdateGroup");
-            this.getRouter().navTo("matchList");
+            this._reloadMatchList();
         },
 
         handleNumberofGoalsChange: function (oEvent) {
@@ -373,6 +374,11 @@ sap.ui.define([
                 console.error(`_getMatchBets - error: ${error.message}`);
                 throw error;
             }
+        },
+        _reloadMatchList: function(){
+            this.getModel("mainModel").resetChanges("UpdateGroup");
+            this.getRouter().navTo("matchList");
         }
+        //EOF
     });
 });
