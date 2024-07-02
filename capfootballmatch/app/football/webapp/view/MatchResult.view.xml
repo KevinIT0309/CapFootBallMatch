@@ -108,7 +108,7 @@
                                         text="{viewModel>matchStatusDesc}"
                                     />
                                 </m:Select>
-                                <core:Title text="Result" />
+                                <core:Title text="Result (90 Min)" />
                                 <m:Label text="Number of Predicts" />
                                 <m:Input
                                     enabled="{viewModel>/enabledPredictInput}"

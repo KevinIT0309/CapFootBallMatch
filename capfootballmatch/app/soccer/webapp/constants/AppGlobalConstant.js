@@ -35,10 +35,34 @@ sap.ui.define([
         "5": 6.5
     };
 
+    const MATCH_STAGE = [
+        {
+            "stage": "1",
+            "stageName": "Group"
+        },
+        {
+            "stage": "2",
+            "stageName": "1/16"
+        },
+        {
+            "stage": "3",
+            "stageName": "1/8"
+        },
+        {
+            "stage": "4",
+            "stageName": "Semi Final"
+        },
+        {
+            "stage": "5",
+            "stageName": "Final"
+        }
+    ];
+
     return {
         MATCH_STATUS: MATCH_STATUS,
         MATCH_STATUS_CONF: MATCH_STATUS_CONF,
         DATE_CONFIG: DATE_CONFIG,
-        MATCH_STAGE_MULTIPLIER: MATCH_STAGE_MULTIPLIER
+        MATCH_STAGE_MULTIPLIER: MATCH_STAGE_MULTIPLIER,
+        MATCH_STAGE: MATCH_STAGE
     };
 });

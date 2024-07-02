@@ -79,7 +79,17 @@
                             text="Round:"
                             class="sapUiTinyMarginEnd"
                         />
-                        <m:Text text="{mainModel>stage}" />
+                        <m:Text text="{ path: 'mainModel>stage',formatter: 'formatter.fnGetStageName'}" />
+                    </m:HBox>
+                    <m:HBox
+                        class="sapUiTinyMarginBottom"
+                        renderType="Bare"
+                    >
+                        <m:Label
+                            text="Win Point:"
+                            class="sapUiTinyMarginEnd"
+                        />
+                        <m:ObjectStatus text="{ path: 'mainModel>stage',formatter: 'formatter.fnGetMatchWinPoint'} Point" state="Warning" />
                     </m:HBox>
                 </m:VBox>
 
@@ -129,7 +139,7 @@
 
                 <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom" id="vbResult">
                     <m:Title
-                        text="Result"
+                        text="Result (90 Min)"
                         class="sapUiTinyMarginBottom"
                     />
                     <m:Text
@@ -146,15 +156,18 @@
 
                 <m:VBox id="vbPlayerResult">
                         <m:ObjectStatus
-                        text="{
+                        text="You {
                            parts: [ 'viewModel>/isDraw','viewModel>/team_win_ID','mainModel>status','mainModel>team_win_ID','mainModel>team1_score','mainModel>team2_score'
 						    ],
                             formatter: 'formatter.fnGetBetStatusText'
                         }"
                         state="{
                            parts: [
+                                'viewModel>/isDraw',
                                 'viewModel>/team_win_ID',
-                                'mainModel>team_win_ID'
+                                'mainModel>team_win_ID',
+                                'mainModel>team1_score',
+                                'mainModel>team2_score'
 						    ],
                             formatter: 'formatter.fnGetLoggedUserBetResultState'
                         }"

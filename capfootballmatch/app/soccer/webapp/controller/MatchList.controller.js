@@ -15,7 +15,7 @@ sap.ui.define([
                 let oData = {
                     "searchFieldValue": "",
                     "matchStatusKey": "",
-                    "matchDayValue": null,
+                    "matchDayValue": new Date(),
                     "userId": "",
                     "userBets": [],
                     "matchesBets": []
@@ -55,6 +55,8 @@ sap.ui.define([
                 if (this._oMatchTable) {
                     this._oMatchTable.getBinding("items").refresh("$auto");
                 }
+                
+                this.onSearch();
 
             },
 
