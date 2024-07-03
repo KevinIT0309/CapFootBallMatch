@@ -56,11 +56,40 @@
                                 <m:Text text="{mainModel>team1/team_name}" />
                                 <m:Label text="Team 2/ Away" />
                                 <m:Text text="{mainModel>team2/team_name}" />
-                                <m:Label text="Is Over" />
-                                <m:Switch customTextOn="Yes" customTextOff="No" change="handleIsOverChange" state="{mainModel>isOver}"></m:Switch>
                                 <m:Label text="User Predicts" />
                                 <m:Text text="{viewModel>/userPredicts}" />
-                                <core:Title text="" />
+                                <!-- Result -->
+                                <core:Title text="Result set (90 Min)" />
+                                <m:Label text="Team 1/ Home - Goal" />
+                                <m:Input
+                                    type="Number"
+                                    enabled="{viewModel>/enabledOtherInputs}"
+                                    change="handleScoreChange"
+                                    value="{path: 'mainModel>team1_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
+                                <m:Label text="Team 2/ Away - Goal" />
+                                <m:Input
+                                    type="Number"
+                                    enabled="{viewModel>/enabledOtherInputs}"
+                                    change="handleScoreChange"
+                                    value="{path: 'mainModel>team2_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
+                                <m:Label text="Select Team Win (Keep blank for Draw)" />
+                                <m:ComboBox
+                                    id="selectTeamWin"
+                                    enabled="{viewModel>/enabledOtherInputs}"
+                                    showSecondaryValues="true"
+                                    selectedKey="{mainModel>team_win_ID}"
+                                    change="handleTeamWinChange"
+                                    items="{ path: 'viewModel>/predictOptions' }"
+                                >
+                                    <core:Item
+                                        text="{viewModel>team_name}"
+                                        key="{viewModel>team_id}"
+                                    />
+                                </m:ComboBox>
+                                <!-- Config -->
+                                <core:Title text="Setting" />
                                 <m:Label text="Match Day" />
                                 <m:DateTimePicker
                                     id="matchDateTimeDTP"
@@ -93,6 +122,13 @@
                                         }
                                     }"
                                 /> -->
+                                <m:Label text="Number of Predicts" />
+                                <m:Input
+                                    enabled="{viewModel>/enabledPredictInput}"
+                                    type="Number"
+                                    change="handleNumberofPredictsChange"
+                                    value="{path: 'mainModel>predicts', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
+                                />
                                 <m:Label text="Match Status" />
                                 <m:Select
                                     enabled="{viewModel>/enabledMatchStatus}"
@@ -108,42 +144,10 @@
                                         text="{viewModel>matchStatusDesc}"
                                     />
                                 </m:Select>
-                                <core:Title text="Result (90 Min)" />
-                                <m:Label text="Number of Predicts" />
-                                <m:Input
-                                    enabled="{viewModel>/enabledPredictInput}"
-                                    type="Number"
-                                    change="handleNumberofPredictsChange"
-                                    value="{path: 'mainModel>predicts', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
-                                />
-                                <m:Label text="Team win" />
-                                <m:ComboBox
-                                    id="selectTeamWin"
-                                    enabled="{viewModel>/enabledOtherInputs}"
-                                    showSecondaryValues="true"
-                                    selectedKey="{mainModel>team_win_ID}"
-                                    change="handleTeamWinChange"
-                                    items="{ path: 'viewModel>/predictOptions' }"
-                                >
-                                    <core:Item
-                                        text="{viewModel>team_name}"
-                                        key="{viewModel>team_id}"
-                                    />
-                                </m:ComboBox>
-                                <m:Label text="Team 1 Goal" />
-                                <m:Input
-                                    type="Number"
-                                    enabled="{viewModel>/enabledOtherInputs}"
-                                    change="handleScoreChange"
-                                    value="{path: 'mainModel>team1_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
-                                />
-                                <m:Label text="Team 2 Goal" />
-                                <m:Input
-                                    type="Number"
-                                    enabled="{viewModel>/enabledOtherInputs}"
-                                    change="handleScoreChange"
-                                    value="{path: 'mainModel>team2_score', type: 'sap.ui.model.type.Integer', constraints:{minimum:0}}"
-                                />
+                                <m:Label text="Is Over" />
+                                <m:Switch customTextOn="Yes" customTextOff="No" change="handleIsOverChange" state="{mainModel>isOver}"></m:Switch>
+                              
+                                
                             </form:content>
                         </form:SimpleForm>
                     </ObjectPageSubSection>

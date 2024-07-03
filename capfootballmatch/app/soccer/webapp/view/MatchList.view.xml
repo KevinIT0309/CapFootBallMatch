@@ -38,17 +38,29 @@
                                 visibleInFilterBar="true"
                             >
                                 <fb:control>
-                                    <DatePicker
+                                    <DateRangeSelection
                                         change="handleMatchDayValueChange"
-                                        value="{
-                                        'path': 'viewModel>/matchDayValue',
+                                        delimiter="-"
+                                        displayFormat="dd/MM/yyyy"
+                                        valueFormat="yyyy-MM-dd"
+                                        dateValue="{
+                                        'path': 'viewModel>/matchDayFrom',
                                         'type': 'sap.ui.model.odata.type.DateTimeOffset',
                                         'formatOptions': {
                                             'pattern': 'dd/MM/yyyy',
                                             'strictParsing': true,
                                             'UTC': true
-                                        }
-                                    }"
+                                         }
+                                        }"
+                                        secondDateValue="{
+                                        'path': 'viewModel>/matchDayTo',
+                                        'type': 'sap.ui.model.odata.type.DateTimeOffset',
+                                        'formatOptions': {
+                                            'pattern': 'dd/MM/yyyy',
+                                            'strictParsing': true,
+                                            'UTC': true
+                                         }
+                                        }"
                                     />
                                 </fb:control>
                             </fb:FilterGroupItem>
