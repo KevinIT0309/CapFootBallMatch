@@ -12,10 +12,15 @@ sap.ui.define([
 
         return BaseController.extend("cap.euro.bettor.soccer.controller.MatchList", {
             onInit: function () {
+                const matchDayFrom = new Date();
+                let matchDayTo = new Date();
+                matchDayTo.setDate(matchDayFrom.getDate() + 3);
                 let oData = {
                     "searchFieldValue": "",
                     "matchStatusKey": "",
                     "matchDayValue": new Date(),
+                    "matchDayFrom": matchDayFrom,
+                    "matchDayTo": matchDayTo,
                     "userId": "",
                     "userBets": [],
                     "matchesBets": []
@@ -78,20 +83,16 @@ sap.ui.define([
 
             onSearch: function () {
                 let viewModel = this.getModel("viewModel");
-                // let matchStatusKey = viewModel.getProperty("/matchStatusKey");
-                let matchDayValue = viewModel.getProperty("/matchDayValue");
+                let matchDayFrom = viewModel.getProperty("/matchDayFrom");
+                let matchDayTo = viewModel.getProperty("/matchDayTo");
                 let filters = [];
-
-                // if (matchStatusKey) {
-                //     filters.push(new Filter("status", "EQ", parseInt(matchStatusKey)));
-                // }
-
-                if (matchDayValue) {
-                    let upperMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(0, 0, 0));
-                    let lowerMatchDatetime = new Date(new Date(matchDayValue.getTime()).setHours(23, 59, 59));
+            
+                if (matchDayFrom && matchDayTo) {
+                    let upperMatchDatetime = new Date(new Date(matchDayFrom).setHours(0, 0, 0));
+                    let lowerMatchDatetime = new Date(new Date(matchDayTo).setHours(23, 59, 59));
                     filters.push(new Filter("match_time", "BT", upperMatchDatetime.toISOString(), lowerMatchDatetime.toISOString()));
                 }
-
+            
                 if (filters.length) {
                     this.byId("table").getBinding("items").filter(
                         new Filter({
@@ -103,6 +104,7 @@ sap.ui.define([
                     this.byId("table").getBinding("items").filter([]);
                 }
             },
+            
             _fnGetMatchBetResults: function (userId) {
                 let sRequestEndpoint = `${this.getFMSrvPath()}/getMatchBetResults(userID='${userId}')`;
                 console.log(`Request getMatchBetResults Endpoint: ${sRequestEndpoint}`);
